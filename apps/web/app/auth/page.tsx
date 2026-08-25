@@ -1,13 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { signIn, useSession } from 'next-auth/react';
 import { AuthResponse, api, setToken } from '@/lib/api';
 
 type AuthMethod = 'google' | 'mobile' | 'email';
 
 export default function AuthPage() {
   const router = useRouter();
+  const { data: session } = useSession();
   const [method, setMethod] = useState<AuthMethod>('google');
   
   // Google Sign-In state
@@ -31,7 +33,34 @@ export default function AuthPage() {
   const [successMsg, setSuccessMsg] = useState('');
   const [busy, setBusy] = useState(false);
 
-  // 1. Google Sign-In Handler
+  // Sync NextAuth Google session if user authenticated via NextAuth Google provider
+  useEffect(() => {
+    if (session?.user?.email) {
+      api<AuthResponse>('/auth/google', {
+        method: 'POST',
+        body: JSON.stringify({ email: session.user.email, name: session.user.name || undefined })
+      })
+        .then(data => {
+          setToken(data.token);
+          const userName = session.user?.name || session.user?.email || 'User';
+          setSuccessMsg(`Welcome, ${userName}! Redirecting...`);
+          setTimeout(() => router.push('/saved'), 800);
+        })
+        .catch(err => {
+          setMessage(err instanceof Error ? err.message : 'Google authentication sync failed');
+        });
+    }
+  }, [session, router]);
+
+  // 1. NextAuth OAuth Google Login
+  function handleNextAuthGoogle() {
+    setBusy(true);
+    setMessage('');
+    setSuccessMsg('Connecting to Google OAuth...');
+    signIn('google', { callbackUrl: '/auth' });
+  }
+
+  // 2. Direct Google Email Login Handler
   async function handleGoogleLogin(e?: React.FormEvent, customEmail?: string) {
     if (e) e.preventDefault();
     setBusy(true);
@@ -53,7 +82,7 @@ export default function AuthPage() {
     }
   }
 
-  // 2. Mobile OTP - Send OTP Handler
+  // 3. Mobile OTP - Send OTP Handler
   async function handleSendOtp(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -74,7 +103,7 @@ export default function AuthPage() {
     }
   }
 
-  // 3. Mobile OTP - Verify OTP Handler
+  // 4. Mobile OTP - Verify OTP Handler
   async function handleVerifyOtp(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -95,7 +124,7 @@ export default function AuthPage() {
     }
   }
 
-  // 4. Standard Email/Password Handler
+  // 5. Standard Email/Password Handler
   async function handleEmailAuth(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -187,7 +216,7 @@ export default function AuthPage() {
           <div className="mt-6 space-y-4">
             <button
               disabled={busy}
-              onClick={e => handleGoogleLogin(e)}
+              onClick={handleNextAuthGoogle}
               className="w-full flex items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3.5 font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700/80"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -196,7 +225,7 @@ export default function AuthPage() {
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
               </svg>
-              Continue with Google
+              Continue with Google (OAuth)
             </button>
 
             <div className="relative my-4 flex items-center justify-center">
