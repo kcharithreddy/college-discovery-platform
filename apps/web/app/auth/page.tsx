@@ -1,20 +1,29 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { signIn, useSession } from 'next-auth/react';
 import { AuthResponse, api, setToken } from '@/lib/api';
+
+declare global {
+  interface Window {
+    google?: {
+      accounts: {
+        id: {
+          initialize: (config: { client_id: string; callback: (response: { credential: string }) => void }) => void;
+          renderButton: (parent: HTMLElement | null, options: { theme?: string; size?: string; width?: string | number; text?: string; shape?: string }) => void;
+        };
+      };
+    };
+  }
+}
 
 type AuthMethod = 'google' | 'mobile' | 'email';
 
+const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '832754884433-dbaqjbatnc739s375hrpm3t6elj8gv3a.apps.googleusercontent.com';
+
 export default function AuthPage() {
   const router = useRouter();
-  const { data: session } = useSession();
   const [method, setMethod] = useState<AuthMethod>('google');
-  
-  // Google Sign-In state
-  const [googleEmail, setGoogleEmail] = useState('student.demo@gmail.com');
-  const [googleName, setGoogleName] = useState('Google Student');
 
   // Mobile OTP state
   const [phone, setPhone] = useState('9876543210');
@@ -33,56 +42,72 @@ export default function AuthPage() {
   const [successMsg, setSuccessMsg] = useState('');
   const [busy, setBusy] = useState(false);
 
-  // Sync NextAuth Google session if user authenticated via NextAuth Google provider
-  useEffect(() => {
-    if (session?.user?.email) {
-      api<AuthResponse>('/auth/google', {
-        method: 'POST',
-        body: JSON.stringify({ email: session.user.email, name: session.user.name || undefined })
-      })
-        .then(data => {
-          setToken(data.token);
-          const userName = session.user?.name || session.user?.email || 'User';
-          setSuccessMsg(`Welcome, ${userName}! Redirecting...`);
-          setTimeout(() => router.push('/saved'), 800);
-        })
-        .catch(err => {
-          setMessage(err instanceof Error ? err.message : 'Google authentication sync failed');
-        });
-    }
-  }, [session, router]);
-
-  // 1. NextAuth OAuth Google Login
-  function handleNextAuthGoogle() {
+  // Real Google Sign-In Credential Callback
+  const handleGoogleCredential = useCallback(async (response: { credential: string }) => {
+    if (!response || !response.credential) return;
     setBusy(true);
     setMessage('');
-    setSuccessMsg('Connecting to Google OAuth...');
-    signIn('google', { callbackUrl: '/auth' });
-  }
+    setSuccessMsg('Verifying Google credentials...');
 
-  // 2. Direct Google Email Login Handler
-  async function handleGoogleLogin(e?: React.FormEvent, customEmail?: string) {
-    if (e) e.preventDefault();
-    setBusy(true);
-    setMessage('');
-    setSuccessMsg('');
-    const targetEmail = customEmail || googleEmail;
     try {
       const data = await api<AuthResponse>('/auth/google', {
         method: 'POST',
-        body: JSON.stringify({ email: targetEmail, name: googleName })
+        body: JSON.stringify({ credential: response.credential })
       });
       setToken(data.token);
-      setSuccessMsg('Signed in with Google successfully! Redirecting...');
+      setSuccessMsg(`Welcome, ${data.user.name}! Redirecting...`);
       setTimeout(() => router.push('/saved'), 800);
     } catch (err) {
       setMessage(err instanceof Error ? err.message : 'Google authentication failed');
     } finally {
       setBusy(false);
     }
-  }
+  }, [router]);
 
-  // 3. Mobile OTP - Send OTP Handler
+  // Load and initialize Google Identity Services (GIS)
+  useEffect(() => {
+    if (method !== 'google') return;
+
+    const renderGoogleButton = () => {
+      if (window.google?.accounts?.id) {
+        window.google.accounts.id.initialize({
+          client_id: GOOGLE_CLIENT_ID,
+          callback: handleGoogleCredential
+        });
+
+        const googleBtnDiv = document.getElementById('googleSignInDiv');
+        if (googleBtnDiv) {
+          googleBtnDiv.innerHTML = '';
+          window.google.accounts.id.renderButton(googleBtnDiv, {
+            theme: 'outline',
+            size: 'large',
+            width: '320',
+            text: 'continue_with',
+            shape: 'pill'
+          });
+        }
+      }
+    };
+
+    if (window.google?.accounts?.id) {
+      renderGoogleButton();
+    } else {
+      const existingScript = document.getElementById('google-gsi-script');
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.id = 'google-gsi-script';
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.async = true;
+        script.defer = true;
+        script.onload = renderGoogleButton;
+        document.head.appendChild(script);
+      } else {
+        existingScript.onload = renderGoogleButton;
+      }
+    }
+  }, [method, handleGoogleCredential]);
+
+  // Mobile OTP - Send OTP Handler
   async function handleSendOtp(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -103,7 +128,7 @@ export default function AuthPage() {
     }
   }
 
-  // 4. Mobile OTP - Verify OTP Handler
+  // Mobile OTP - Verify OTP Handler
   async function handleVerifyOtp(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -124,7 +149,7 @@ export default function AuthPage() {
     }
   }
 
-  // 5. Standard Email/Password Handler
+  // Standard Email/Password Handler
   async function handleEmailAuth(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
@@ -211,60 +236,15 @@ export default function AuthPage() {
           </button>
         </div>
 
-        {/* Tab 1: Google Login */}
+        {/* Tab 1: Real Google Identity Services (GIS) Sign-In */}
         {method === 'google' && (
-          <div className="mt-6 space-y-4">
-            <button
-              disabled={busy}
-              onClick={handleNextAuthGoogle}
-              className="w-full flex items-center justify-center gap-3 rounded-xl border border-slate-300 bg-white px-4 py-3.5 font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:opacity-60 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700/80"
-            >
-              <svg className="h-5 w-5" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-              Continue with Google (OAuth)
-            </button>
-
-            <div className="relative my-4 flex items-center justify-center">
-              <div className="w-full border-t border-slate-200 dark:border-slate-800"></div>
-              <span className="absolute bg-white px-3 text-xs uppercase tracking-wider text-slate-400 dark:bg-slate-900 dark:text-slate-500">
-                or sign in with Google email
-              </span>
-            </div>
-
-            <form onSubmit={handleGoogleLogin} className="space-y-3">
-              <div>
-                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">Google Email</label>
-                <input
-                  value={googleEmail}
-                  onChange={e => setGoogleEmail(e.target.value)}
-                  type="email"
-                  placeholder="name@gmail.com"
-                  className="mt-1 w-full rounded-xl border px-4 py-3 text-sm focus:border-blue-500 focus:outline-none dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100"
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">Name (Optional)</label>
-                <input
-                  value={googleName}
-                  onChange={e => setGoogleName(e.target.value)}
-                  type="text"
-                  placeholder="Your Name"
-                  className="mt-1 w-full rounded-xl border px-4 py-3 text-sm focus:border-blue-500 focus:outline-none dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100"
-                />
-              </div>
-
-              <button
-                disabled={busy}
-                type="submit"
-                className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3.5 font-semibold text-white shadow-md hover:from-blue-700 hover:to-indigo-700 disabled:opacity-60"
-              >
-                {busy ? 'Connecting...' : 'Sign in with Google Email'}
-              </button>
-            </form>
+          <div className="mt-8 flex flex-col items-center justify-center space-y-4 py-4">
+            <p className="text-center text-xs font-medium text-slate-500 dark:text-slate-400">
+              Sign in securely using your official Google Account
+            </p>
+            
+            {/* Google OAuth Button rendered dynamically by GIS */}
+            <div id="googleSignInDiv" className="flex min-h-[44px] items-center justify-center"></div>
           </div>
         )}
 

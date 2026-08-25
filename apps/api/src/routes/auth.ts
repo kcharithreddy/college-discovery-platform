@@ -2,10 +2,14 @@ import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { z } from 'zod';
+import { OAuth2Client } from 'google-auth-library';
 import { prisma } from '../prisma';
 import { asyncHandler, getJwtSecret } from '../utils';
 
 const router = Router();
+
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '832754884433-dbaqjbatnc739s375hrpm3t6elj8gv3a.apps.googleusercontent.com';
+const googleClient = new OAuth2Client(GOOGLE_CLIENT_ID);
 
 // Simple in-memory OTP store for phone authentication
 const otpStore = new Map<string, { code: string; expiresAt: number }>();
@@ -17,8 +21,7 @@ const authSchema = z.object({
 });
 
 const googleAuthSchema = z.object({
-  email: z.string().trim().email().transform(email => email.toLowerCase()),
-  name: z.string().trim().min(2).max(60).optional()
+  credential: z.string().min(1, 'Google credential token is required')
 });
 
 const sendOtpSchema = z.object({
@@ -88,32 +91,50 @@ router.post('/login', asyncHandler(async (req, res) => {
   });
 }));
 
-// 3. Google Sign-In / Register
+// 3. Real Google OAuth (ID Token Verification via Google Identity Services)
 router.post('/google', asyncHandler(async (req, res) => {
   const parsed = googleAuthSchema.safeParse(req.body);
   if (!parsed.success) {
-    res.status(400).json({ message: 'Invalid input', errors: parsed.error.flatten() });
+    res.status(400).json({ message: 'Google credential token is missing or invalid', errors: parsed.error.flatten() });
     return;
   }
 
-  const { email, name } = parsed.data;
-  let user = await prisma.user.findUnique({ where: { email } });
+  const { credential } = parsed.data;
 
-  if (!user) {
-    const derivedName = name || email.split('@')[0].replace(/[._-]/g, ' ') || 'Google Student';
-    user = await prisma.user.create({
-      data: {
-        email,
-        name: derivedName.charAt(0).toUpperCase() + derivedName.slice(1),
-        provider: 'google'
-      }
+  try {
+    const ticket = await googleClient.verifyIdToken({
+      idToken: credential,
+      audience: GOOGLE_CLIENT_ID
     });
-  }
 
-  res.json({
-    user: { id: user.id, name: user.name, email: user.email, phone: user.phone, provider: user.provider },
-    token: createToken(user.id)
-  });
+    const payload = ticket.getPayload();
+    if (!payload || !payload.email) {
+      res.status(401).json({ message: 'Invalid Google token payload' });
+      return;
+    }
+
+    const email = payload.email.toLowerCase();
+    const name = payload.name || payload.given_name || email.split('@')[0];
+
+    let user = await prisma.user.findUnique({ where: { email } });
+    if (!user) {
+      user = await prisma.user.create({
+        data: {
+          email,
+          name,
+          provider: 'google'
+        }
+      });
+    }
+
+    res.json({
+      user: { id: user.id, name: user.name, email: user.email, phone: user.phone, provider: user.provider },
+      token: createToken(user.id)
+    });
+  } catch (error) {
+    console.error('Google token verification error:', error);
+    res.status(401).json({ message: 'Google authentication failed: Invalid or expired token' });
+  }
 }));
 
 // 4. Send Mobile OTP
