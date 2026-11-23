@@ -25,9 +25,9 @@ router.get('/', asyncHandler(async (req, res) => {
 
   const where = {
     AND: [
-      q ? { name: { contains: q } } : {},
+      q ? { name: { contains: q, mode: 'insensitive' as const } } : {},
       location ? { location: { equals: location } } : {},
-      course ? { course: { contains: course } } : {},
+      course ? { course: { contains: course, mode: 'insensitive' as const } } : {},
       maxFees ? { fees: { lte: maxFees } } : {}
     ]
   };

@@ -1,18 +1,23 @@
+import { randomInt } from 'crypto';
 import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { z } from 'zod';
 import { OAuth2Client } from 'google-auth-library';
+import { config } from '../config';
 import { prisma } from '../prisma';
-import { asyncHandler, getJwtSecret } from '../utils';
+import { asyncHandler, toPublicUser } from '../utils';
 
 const router = Router();
+const googleClient = new OAuth2Client(config.googleClientId);
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || '832754884433-dbaqjbatnc739s375hrpm3t6elj8gv3a.apps.googleusercontent.com';
-const googleClient = new OAuth2Client(GOOGLE_CLIENT_ID);
+const DEMO_OTP = '123456';
+const OTP_TTL_MS = 5 * 60 * 1000;
 
-// Simple in-memory OTP store for phone authentication
+// In-memory OTP store. Fine for a single instance; use Redis or a DB table when scaling out.
 const otpStore = new Map<string, { code: string; expiresAt: number }>();
+
+const phoneSchema = z.string().trim().regex(/^\d{10}$/, 'Phone number must be a 10-digit number');
 
 const authSchema = z.object({
   name: z.string().trim().min(2).max(60).optional(),
@@ -24,21 +29,18 @@ const googleAuthSchema = z.object({
   credential: z.string().min(1, 'Google credential token is required')
 });
 
-const sendOtpSchema = z.object({
-  phone: z.string().trim().regex(/^\d{10}$/, 'Phone number must be a 10-digit number')
-});
+const sendOtpSchema = z.object({ phone: phoneSchema });
 
 const verifyOtpSchema = z.object({
-  phone: z.string().trim().regex(/^\d{10}$/, 'Phone number must be a 10-digit number'),
+  phone: phoneSchema,
   otp: z.string().trim().length(6, 'OTP must be 6 digits'),
   name: z.string().trim().min(2).max(60).optional()
 });
 
 function createToken(userId: string) {
-  return jwt.sign({ userId }, getJwtSecret(), { expiresIn: '7d' });
+  return jwt.sign({ userId }, config.jwtSecret, { expiresIn: '7d' });
 }
 
-// 1. Standard Email & Password Registration
 router.post('/register', asyncHandler(async (req, res) => {
   const parsed = authSchema.safeParse(req.body);
   if (!parsed.success) {
@@ -58,14 +60,12 @@ router.post('/register', asyncHandler(async (req, res) => {
       email: parsed.data.email,
       password: await bcrypt.hash(parsed.data.password, 10),
       provider: 'credentials'
-    },
-    select: { id: true, name: true, email: true, phone: true, provider: true }
+    }
   });
 
-  res.status(201).json({ user, token: createToken(user.id) });
+  res.status(201).json({ user: toPublicUser(user), token: createToken(user.id) });
 }));
 
-// 2. Standard Email & Password Login
 router.post('/login', asyncHandler(async (req, res) => {
   const parsed = authSchema.omit({ name: true }).safeParse(req.body);
   if (!parsed.success) {
@@ -74,70 +74,51 @@ router.post('/login', asyncHandler(async (req, res) => {
   }
 
   const user = await prisma.user.findUnique({ where: { email: parsed.data.email } });
-  if (!user || !user.password) {
+  const ok = user?.password ? await bcrypt.compare(parsed.data.password, user.password) : false;
+  if (!user || !ok) {
     res.status(401).json({ message: 'Invalid email or password' });
     return;
   }
 
-  const ok = await bcrypt.compare(parsed.data.password, user.password);
-  if (!ok) {
-    res.status(401).json({ message: 'Invalid email or password' });
-    return;
-  }
-
-  res.json({
-    user: { id: user.id, name: user.name, email: user.email, phone: user.phone, provider: user.provider },
-    token: createToken(user.id)
-  });
+  res.json({ user: toPublicUser(user), token: createToken(user.id) });
 }));
 
-// 3. Real Google OAuth (ID Token Verification via Google Identity Services)
+// Verifies a Google Identity Services ID token sent by the frontend.
 router.post('/google', asyncHandler(async (req, res) => {
+  if (!config.googleClientId) {
+    res.status(503).json({ message: 'Google sign-in is not configured on the server' });
+    return;
+  }
+
   const parsed = googleAuthSchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ message: 'Google credential token is missing or invalid', errors: parsed.error.flatten() });
     return;
   }
 
-  const { credential } = parsed.data;
-
+  let payload;
   try {
-    const ticket = await googleClient.verifyIdToken({
-      idToken: credential,
-      audience: GOOGLE_CLIENT_ID
-    });
-
-    const payload = ticket.getPayload();
-    if (!payload || !payload.email) {
-      res.status(401).json({ message: 'Invalid Google token payload' });
-      return;
-    }
-
-    const email = payload.email.toLowerCase();
-    const name = payload.name || payload.given_name || email.split('@')[0];
-
-    let user = await prisma.user.findUnique({ where: { email } });
-    if (!user) {
-      user = await prisma.user.create({
-        data: {
-          email,
-          name,
-          provider: 'google'
-        }
-      });
-    }
-
-    res.json({
-      user: { id: user.id, name: user.name, email: user.email, phone: user.phone, provider: user.provider },
-      token: createToken(user.id)
-    });
+    const ticket = await googleClient.verifyIdToken({ idToken: parsed.data.credential, audience: config.googleClientId });
+    payload = ticket.getPayload();
   } catch (error) {
     console.error('Google token verification error:', error);
-    res.status(401).json({ message: 'Google authentication failed: Invalid or expired token' });
   }
+
+  if (!payload?.email) {
+    res.status(401).json({ message: 'Google authentication failed: invalid or expired token' });
+    return;
+  }
+
+  const email = payload.email.toLowerCase();
+  const user = await prisma.user.upsert({
+    where: { email },
+    update: {},
+    create: { email, name: payload.name || payload.given_name || email.split('@')[0], provider: 'google' }
+  });
+
+  res.json({ user: toPublicUser(user), token: createToken(user.id) });
 }));
 
-// 4. Send Mobile OTP
 router.post('/mobile/send-otp', asyncHandler(async (req, res) => {
   const parsed = sendOtpSchema.safeParse(req.body);
   if (!parsed.success) {
@@ -146,18 +127,16 @@ router.post('/mobile/send-otp', asyncHandler(async (req, res) => {
   }
 
   const { phone } = parsed.data;
-  const code = '123456'; // Default OTP for fast demo testing
-  const expiresAt = Date.now() + 5 * 60 * 1000; // 5 minutes
+  const code = config.demoOtp ? DEMO_OTP : String(randomInt(0, 1_000_000)).padStart(6, '0');
+  otpStore.set(phone, { code, expiresAt: Date.now() + OTP_TTL_MS });
 
-  otpStore.set(phone, { code, expiresAt });
-
+  // TODO: deliver `code` via an SMS provider when demo mode is off.
   res.json({
     message: `OTP sent successfully to +91 ${phone}`,
-    demoOtp: code
+    ...(config.demoOtp ? { demoOtp: code } : {})
   });
 }));
 
-// 5. Verify Mobile OTP & Login/Register
 router.post('/mobile/verify-otp', asyncHandler(async (req, res) => {
   const parsed = verifyOtpSchema.safeParse(req.body);
   if (!parsed.success) {
@@ -167,31 +146,19 @@ router.post('/mobile/verify-otp', asyncHandler(async (req, res) => {
 
   const { phone, otp, name } = parsed.data;
   const stored = otpStore.get(phone);
-
-  // Validate OTP (allow default 123456 as backup)
-  const isValidOtp = (stored && stored.code === otp && stored.expiresAt > Date.now()) || otp === '123456';
-  if (!isValidOtp) {
-    res.status(400).json({ message: 'Invalid or expired OTP. Please use OTP: 123456' });
+  if (!stored || stored.code !== otp || stored.expiresAt < Date.now()) {
+    res.status(400).json({ message: 'Invalid or expired OTP' });
     return;
   }
-
   otpStore.delete(phone);
 
-  let user = await prisma.user.findUnique({ where: { phone } });
-  if (!user) {
-    user = await prisma.user.create({
-      data: {
-        phone,
-        name: name || `Student (${phone.slice(-4)})`,
-        provider: 'phone'
-      }
-    });
-  }
-
-  res.json({
-    user: { id: user.id, name: user.name, email: user.email, phone: user.phone, provider: user.provider },
-    token: createToken(user.id)
+  const user = await prisma.user.upsert({
+    where: { phone },
+    update: {},
+    create: { phone, name: name || `Student (${phone.slice(-4)})`, provider: 'phone' }
   });
+
+  res.json({ user: toPublicUser(user), token: createToken(user.id) });
 }));
 
 export default router;

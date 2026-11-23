@@ -1,14 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CollegeCard } from '@/components/CollegeCard';
-import { College, api } from '@/lib/api';
+import { College, FiltersResponse, api } from '@/lib/api';
 
 export default function PredictorPage() {
+  const [exams, setExams] = useState<string[]>(['JEE']);
   const [exam, setExam] = useState('JEE');
   const [rank, setRank] = useState('1000');
   const [matches, setMatches] = useState<College[]>([]);
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    api<FiltersResponse>('/colleges/filters')
+      .then(data => { if (data.exams.length) setExams(data.exams); })
+      .catch(() => undefined);
+  }, []);
 
   async function predict(e: React.FormEvent) {
     e.preventDefault();
@@ -32,7 +39,7 @@ export default function PredictorPage() {
 
       <form onSubmit={predict} className="mt-6 grid gap-4 rounded-2xl bg-white p-5 shadow-sm md:grid-cols-3 dark:bg-slate-900">
         <select value={exam} onChange={e => setExam(e.target.value)} className="rounded-xl border px-4 py-3 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100">
-          <option>JEE</option><option>BITSAT</option><option>VITEEE</option><option>SRMJEEE</option><option>MET</option><option>TNEA</option><option>PESSAT</option><option>MHTCET</option>
+          {exams.map(item => <option key={item}>{item}</option>)}
         </select>
         <input value={rank} onChange={e => setRank(e.target.value)} type="number" min="1" className="rounded-xl border px-4 py-3 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-500" />
         <button className="rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700">Predict colleges</button>
