@@ -8,34 +8,70 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id        String         @id @default(cuid())
   name      String
-  email     String?  @unique
-  phone     String?  @unique
+  email     String?        @unique
+  phone     String?        @unique
   password  String?
-  provider  String   @default("credentials")
+  provider  String         @default("credentials")
   saved     SavedCollege[]
-  createdAt DateTime @default(now())
+  reviews   Review[]
+  createdAt DateTime       @default(now())
 }
 
 model College {
-  id             String   @id @default(cuid())
-  name           String
-  slug           String   @unique
-  location       String
-  fees           Int
-  rating         Float
-  course         String
-  placementRate  Int
-  averagePackage Float
-  exam           String
-  minRank        Int
-  maxRank        Int
-  overview       String
-  courses        Course[]
-  reviews        Review[]
-  savedBy        SavedCollege[]
-  createdAt      DateTime @default(now())
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  city        String
+  state       String
+  /// e.g. IIT, NIT, IIIT, State Government, Private, Deemed
+  type        String
+  ownership   String // Government | Private
+  established Int?
+  campusAcres Float?
+  website     String?
+  overview    String
+
+  // NIRF Engineering ranking
+  nirfRank  Int?
+  nirfScore Float?
+  nirfYear  Int?
+
+  // Admissions & money (null = not available yet)
+  course     String // flagship programme shown on cards
+  exam       String
+  minRank    Int?
+  maxRank    Int?
+  fees       Int? // approx. annual tuition in INR
+  hostelFees Int? // approx. annual hostel + mess in INR
+
+  // Placements
+  placementRate  Int?
+  averagePackage Float? // LPA
+  medianPackage  Float? // LPA
+
+  // Campus
+  hostelAvailable Boolean  @default(true)
+  facilities      String[]
+  campusLife      String[]
+  fests           String[]
+  pros            String[]
+  cons            String[]
+
+  // Student ratings are aggregated from real reviews
+  rating      Float?
+  reviewCount Int    @default(0)
+
+  sourceNote String?
+  courses    Course[]
+  reviews    Review[]
+  savedBy    SavedCollege[]
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @default(now()) @updatedAt
+
+  @@index([state])
+  @@index([nirfRank])
 }
 
 model Course {
@@ -48,13 +84,24 @@ model Course {
 }
 
 model Review {
-  id        String   @id @default(cuid())
-  student   String
-  rating    Float
-  comment   String
-  college   College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
-  collegeId String
-  createdAt DateTime @default(now())
+  id             String   @id @default(cuid())
+  rating         Int // 1-5 overall
+  academics      Int?
+  infrastructure Int?
+  campusLife     Int?
+  placements     Int?
+  title          String
+  comment        String
+  pros           String?
+  cons           String?
+  graduationYear Int?
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId         String
+  college        College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  collegeId      String
+  createdAt      DateTime @default(now())
+
+  @@unique([userId, collegeId])
 }
 
 model SavedCollege {

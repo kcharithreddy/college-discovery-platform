@@ -1,24 +1,62 @@
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
 
+export type Course = { id: string; name: string; duration: string; fees: number };
+
+export type Review = {
+  id: string;
+  rating: number;
+  academics: number | null;
+  infrastructure: number | null;
+  campusLife: number | null;
+  placements: number | null;
+  title: string;
+  comment: string;
+  pros: string | null;
+  cons: string | null;
+  graduationYear: number | null;
+  createdAt: string;
+  user?: { name: string };
+};
+
 export type College = {
   id: string;
   name: string;
   slug: string;
-  location: string;
-  fees: number;
-  rating: number;
-  course: string;
-  placementRate: number;
-  averagePackage: number;
-  exam: string;
-  minRank: number;
-  maxRank: number;
+  city: string;
+  state: string;
+  type: string;
+  ownership: string;
+  established: number | null;
+  campusAcres: number | null;
+  website: string | null;
   overview: string;
-  courses?: { id: string; name: string; duration: string; fees: number }[];
-  reviews?: { id: string; student: string; rating: number; comment: string }[];
+  nirfRank: number | null;
+  nirfScore: number | null;
+  nirfYear: number | null;
+  course: string;
+  exam: string;
+  minRank: number | null;
+  maxRank: number | null;
+  fees: number | null;
+  hostelFees: number | null;
+  placementRate: number | null;
+  averagePackage: number | null;
+  medianPackage: number | null;
+  hostelAvailable: boolean;
+  facilities: string[];
+  campusLife: string[];
+  fests: string[];
+  pros: string[];
+  cons: string[];
+  rating: number | null;
+  reviewCount: number;
+  sourceNote: string | null;
+  updatedAt: string;
+  courses?: Course[];
+  reviews?: Review[];
 };
 
-export type FiltersResponse = { locations: string[]; courses: string[]; exams: string[] };
+export type FiltersResponse = { states: string[]; types: string[]; exams: string[]; courses: string[] };
 export type AuthResponse = { token: string; user: { id: string; name: string; email?: string | null; phone?: string | null; provider?: string } };
 
 export class ApiError extends Error {
@@ -64,6 +102,17 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
   return res.json();
 }
 
-export function formatFees(value: number) {
+export const NOT_AVAILABLE = 'Not available';
+
+export function formatFees(value: number | null | undefined) {
+  if (value == null) return NOT_AVAILABLE;
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+}
+
+export function formatLpa(value: number | null | undefined) {
+  return value == null ? NOT_AVAILABLE : `₹${value} LPA`;
+}
+
+export function formatPercent(value: number | null | undefined) {
+  return value == null ? NOT_AVAILABLE : `${value}%`;
 }
