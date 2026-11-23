@@ -1,3 +1,88 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/bricolage-grotesque';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Colour tokens as RGB channels so Tailwind opacity modifiers work (e.g. bg-surface/80). */
+  :root {
+    --page: 246 247 251;
+    --surface: 255 255 255;
+    --muted: 241 244 249;
+    --line: 226 231 240;
+    --ink: 15 23 42;
+    --sub: 71 85 105;
+    --faint: 120 133 155;
+    color-scheme: light;
+  }
+
+  .dark {
+    --page: 8 11 22;
+    --surface: 16 21 36;
+    --muted: 24 31 50;
+    --line: 38 47 70;
+    --ink: 236 240 247;
+    --sub: 168 179 199;
+    --faint: 120 133 158;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-page font-sans text-ink;
+  }
+
+  h1, h2, h3 {
+    @apply font-display tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-page;
+  }
+
+  input, select, textarea {
+    @apply text-ink;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-surface shadow-card;
+  }
+
+  .field {
+    @apply h-11 w-full rounded-xl border border-line bg-surface px-3.5 text-sm text-ink placeholder:text-faint transition focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/15;
+  }
+
+  .btn {
+    @apply inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 text-sm font-semibold transition disabled:pointer-events-none disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-sm hover:bg-brand-700;
+  }
+  .btn-secondary {
+    @apply btn border border-line bg-surface text-ink hover:border-brand-300 hover:bg-muted;
+  }
+  .btn-ghost {
+    @apply btn text-sub hover:bg-muted hover:text-ink;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.14em] text-brand-600 dark:text-brand-300;
+  }
+}

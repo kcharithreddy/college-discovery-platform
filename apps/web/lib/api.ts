@@ -111,6 +111,13 @@ export function formatFees(value: number | null | undefined) {
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
 }
 
+/** Compact rupees for tight spaces: 225000 → "₹2.25L", 55000 → "₹55K". */
+export function formatLakh(value: number | null | undefined) {
+  if (value == null) return NOT_AVAILABLE;
+  if (value >= 100000) return `₹${Number((value / 100000).toFixed(2))}L`;
+  return `₹${Math.round(value / 1000)}K`;
+}
+
 export function formatLpa(value: number | null | undefined) {
   return value == null ? NOT_AVAILABLE : `₹${value} LPA`;
 }

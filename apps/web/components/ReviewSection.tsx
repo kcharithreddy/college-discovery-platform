@@ -14,7 +14,7 @@ const ASPECTS = [
 
 type Aspect = (typeof ASPECTS)[number][0];
 
-const field = 'mt-1 w-full rounded-xl border px-4 py-2.5 text-sm dark:border-slate-800 dark:bg-slate-950';
+const field = 'mt-1 w-full rounded-xl border border-line px-4 py-2.5 text-sm';
 
 export function ReviewSection({ collegeId, reviews }: { collegeId: string; reviews: Review[] }) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -32,8 +32,8 @@ export function ReviewSection({ collegeId, reviews }: { collegeId: string; revie
       {reviews.length > 0 && (
         <div className="mb-5 grid gap-3 sm:grid-cols-4">
           {averages.map(a => (
-            <div key={a.label} className="rounded-2xl bg-slate-50 p-3 text-center dark:bg-slate-800/50">
-              <p className="text-xs text-slate-500 dark:text-slate-400">{a.label}</p>
+            <div key={a.label} className="rounded-2xl bg-muted p-3 text-center">
+              <p className="text-xs text-faint">{a.label}</p>
               <p className="text-lg font-bold">{a.value ? `⭐ ${a.value}` : '—'}</p>
             </div>
           ))}
@@ -41,15 +41,15 @@ export function ReviewSection({ collegeId, reviews }: { collegeId: string; revie
       )}
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-slate-600 dark:text-slate-400">
+        <p className="text-sub">
           {reviews.length === 0 ? 'No reviews yet. If you study or studied here, help the next batch by writing the first one.' : `${reviews.length} review${reviews.length === 1 ? '' : 's'} from students`}
         </p>
         {loggedIn ? (
-          <button onClick={() => setShowForm(v => !v)} className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+          <button onClick={() => setShowForm(v => !v)} className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700">
             {showForm ? 'Cancel' : 'Write a review'}
           </button>
         ) : (
-          <Link href="/auth" className="rounded-lg border px-4 py-2 text-sm font-semibold dark:border-slate-700">Log in to write a review</Link>
+          <Link href="/auth" className="rounded-lg border border-line px-4 py-2 text-sm font-semibold">Log in to write a review</Link>
         )}
       </div>
 
@@ -57,15 +57,15 @@ export function ReviewSection({ collegeId, reviews }: { collegeId: string; revie
 
       <div className="mt-5 grid gap-4">
         {reviews.map(r => (
-          <article key={r.id} className="rounded-2xl border p-4 dark:border-slate-800">
+          <article key={r.id} className="rounded-2xl border border-line p-4">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="font-bold">{r.title}</h3>
               <span className="text-sm font-semibold text-green-700 dark:text-green-400">⭐ {r.rating}/5</span>
             </div>
-            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-1 text-xs text-faint">
               {r.user?.name ?? 'Student'}{r.graduationYear ? ` · Class of ${r.graduationYear}` : ''} · {new Date(r.createdAt).toLocaleDateString('en-IN', { dateStyle: 'medium' })}
             </p>
-            <p className="mt-3 whitespace-pre-line leading-7 text-slate-700 dark:text-slate-300">{r.comment}</p>
+            <p className="mt-3 whitespace-pre-line leading-7 text-sub">{r.comment}</p>
             {(r.pros || r.cons) && (
               <div className="mt-3 grid gap-2 text-sm md:grid-cols-2">
                 {r.pros && <p className="rounded-xl bg-green-50 p-3 dark:bg-green-950/40"><strong>Liked:</strong> {r.pros}</p>}
@@ -115,7 +115,7 @@ function ReviewForm({ collegeId, onDone }: { collegeId: string; onDone: () => vo
   }
 
   return (
-    <form onSubmit={submit} className="mt-5 space-y-4 rounded-2xl border p-4 dark:border-slate-800">
+    <form onSubmit={submit} className="mt-5 space-y-4 rounded-2xl border border-line p-4">
       <div className="grid gap-3 sm:grid-cols-5">
         <Stars label="Overall" value={rating} onChange={setRating} />
         {ASPECTS.map(([key, label]) => (
@@ -140,7 +140,7 @@ function ReviewForm({ collegeId, onDone }: { collegeId: string; onDone: () => vo
         </label>
       </div>
       {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
-      <button disabled={busy} className="rounded-lg bg-blue-600 px-5 py-2.5 font-semibold text-white hover:bg-blue-700 disabled:opacity-60">
+      <button disabled={busy} className="rounded-lg bg-brand-600 px-5 py-2.5 font-semibold text-white hover:bg-brand-700 disabled:opacity-60">
         {busy ? 'Saving…' : 'Publish review'}
       </button>
     </form>
@@ -150,7 +150,7 @@ function ReviewForm({ collegeId, onDone }: { collegeId: string; onDone: () => vo
 function Stars({ label, value, onChange }: { label: string; value?: number; onChange: (v: number) => void }) {
   return (
     <fieldset>
-      <legend className="text-xs font-semibold text-slate-600 dark:text-slate-400">{label}</legend>
+      <legend className="text-xs font-semibold text-sub">{label}</legend>
       <div className="mt-1 flex">
         {[1, 2, 3, 4, 5].map(n => (
           <button
@@ -158,7 +158,7 @@ function Stars({ label, value, onChange }: { label: string; value?: number; onCh
             type="button"
             aria-label={`${label}: ${n} star${n > 1 ? 's' : ''}`}
             onClick={() => onChange(n)}
-            className={`text-xl ${value && n <= value ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'}`}
+            className={`text-xl ${value && n <= value ? 'text-amber-400' : 'text-line'}`}
           >
             ★
           </button>
