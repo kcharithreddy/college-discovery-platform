@@ -349,13 +349,71 @@ export const colleges: CollegeSeed[] = [
     sourceNote: UNVERIFIED
   },
   {
+    // Source: official IIT Madras website (iitm.ac.in) + IIT Madras NIRF 2026 Engineering data submission.
+    // Checked 24 Nov 2026. Fee amounts and the NIRF rank are not published on those pages, so they are left empty.
     name: "IIT Madras", slug: "iit-madras", city: "Chennai", state: "Tamil Nadu",
     type: "IIT", ownership: "Government", established: 1959, website: "https://www.iitm.ac.in",
-    overview: "The #1 ranked engineering institute in India.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 1, maxRank: 300,
-    fees: 225000, placementRate: 95, averagePackage: 25.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    campusAcres: 630,
+    overview: "Set up in 1959 with technical assistance from the West German government and declared an Institute of National Importance in 1961, IIT Madras is a fully residential institute in South Chennai. It has 16 academic departments, nearly 100 laboratories and about 550 faculty, and has been named an Institute of Eminence. Undergraduate entry is through JEE (Main) and JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 81, medianPackage: 17.78,
+    hostelAvailable: true,
+    facilities: [
+      "20 hostels named after Indian rivers (15 for men, 5 for women), with internet/LAN in every room",
+      "Central Library: five-storey, air-conditioned and Wi-Fi enabled, with 2 million+ books and 1,000+ journal subscriptions",
+      "Institute hospital with visiting specialists (including a psychiatrist), lab tests, X-ray, in-patient wards and an ambulance; pharmacy run by Apollo",
+      "Olympic-standard swimming pool, athletics stadium, gymnasium, floodlit hockey and football fields, squash and tennis courts",
+      "Nearly 100 laboratories across 16 academic departments",
+      "Campus buses and battery vehicles; students cycle or walk (powered vehicles are not allowed for students)",
+      "SBI and Canara Bank branches with ATMs, a post office and two shopping centres on campus",
+      "Lifts/ramps and accessible toilets in more than 80% of buildings"
+    ],
+    campusLife: [
+      "Sangam cultural clubs: Quiz, Music, Thespian, Choreo, Fine Arts, Comedy, Film Appreciation, E-Sports and more",
+      "Regional clubs such as Telugu Samskrita Samiti, Kannada Sangha, Kerala Kala Samiti and SADINER help freshers settle in",
+      "Lit Soc: a year-long inter-hostel cultural competition",
+      "12 sports clubs, inter-hostel sports (Schroeter, Dean's Trophy) and the Inter IIT Sports Meet",
+      "Hostel nights and festival celebrations including Holi, Pongal, Onam and Diwali",
+      "Department fests such as Exebit (CSE), Mechanica (Mechanical) and Amalgam (Metallurgy)",
+      "Weekend movies at the Open Air Theatre; the campus is also a reserve forest"
+    ],
+    fests: ["Shaastra (technical, January)", "Saarang (cultural, January)"],
+    pros: [
+      "Of 781 B.Tech students graduating in 2024-25, 631 were placed and 147 went on to higher studies",
+      "Median B.Tech salary of ₹17.78 lakh (2024-25 graduates)",
+      "Merit-cum-means scholarship: 67% tuition fee exemption for family income up to ₹4.5 lakh",
+      "Large, green 630-acre residential campus inside Chennai city"
+    ],
+    cons: [
+      "First-year undergraduates live in shared rooms",
+      "Large campus and no powered vehicles for students, so expect to cycle or walk a lot",
+      "The institute describes its academic schedule as very tight",
+      "Fee amounts are only shown on the student fee portal, so confirm them during admission"
+    ],
+    courses: [
+      { name: "B.Tech Aerospace Engineering", duration: "4 years" },
+      { name: "B.Tech + M.Tech Aerospace Engineering (Dual Degree)", duration: "5 years" },
+      { name: "B.Tech Artificial Intelligence and Data Analytics", duration: "4 years" },
+      { name: "B.Tech Chemical Engineering", duration: "4 years" },
+      { name: "B.Tech Computational Engineering & Mechanics", duration: "4 years" },
+      { name: "B.Tech Instrumentation & Biomedical Engineering", duration: "4 years" },
+      { name: "B.Tech Naval Architecture and Ocean Engineering", duration: "4 years" },
+      { name: "B.Tech Metallurgical and Materials Engineering", duration: "4 years" },
+      { name: "B.Tech Biological Engineering", duration: "4 years" },
+      { name: "B.Tech Civil Engineering", duration: "4 years" },
+      { name: "B.Tech Computer Science and Engineering", duration: "4 years" },
+      { name: "B.Tech Mechanical Engineering", duration: "4 years" },
+      { name: "B.Tech + M.Tech Engineering Design (Dual Degree)", duration: "5 years" },
+      { name: "B.Tech Electrical Engineering", duration: "4 years" },
+      { name: "B.Tech Engineering Physics", duration: "4 years" },
+      { name: "B.S. Biological Science", duration: "4 years" },
+      { name: "B.S. Physics", duration: "4 years" },
+      { name: "B.S. Chemistry", duration: "4 years" },
+      { name: "B.S. Mathematics", duration: "4 years" },
+      { name: "B.S. Medical Sciences & Engineering", duration: "4 years" },
+      { name: "Bachelor of Cyber Security", duration: "4 years" }
+    ],
+    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not published on these pages."
   },
   {
     name: "IIT Hyderabad", slug: "iit-hyderabad", city: "Sangareddy", state: "Telangana",
