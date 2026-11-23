@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { CollegeCard } from '@/components/CollegeCard';
 import { College, FiltersResponse, api } from '@/lib/api';
@@ -38,6 +38,7 @@ function CollegeExplorer() {
   const page = Math.max(Number(searchParams.get('page')) || 1, 1);
 
   const [search, setSearch] = useState(filters.q);
+  const pushedSearch = useRef(filters.q);
   const [options, setOptions] = useState<FiltersResponse>({ states: [], types: [], exams: [], courses: [] });
   const [colleges, setColleges] = useState<College[]>([]);
   const [total, setTotal] = useState(0);
@@ -46,7 +47,9 @@ function CollegeExplorer() {
   const [error, setError] = useState('');
 
   function update(changes: Partial<Record<FilterKey | 'page', string>>) {
-    const params = new URLSearchParams(searchParams.toString());
+    // Read the live URL, not the `searchParams` captured at render time: the debounced
+    // search calls this later, and a stale copy would wipe filters changed in between.
+    const params = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(changes)) {
       if (value) params.set(key, value);
       else params.delete(key);
@@ -58,10 +61,21 @@ function CollegeExplorer() {
   // Debounce the free-text search so we don't hit the API on every keystroke.
   useEffect(() => {
     if (search === filters.q) return;
-    const timer = setTimeout(() => update({ q: search }), 300);
+    const timer = setTimeout(() => {
+      pushedSearch.current = search;
+      update({ q: search });
+    }, 300);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
+
+  // Sync the box when the URL's search changes from elsewhere (Clear filters, browser back),
+  // but never overwrite what the user is typing.
+  useEffect(() => {
+    if (filters.q === pushedSearch.current) return;
+    pushedSearch.current = filters.q;
+    setSearch(filters.q);
+  }, [filters.q]);
 
   useEffect(() => {
     api<FiltersResponse>('/colleges/filters').then(setOptions).catch(() => undefined);
@@ -69,18 +83,22 @@ function CollegeExplorer() {
 
   const query = searchParams.toString();
   useEffect(() => {
+    // Ignore responses from older requests so a slow earlier search can't overwrite newer results.
+    let current = true;
     setLoading(true);
     setError('');
     const params = new URLSearchParams(query);
     params.set('limit', '9');
     api<CollegesResponse>(`/colleges?${params}`)
       .then(data => {
+        if (!current) return;
         setColleges(data.items);
         setTotal(data.meta.total);
         setTotalPages(data.meta.totalPages || 1);
       })
-      .catch(err => setError(err instanceof Error ? err.message : 'Failed to load colleges'))
-      .finally(() => setLoading(false));
+      .catch(err => { if (current) setError(err instanceof Error ? err.message : 'Failed to load colleges'); })
+      .finally(() => { if (current) setLoading(false); });
+    return () => { current = false; };
   }, [query]);
 
   const hasFilters = FILTER_KEYS.some(key => key !== 'sort' && filters[key]);
