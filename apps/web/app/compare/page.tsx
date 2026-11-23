@@ -2,19 +2,25 @@
 
 import { useEffect, useState } from 'react';
 import { CollegeCard } from '@/components/CollegeCard';
-import { College, api, formatFees } from '@/lib/api';
+import { College, api, formatFees, formatLpa, formatPercent } from '@/lib/api';
 
 export default function ComparePage() {
   const [colleges, setColleges] = useState<College[]>([]);
   const [selected, setSelected] = useState<College[]>([]);
   const [compareData, setCompareData] = useState<College[]>([]);
   const [error, setError] = useState('');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
-    api<{ items: College[] }>('/colleges?limit=12')
-      .then(data => setColleges(data.items))
-      .catch(err => setError(err instanceof Error ? err.message : 'Failed to load colleges'));
-  }, []);
+    const timer = setTimeout(() => {
+      const params = new URLSearchParams({ limit: '12' });
+      if (search.trim()) params.set('q', search.trim());
+      api<{ items: College[] }>(`/colleges?${params}`)
+        .then(data => setColleges(data.items))
+        .catch(err => setError(err instanceof Error ? err.message : 'Failed to load colleges'));
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [search]);
 
   function toggle(college: College) {
     setError('');
@@ -57,20 +63,45 @@ export default function ComparePage() {
           <table className="w-full min-w-[760px] text-left text-sm">
             <thead><tr className="border-b bg-slate-50 dark:border-slate-800 dark:bg-slate-800"><th className="p-3">Metric</th>{compareData.map(c => <th key={c.id} className="p-3">{c.name}</th>)}</tr></thead>
             <tbody>
-              <tr className="border-b dark:border-slate-800"><td className="p-3 font-semibold">Location</td>{compareData.map(c => <td key={c.id} className="p-3">{c.location}</td>)}</tr>
-              <tr className="border-b dark:border-slate-800"><td className="p-3 font-semibold">Fees</td>{compareData.map(c => <td key={c.id} className="p-3">{formatFees(c.fees)}</td>)}</tr>
-              <tr className="border-b dark:border-slate-800"><td className="p-3 font-semibold">Placement %</td>{compareData.map(c => <td key={c.id} className="p-3">{c.placementRate}%</td>)}</tr>
-              <tr className="border-b dark:border-slate-800"><td className="p-3 font-semibold">Rating</td>{compareData.map(c => <td key={c.id} className="p-3">⭐ {c.rating}</td>)}</tr>
-              <tr className="border-b dark:border-slate-800"><td className="p-3 font-semibold">Average Package</td>{compareData.map(c => <td key={c.id} className="p-3">₹{c.averagePackage} LPA</td>)}</tr>
-              <tr><td className="p-3 font-semibold">Courses</td>{compareData.map(c => <td key={c.id} className="p-3">{c.courses?.map(x => x.name).join(', ')}</td>)}</tr>
+              {ROWS.map(([label, render]) => (
+                <tr key={label} className="border-b last:border-0 dark:border-slate-800">
+                  <td className="p-3 font-semibold">{label}</td>
+                  {compareData.map(c => <td key={c.id} className="p-3">{render(c)}</td>)}
+                </tr>
+              ))}
             </tbody>
           </table>
         </section>
       )}
 
-      <section className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <input
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+        placeholder="Search colleges to add…"
+        aria-label="Search colleges to compare"
+        className="mt-8 w-full rounded-xl border px-4 py-3 dark:border-slate-800 dark:bg-slate-950"
+      />
+
+      <section className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {colleges.map(college => <CollegeCard key={college.id} college={college} selectable selected={selected.some(c => c.id === college.id)} onToggle={toggle} />)}
       </section>
     </main>
   );
 }
+
+const ROWS: [string, (c: College) => React.ReactNode][] = [
+  ['NIRF rank', c => (c.nirfRank ? `#${c.nirfRank}${c.nirfYear ? ` (${c.nirfYear})` : ''}` : '—')],
+  ['Type', c => `${c.type} · ${c.ownership}`],
+  ['Location', c => `${c.city}, ${c.state}`],
+  ['Established', c => c.established ?? '—'],
+  ['Entrance exam', c => c.exam],
+  ['Tuition / year', c => formatFees(c.fees)],
+  ['Hostel + mess / year', c => formatFees(c.hostelFees)],
+  ['Placement %', c => formatPercent(c.placementRate)],
+  ['Average package', c => formatLpa(c.averagePackage)],
+  ['Median package', c => formatLpa(c.medianPackage)],
+  ['Campus size', c => (c.campusAcres ? `${c.campusAcres} acres` : '—')],
+  ['Hostel', c => (c.hostelAvailable ? 'Yes' : 'No')],
+  ['Student rating', c => (c.rating != null ? `⭐ ${c.rating} (${c.reviewCount})` : 'No reviews yet')],
+  ['Courses', c => c.courses?.map(x => x.name).join(', ') || '—']
+];

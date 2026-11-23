@@ -1,11 +1,29 @@
+# Dependencies
 node_modules
+
+# Build output
 .next
 dist
+*.tsbuildinfo
+
+# Environment
 .env
 .env.local
-.DS_Store
+.env.*.local
+
+# Local databases
 *.db
 *.db-journal
 
-# generated archives
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archives
 *.zip
