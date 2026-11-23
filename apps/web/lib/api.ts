@@ -29,6 +29,7 @@ export type College = {
   established: number | null;
   campusAcres: number | null;
   website: string | null;
+  logo: string | null;
   overview: string;
   nirfRank: number | null;
   nirfScore: number | null;
@@ -45,6 +46,7 @@ export type College = {
   hostelAvailable: boolean;
   facilities: string[];
   campusLife: string[];
+  sports: string[];
   fests: string[];
   pros: string[];
   cons: string[];
