@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ApiError, College, api, formatFees } from '@/lib/api';
+import { ApiError, College, api, formatFees, formatLpa, formatPercent } from '@/lib/api';
 
 type Props = {
   college: College;
@@ -40,17 +40,29 @@ export function CollegeCard({ college, selectable, selected, onToggle, onRemoved
     <article className="rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-bold text-slate-950 dark:text-slate-100">{college.name}</h3>
-          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{college.location} • {college.course}</p>
+          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+            {college.nirfRank && (
+              <span className="rounded-full bg-amber-100 px-2.5 py-1 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
+                NIRF #{college.nirfRank}{college.nirfYear ? ` · ${college.nirfYear}` : ''}
+              </span>
+            )}
+            <span className="rounded-full bg-slate-100 px-2.5 py-1 text-slate-700 dark:bg-slate-800 dark:text-slate-300">{college.type}</span>
+          </div>
+          <h3 className="mt-2 text-lg font-bold text-slate-950 dark:text-slate-100">{college.name}</h3>
+          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">📍 {college.city}, {college.state}</p>
         </div>
-        <span className="rounded-full bg-green-50 px-3 py-1 text-sm font-semibold text-green-700 dark:bg-green-950 dark:text-green-300">⭐ {college.rating}</span>
+        {college.rating != null && (
+          <span title={`${college.reviewCount} student review${college.reviewCount === 1 ? '' : 's'}`} className="shrink-0 rounded-full bg-green-50 px-3 py-1 text-sm font-semibold text-green-700 dark:bg-green-950 dark:text-green-300">
+            ⭐ {college.rating}
+          </span>
+        )}
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
-        <div className="rounded-xl bg-slate-50 p-3 dark:bg-slate-800/50"><p className="text-slate-500 dark:text-slate-400">Fees</p><p className="font-semibold">{formatFees(college.fees)}</p></div>
-        <div className="rounded-xl bg-slate-50 p-3 dark:bg-slate-800/50"><p className="text-slate-500 dark:text-slate-400">Placement</p><p className="font-semibold">{college.placementRate}%</p></div>
-        <div className="rounded-xl bg-slate-50 p-3 dark:bg-slate-800/50"><p className="text-slate-500 dark:text-slate-400">Avg Package</p><p className="font-semibold">₹{college.averagePackage} LPA</p></div>
-        <div className="rounded-xl bg-slate-50 p-3 dark:bg-slate-800/50"><p className="text-slate-500 dark:text-slate-400">Exam</p><p className="font-semibold">{college.exam}</p></div>
+        <Stat label="Fees / year" value={formatFees(college.fees)} />
+        <Stat label="Placement" value={formatPercent(college.placementRate)} />
+        <Stat label="Avg package" value={formatLpa(college.averagePackage)} />
+        <Stat label="Exam" value={college.exam} />
       </div>
 
       <div className="mt-5 flex flex-wrap items-center gap-2">
@@ -62,5 +74,14 @@ export function CollegeCard({ college, selectable, selected, onToggle, onRemoved
         {message && <span className="text-sm font-medium text-slate-600 dark:text-slate-400">{message}</span>}
       </div>
     </article>
+  );
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl bg-slate-50 p-3 dark:bg-slate-800/50">
+      <p className="text-slate-500 dark:text-slate-400">{label}</p>
+      <p className="font-semibold">{value}</p>
+    </div>
   );
 }
