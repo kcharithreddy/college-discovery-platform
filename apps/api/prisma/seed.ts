@@ -24,12 +24,17 @@ async function main() {
   });
 
   for (const { courses, ...college } of colleges) {
-    await prisma.college.create({
-      data: {
-        ...college,
-        courses: { create: courses.map(course => ({ ...course, fees: course.fees ?? college.fees ?? 0 })) }
-      }
-    });
+    try {
+      await prisma.college.create({
+        data: {
+          ...college,
+          courses: { create: courses.map(course => ({ ...course, fees: course.fees ?? college.fees ?? 0 })) }
+        }
+      });
+    } catch (error) {
+      console.error(`\nFailed to seed "${college.name}". If the error mentions an unknown field, run \`npm run db:deploy\` first.\n`);
+      throw error;
+    }
   }
 
   console.log(`Seeded ${colleges.length} colleges`);
