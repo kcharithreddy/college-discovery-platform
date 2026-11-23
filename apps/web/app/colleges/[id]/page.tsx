@@ -1,14 +1,17 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import { API_URL, College, formatFees } from '@/lib/api';
 
-async function getCollege(id: string): Promise<College> {
-  const res = await fetch(`${API_URL}/colleges/${id}`, { cache: 'no-store' });
-  if (!res.ok) throw new Error('College not found');
+async function getCollege(id: string): Promise<College | null> {
+  const res = await fetch(`${API_URL}/colleges/${encodeURIComponent(id)}`, { cache: 'no-store' });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error('Failed to load college');
   return res.json();
 }
 
 export default async function CollegeDetail({ params }: { params: { id: string } }) {
   const college = await getCollege(params.id);
+  if (!college) notFound();
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">

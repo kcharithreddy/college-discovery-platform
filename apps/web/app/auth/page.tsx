@@ -19,11 +19,11 @@ declare global {
 
 type AuthMethod = 'google' | 'mobile' | 'email';
 
-const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '832754884433-dbaqjbatnc739s375hrpm3t6elj8gv3a.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '';
 
 export default function AuthPage() {
   const router = useRouter();
-  const [method, setMethod] = useState<AuthMethod>('google');
+  const [method, setMethod] = useState<AuthMethod>(GOOGLE_CLIENT_ID ? 'google' : 'email');
 
   // Mobile OTP state
   const [phone, setPhone] = useState('9876543210');
@@ -66,7 +66,7 @@ export default function AuthPage() {
 
   // Load and initialize Google Identity Services (GIS)
   useEffect(() => {
-    if (method !== 'google') return;
+    if (method !== 'google' || !GOOGLE_CLIENT_ID) return;
 
     const renderGoogleButton = () => {
       if (window.google?.accounts?.id) {
@@ -114,13 +114,17 @@ export default function AuthPage() {
     setMessage('');
     setSuccessMsg('');
     try {
-      const res = await api<{ message: string; demoOtp: string }>('/auth/mobile/send-otp', {
+      const res = await api<{ message: string; demoOtp?: string }>('/auth/mobile/send-otp', {
         method: 'POST',
         body: JSON.stringify({ phone })
       });
       setOtpSent(true);
-      setOtp(res.demoOtp || '123456');
-      setDemoOtpInfo(`OTP sent to +91 ${phone}. (Demo OTP: ${res.demoOtp || '123456'})`);
+      if (res.demoOtp) {
+        setOtp(res.demoOtp);
+        setDemoOtpInfo(`${res.message} (Demo OTP: ${res.demoOtp})`);
+      } else {
+        setDemoOtpInfo(res.message);
+      }
     } catch (err) {
       setMessage(err instanceof Error ? err.message : 'Failed to send OTP');
     } finally {
@@ -243,8 +247,13 @@ export default function AuthPage() {
               Sign in securely using your official Google Account
             </p>
             
-            {/* Google OAuth Button rendered dynamically by GIS */}
-            <div id="googleSignInDiv" className="flex min-h-[44px] items-center justify-center"></div>
+            {GOOGLE_CLIENT_ID ? (
+              <div id="googleSignInDiv" className="flex min-h-[44px] items-center justify-center"></div>
+            ) : (
+              <p className="rounded-xl bg-amber-50 p-3 text-center text-xs font-semibold text-amber-800 dark:bg-amber-950/40 dark:text-amber-300">
+                Google sign-in is not configured. Set NEXT_PUBLIC_GOOGLE_CLIENT_ID to enable it.
+              </p>
+            )}
           </div>
         )}
 

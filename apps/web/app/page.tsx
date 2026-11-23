@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { CollegeCard } from '@/components/CollegeCard';
-import { College, api } from '@/lib/api';
+import { College, FiltersResponse, api } from '@/lib/api';
 
-type Response = { items: College[]; meta: { page: number; totalPages: number; total: number } };
+type CollegesResponse = { items: College[]; meta: { page: number; totalPages: number; total: number } };
 
 export default function HomePage() {
   const [colleges, setColleges] = useState<College[]>([]);
@@ -20,7 +20,7 @@ export default function HomePage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    api<{ locations: string[]; courses: string[] }>('/colleges/filters')
+    api<FiltersResponse>('/colleges/filters')
       .then(data => { setLocations(data.locations); setCourses(data.courses); })
       .catch(() => undefined);
   }, []);
@@ -34,7 +34,7 @@ export default function HomePage() {
     if (course) params.set('course', course);
     if (maxFees) params.set('maxFees', maxFees);
 
-    api<Response>(`/colleges?${params}`)
+    api<CollegesResponse>(`/colleges?${params}`)
       .then(data => { setColleges(data.items); setTotalPages(data.meta.totalPages || 1); })
       .catch(err => setError(err.message))
       .finally(() => setLoading(false));
