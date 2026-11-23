@@ -1,13 +1,15 @@
 import Link from 'next/link';
+import { Compass } from 'lucide-react';
 
 export default function NotFound() {
   return (
-    <main className="mx-auto max-w-md px-4 py-16 text-center">
-      <h1 className="text-3xl font-extrabold">Page not found</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-400">The page or college you are looking for does not exist.</p>
-      <Link href="/" className="mt-6 inline-block rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white hover:bg-blue-700">
-        Back to colleges
-      </Link>
+    <main className="mx-auto flex max-w-md flex-col items-center px-4 py-24 text-center">
+      <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 dark:bg-brand-500/15 dark:text-brand-300">
+        <Compass className="h-8 w-8" />
+      </span>
+      <h1 className="mt-6 text-4xl font-extrabold">Page not found</h1>
+      <p className="mt-2 text-sub">The page or college you&apos;re looking for doesn&apos;t exist, or may have moved.</p>
+      <Link href="/" className="btn-primary mt-8">Back to colleges</Link>
     </main>
   );
 }

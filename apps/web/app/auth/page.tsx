@@ -177,27 +177,27 @@ export default function AuthPage() {
 
   return (
     <main className="mx-auto max-w-lg px-4 py-12">
-      <div className="rounded-3xl border border-slate-200/80 bg-white/90 p-8 shadow-xl backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/90">
+      <div className="card p-8 shadow-lift">
         
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h1 className="text-3xl font-extrabold tracking-tight text-ink">
             Welcome Back
           </h1>
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+          <p className="mt-2 text-sm text-sub">
             Sign in or create your CollegeFinder account
           </p>
         </div>
 
         {/* Method Switcher Tabs */}
-        <div className="mt-6 flex rounded-2xl bg-slate-100 p-1.5 dark:bg-slate-800/80">
+        <div className="mt-6 flex rounded-2xl bg-muted p-1.5">
           <button
             type="button"
             onClick={() => { setMethod('google'); setMessage(''); setSuccessMsg(''); }}
             className={`flex-1 flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-semibold transition-all ${
               method === 'google'
-                ? 'bg-white text-slate-900 shadow-sm dark:bg-slate-950 dark:text-white'
-                : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                ? 'bg-surface text-ink shadow-sm'
+                : 'text-sub hover:text-ink'
             }`}
           >
             <svg className="h-4 w-4" viewBox="0 0 24 24">
@@ -214,8 +214,8 @@ export default function AuthPage() {
             onClick={() => { setMethod('mobile'); setMessage(''); setSuccessMsg(''); }}
             className={`flex-1 flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-semibold transition-all ${
               method === 'mobile'
-                ? 'bg-white text-slate-900 shadow-sm dark:bg-slate-950 dark:text-white'
-                : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                ? 'bg-surface text-ink shadow-sm'
+                : 'text-sub hover:text-ink'
             }`}
           >
             <svg className="h-4 w-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
@@ -229,8 +229,8 @@ export default function AuthPage() {
             onClick={() => { setMethod('email'); setMessage(''); setSuccessMsg(''); }}
             className={`flex-1 flex items-center justify-center gap-2 rounded-xl py-2.5 text-xs font-semibold transition-all ${
               method === 'email'
-                ? 'bg-white text-slate-900 shadow-sm dark:bg-slate-950 dark:text-white'
-                : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200'
+                ? 'bg-surface text-ink shadow-sm'
+                : 'text-sub hover:text-ink'
             }`}
           >
             <svg className="h-4 w-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2">
@@ -243,7 +243,7 @@ export default function AuthPage() {
         {/* Tab 1: Real Google Identity Services (GIS) Sign-In */}
         {method === 'google' && (
           <div className="mt-8 flex flex-col items-center justify-center space-y-4 py-4">
-            <p className="text-center text-xs font-medium text-slate-500 dark:text-slate-400">
+            <p className="text-center text-xs font-medium text-faint">
               Sign in securely using your official Google Account
             </p>
             
@@ -263,25 +263,25 @@ export default function AuthPage() {
             {!otpSent ? (
               <form onSubmit={handleSendOtp} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">Mobile Phone Number</label>
-                  <div className="mt-1 flex items-center rounded-xl border dark:border-slate-800 dark:bg-slate-950">
-                    <span className="px-3 text-sm font-bold text-slate-500 border-r dark:border-slate-800 dark:text-slate-400">+91</span>
+                  <label className="block text-xs font-semibold text-sub">Mobile Phone Number</label>
+                  <div className="mt-1 flex items-center rounded-xl border border-line">
+                    <span className="px-3 text-sm font-bold text-faint border-r">+91</span>
                     <input
                       value={phone}
                       onChange={e => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
                       type="tel"
                       maxLength={10}
                       placeholder="9876543210"
-                      className="w-full bg-transparent px-4 py-3 text-sm font-medium focus:outline-none dark:text-slate-100"
+                      className="w-full bg-transparent px-4 py-3 text-sm font-medium focus:outline-none"
                     />
                   </div>
-                  <p className="mt-1.5 text-xs text-slate-500 dark:text-slate-400">We will send a 6-digit OTP to verify your phone number.</p>
+                  <p className="mt-1.5 text-xs text-faint">We will send a 6-digit OTP to verify your phone number.</p>
                 </div>
 
                 <button
                   disabled={busy || phone.length !== 10}
                   type="submit"
-                  className="w-full rounded-xl bg-blue-600 px-4 py-3.5 font-semibold text-white shadow-md hover:bg-blue-700 disabled:opacity-60"
+                  className="w-full btn-primary h-12 w-full text-base"
                 >
                   {busy ? 'Sending OTP...' : 'Send OTP'}
                 </button>
@@ -289,20 +289,20 @@ export default function AuthPage() {
             ) : (
               <form onSubmit={handleVerifyOtp} className="space-y-4">
                 {demoOtpInfo && (
-                  <div className="rounded-xl bg-blue-50 p-3 text-xs font-semibold text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">
+                  <div className="rounded-xl bg-brand-50 p-3 text-xs font-semibold text-brand-700 dark:bg-brand-500/15 dark:text-brand-300">
                     {demoOtpInfo}
                   </div>
                 )}
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">Enter 6-Digit OTP</label>
+                  <label className="block text-xs font-semibold text-sub">Enter 6-Digit OTP</label>
                   <input
                     value={otp}
                     onChange={e => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
                     type="text"
                     maxLength={6}
                     placeholder="123456"
-                    className="mt-1 w-full rounded-xl border px-4 py-3 text-center text-lg font-bold tracking-widest focus:border-blue-500 focus:outline-none dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100"
+                    className="mt-1 w-full rounded-xl border border-line px-4 py-3 text-center text-lg font-bold tracking-widest focus:border-brand-500 focus:outline-none"
                   />
                 </div>
 
@@ -317,7 +317,7 @@ export default function AuthPage() {
                 <button
                   type="button"
                   onClick={() => setOtpSent(false)}
-                  className="w-full text-xs font-semibold text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
+                  className="w-full text-xs font-semibold text-faint hover:text-ink"
                 >
                   ← Change Mobile Number
                 </button>
@@ -329,18 +329,18 @@ export default function AuthPage() {
         {/* Tab 3: Standard Email & Password */}
         {method === 'email' && (
           <form onSubmit={handleEmailAuth} className="mt-6 space-y-4">
-            <div className="flex rounded-xl bg-slate-100 p-1 text-xs font-semibold dark:bg-slate-800">
+            <div className="flex rounded-xl bg-muted p-1 text-xs font-semibold">
               <button
                 type="button"
                 onClick={() => setEmailMode('login')}
-                className={`flex-1 rounded-lg py-2 ${emailMode === 'login' ? 'bg-white shadow-sm dark:bg-slate-950 dark:text-white' : 'dark:text-slate-400'}`}
+                className={`flex-1 rounded-lg py-2 ${emailMode === 'login' ? 'bg-surface shadow-sm' : ''}`}
               >
                 Login
               </button>
               <button
                 type="button"
                 onClick={() => setEmailMode('register')}
-                className={`flex-1 rounded-lg py-2 ${emailMode === 'register' ? 'bg-white shadow-sm dark:bg-slate-950 dark:text-white' : 'dark:text-slate-400'}`}
+                className={`flex-1 rounded-lg py-2 ${emailMode === 'register' ? 'bg-surface shadow-sm' : ''}`}
               >
                 Register
               </button>
@@ -348,42 +348,42 @@ export default function AuthPage() {
 
             {emailMode === 'register' && (
               <div>
-                <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">Full Name</label>
+                <label className="block text-xs font-semibold text-sub">Full Name</label>
                 <input
                   value={name}
                   onChange={e => setName(e.target.value)}
                   placeholder="Student Name"
-                  className="mt-1 w-full rounded-xl border px-4 py-3 text-sm focus:border-blue-500 focus:outline-none dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100"
+                  className="field mt-1 h-12"
                 />
               </div>
             )}
 
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">Email Address</label>
+              <label className="block text-xs font-semibold text-sub">Email Address</label>
               <input
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 type="email"
                 placeholder="demo@student.com"
-                className="mt-1 w-full rounded-xl border px-4 py-3 text-sm focus:border-blue-500 focus:outline-none dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100"
+                className="field mt-1 h-12"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400">Password</label>
+              <label className="block text-xs font-semibold text-sub">Password</label>
               <input
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 type="password"
                 placeholder="••••••••"
-                className="mt-1 w-full rounded-xl border px-4 py-3 text-sm focus:border-blue-500 focus:outline-none dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100"
+                className="field mt-1 h-12"
               />
             </div>
 
             <button
               disabled={busy}
               type="submit"
-              className="w-full rounded-xl bg-blue-600 px-4 py-3.5 font-semibold text-white shadow-md hover:bg-blue-700 disabled:opacity-60"
+              className="w-full btn-primary h-12 w-full text-base"
             >
               {busy ? 'Please wait...' : emailMode === 'login' ? 'Login' : 'Create Account'}
             </button>
