@@ -34,6 +34,7 @@ export default async function CollegeDetail({ params }: { params: { id: string }
   if (!college) notFound();
 
   const faqs = buildBeforeYouJoin(college);
+  const showCourseFees = college.courses?.some(c => c.fees > 0) ?? false;
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
@@ -103,11 +104,11 @@ export default async function CollegeDetail({ params }: { params: { id: string }
         {college.courses && college.courses.length > 0 && (
           <div className="mt-5 overflow-x-auto rounded-xl border dark:border-slate-800">
             <table className="w-full text-left text-sm">
-              <thead className="bg-slate-100 dark:bg-slate-800"><tr><th className="p-3">Course</th><th className="p-3">Duration</th><th className="p-3">Fees / year</th></tr></thead>
+              <thead className="bg-slate-100 dark:bg-slate-800"><tr><th className="p-3">Course</th><th className="p-3">Duration</th>{showCourseFees && <th className="p-3">Fees / year</th>}</tr></thead>
               <tbody>
                 {college.courses.map(c => (
                   <tr key={c.id} className="border-t dark:border-slate-800">
-                    <td className="p-3 font-semibold">{c.name}</td><td className="p-3">{c.duration}</td><td className="p-3">{c.fees ? formatFees(c.fees) : NOT_AVAILABLE}</td>
+                    <td className="p-3 font-semibold">{c.name}</td><td className="p-3">{c.duration}</td>{showCourseFees && <td className="p-3">{c.fees ? formatFees(c.fees) : NOT_AVAILABLE}</td>}
                   </tr>
                 ))}
               </tbody>
