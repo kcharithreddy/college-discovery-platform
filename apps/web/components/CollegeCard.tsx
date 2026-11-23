@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { CollegeLogo } from '@/components/CollegeLogo';
 import { ApiError, College, api, formatFees, formatLpa, formatPercent } from '@/lib/api';
 
 type Props = {
@@ -40,6 +41,7 @@ export function CollegeCard({ college, selectable, selected, onToggle, onRemoved
     <article className="rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
       <div className="flex items-start justify-between gap-3">
         <div>
+          <div className="mb-3"><CollegeLogo college={college} /></div>
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
             {college.nirfRank && (
               <span className="rounded-full bg-amber-100 px-2.5 py-1 text-amber-800 dark:bg-amber-950 dark:text-amber-300">

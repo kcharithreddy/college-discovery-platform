@@ -16,6 +16,8 @@ export type CollegeSeed = {
   established?: number;
   campusAcres?: number;
   website?: string;
+  /** Logo file in apps/web/public/logos, e.g. '/logos/iit-madras.png' (from the college's official website). */
+  logo?: string;
   overview: string;
   nirfRank?: number;
   nirfScore?: number;
@@ -32,6 +34,7 @@ export type CollegeSeed = {
   hostelAvailable?: boolean;
   facilities?: string[];
   campusLife?: string[];
+  sports?: string[];
   fests?: string[];
   pros?: string[];
   cons?: string[];
@@ -353,7 +356,7 @@ export const colleges: CollegeSeed[] = [
     // Checked 24 Nov 2026. Fee amounts and the NIRF rank are not published on those pages, so they are left empty.
     name: "IIT Madras", slug: "iit-madras", city: "Chennai", state: "Tamil Nadu",
     type: "IIT", ownership: "Government", established: 1959, website: "https://www.iitm.ac.in",
-    campusAcres: 630,
+    logo: "/logos/iit-madras.png", campusAcres: 630,
     overview: "Set up in 1959 with technical assistance from the West German government and declared an Institute of National Importance in 1961, IIT Madras is a fully residential institute in South Chennai. It has 16 academic departments, nearly 100 laboratories and about 550 faculty, and has been named an Institute of Eminence. Undergraduate entry is through JEE (Main) and JEE (Advanced).",
     course: "B.Tech Computer Science and Engineering", exam: "JEE",
     placementRate: 81, medianPackage: 17.78,
@@ -362,7 +365,6 @@ export const colleges: CollegeSeed[] = [
       "20 hostels named after Indian rivers (15 for men, 5 for women), with internet/LAN in every room",
       "Central Library: five-storey, air-conditioned and Wi-Fi enabled, with 2 million+ books and 1,000+ journal subscriptions",
       "Institute hospital with visiting specialists (including a psychiatrist), lab tests, X-ray, in-patient wards and an ambulance; pharmacy run by Apollo",
-      "Olympic-standard swimming pool, athletics stadium, gymnasium, floodlit hockey and football fields, squash and tennis courts",
       "Nearly 100 laboratories across 16 academic departments",
       "Campus buses and battery vehicles; students cycle or walk (powered vehicles are not allowed for students)",
       "SBI and Canara Bank branches with ATMs, a post office and two shopping centres on campus",
@@ -372,10 +374,24 @@ export const colleges: CollegeSeed[] = [
       "Sangam cultural clubs: Quiz, Music, Thespian, Choreo, Fine Arts, Comedy, Film Appreciation, E-Sports and more",
       "Regional clubs such as Telugu Samskrita Samiti, Kannada Sangha, Kerala Kala Samiti and SADINER help freshers settle in",
       "Lit Soc: a year-long inter-hostel cultural competition",
-      "12 sports clubs, inter-hostel sports (Schroeter, Dean's Trophy) and the Inter IIT Sports Meet",
       "Hostel nights and festival celebrations including Holi, Pongal, Onam and Diwali",
       "Department fests such as Exebit (CSE), Mechanica (Mechanical) and Amalgam (Metallurgy)",
       "Weekend movies at the Open Air Theatre; the campus is also a reserve forest"
+    ],
+    sports: [
+      "Olympic-standard swimming pool",
+      "Athletics stadium",
+      "K.S. Narayanan Centre for Cricketing Excellence and the IIT-Chemplast cricket ground",
+      "Floodlit hockey and football fields",
+      "Wood-floored multipurpose indoor stadium and badminton courts",
+      "Four synthetic tennis courts, two basketball and two volleyball courts",
+      "Two squash courts, a table tennis facility and a weightlifting arena",
+      "Gymnasium with professional instructors",
+      "Skating rink around Sangam ground",
+      "Sports clubs: aquatics, athletics, badminton, bridge, cricket, football, hockey, squash, table tennis, tennis, volleyball and weightlifting",
+      "Inter-hostel competitions: Schroeter and the Dean's Trophy, ending with Gymkhana Day",
+      "Hosts an intercollegiate Sports Fest every September, plus the GF&KR basketball, Jimmy George volleyball and Sanmar cricket tournaments",
+      "Competes in the Inter IIT Sports Meet: IIT Madras has won it 19 times in 51 meets, including 11 in a row"
     ],
     fests: ["Shaastra (technical, January)", "Saarang (cultural, January)"],
     pros: [
@@ -413,7 +429,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.S. Medical Sciences & Engineering", duration: "4 years" },
       { name: "Bachelor of Cyber Security", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not published on these pages."
+    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Sports, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not published on these pages."
   },
   {
     name: "IIT Hyderabad", slug: "iit-hyderabad", city: "Sangareddy", state: "Telangana",

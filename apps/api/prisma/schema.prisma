@@ -31,6 +31,8 @@ model College {
   established Int?
   campusAcres Float?
   website     String?
+  /// Path under the web app public folder, e.g. /logos/iit-madras.png
+  logo        String?
   overview    String
 
   // NIRF Engineering ranking
@@ -55,6 +57,7 @@ model College {
   hostelAvailable Boolean  @default(true)
   facilities      String[]
   campusLife      String[]
+  sports          String[]
   fests           String[]
   pros            String[]
   cons            String[]

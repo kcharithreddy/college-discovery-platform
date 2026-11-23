@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { CollegeLogo } from '@/components/CollegeLogo';
 import { ReviewSection } from '@/components/ReviewSection';
 import { API_URL, College, NOT_AVAILABLE, formatFees, formatLpa, formatPercent } from '@/lib/api';
 import { buildBeforeYouJoin, JOINING_CHECKLIST } from '@/lib/beforeYouJoin';
@@ -23,6 +24,7 @@ const SECTIONS = [
   ['placements', 'Placements'],
   ['infrastructure', 'Infrastructure'],
   ['campus-life', 'Campus life'],
+  ['sports', 'Sports'],
   ['before-you-join', 'Before you join'],
   ['reviews', 'Student reviews']
 ] as const;
@@ -44,6 +46,7 @@ export default async function CollegeDetail({ params }: { params: { id: string }
       <section className={`mt-4 ${card} md:p-8`}>
         <div className="flex flex-col justify-between gap-5 md:flex-row">
           <div>
+            <div className="mb-4"><CollegeLogo college={college} size="lg" /></div>
             <div className="flex flex-wrap gap-2 text-xs font-semibold">
               <span className="rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">{college.type}</span>
               <span className="rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800">{college.ownership}</span>
@@ -143,6 +146,10 @@ export default async function CollegeDetail({ params }: { params: { id: string }
           </div>
         )}
         <BulletList items={college.campusLife} empty="Campus life details have not been added yet. Student reviews below are the best guide." />
+      </Section>
+
+      <Section id="sports" title="Sports">
+        <BulletList items={college.sports} empty="Sports facilities have not been added for this college yet." />
       </Section>
 
       <Section id="before-you-join" title="Before you join">
