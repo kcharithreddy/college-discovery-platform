@@ -24,15 +24,21 @@ export function Nav() {
     window.location.href = '/';
   }
 
+  const links = (
+    <>
+      <Link href="/" className="hover:text-blue-600 dark:text-slate-200">Colleges</Link>
+      <Link href="/compare" className="hover:text-blue-600 dark:text-slate-200">Compare</Link>
+      <Link href="/predictor" className="hover:text-blue-600 dark:text-slate-200">Predictor</Link>
+      <Link href="/saved" className="hover:text-blue-600 dark:text-slate-200">Saved</Link>
+    </>
+  );
+
   return (
     <nav className="sticky top-0 z-10 border-b bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 md:py-4">
         <Link href="/" className="text-xl font-bold text-slate-900 dark:text-white">CollegeFinder</Link>
         <div className="flex items-center gap-4 text-sm font-medium">
-          <Link href="/" className="dark:text-slate-200">Colleges</Link>
-          <Link href="/compare" className="dark:text-slate-200">Compare</Link>
-          <Link href="/predictor" className="dark:text-slate-200">Predictor</Link>
-          <Link href="/saved" className="dark:text-slate-200">Saved</Link>
+          <div className="hidden items-center gap-4 md:flex">{links}</div>
           <ThemeToggle />
           {loggedIn ? (
             <button onClick={logout} className="rounded-lg bg-slate-900 px-3 py-2 text-white dark:bg-slate-800">Logout</button>
@@ -41,6 +47,7 @@ export function Nav() {
           )}
         </div>
       </div>
+      <div className="flex gap-5 overflow-x-auto border-t px-4 py-2 text-sm font-medium md:hidden dark:border-slate-800">{links}</div>
     </nav>
   );
 }

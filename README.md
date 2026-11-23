@@ -10,9 +10,11 @@ Built with **Next.js + Tailwind** on the frontend and **Express + Prisma + Postg
 
 | Feature | What it does |
 | --- | --- |
-| **Search & filter** | Case-insensitive search by college name, filter by location, course and maximum fees, with pagination. |
-| **College details** | Overview, key stats, courses with fees, and student reviews (`/colleges/[slug]`). |
-| **Compare** | Pick 2–3 colleges and compare fees, placement %, rating, average package and courses side by side. |
+| **Search & filter** | Search by college or city. Filter by state, institute type, course and maximum fees. Sort by NIRF rank, fees, placements, package or student rating. Filters stay in the URL, so searches can be shared. |
+| **College details** | Overview, NIRF rank, courses & fees, placements, infrastructure, campus life and fests (`/colleges/[slug]`). |
+| **Before you join** | Answers to the questions students ask before admission (cutoffs, total cost, scholarships, hostel, real placement numbers, anti-ragging help), built from each college's data, plus a pre-admission checklist. |
+| **Student reviews** | Logged-in students rate academics, infrastructure, campus life and placements and write reviews. Each college's rating is the average of real reviews. |
+| **Compare** | Pick 2–3 colleges (searchable) and compare NIRF rank, fees, hostel costs, placements, campus size and ratings side by side. |
 | **Predictor** | Enter an exam and rank to see colleges whose stored rank range matches. |
 | **Saved list** | Logged-in users can shortlist colleges and manage them later. |
 | **Authentication** | Email + password, Google sign-in (Google Identity Services) and mobile OTP, all issuing JWTs. |
@@ -143,11 +145,12 @@ Base URL: `/api`
 | Method | Endpoint | Auth | Description |
 | --- | --- | --- | --- |
 | GET | `/health` | — | Health check |
-| GET | `/colleges?q=&location=&course=&maxFees=&page=&limit=` | — | Search and filter colleges |
-| GET | `/colleges/filters` | — | Distinct locations, courses and exams |
+| GET | `/colleges?q=&state=&type=&course=&exam=&maxFees=&sort=&page=&limit=` | — | Search and filter colleges. `sort`: `nirf` (default), `fees`, `placement`, `package`, `rating`, `name` |
+| GET | `/colleges/filters` | — | Distinct states, types, courses and exams |
 | GET | `/colleges/compare?ids=a,b,c` | — | Compare 2–3 colleges |
 | POST | `/colleges/predict` | — | `{ exam, rank }` → matching colleges |
 | GET | `/colleges/:idOrSlug` | — | College with courses and reviews |
+| POST | `/colleges/:id/reviews` | Bearer | Create or update your review of a college |
 | POST | `/auth/register` | — | `{ name, email, password }` |
 | POST | `/auth/login` | — | `{ email, password }` |
 | POST | `/auth/google` | — | `{ credential }` (Google ID token) |
@@ -173,7 +176,13 @@ Seed the database once after the first deploy with `npm run seed`.
 - **Root directory:** `apps/web`
 - **Environment:** `NEXT_PUBLIC_API_URL=https://your-backend-url.com/api`, and optionally `NEXT_PUBLIC_GOOGLE_CLIENT_ID`
 
+## College data
+
+College data lives in [`apps/api/prisma/data/colleges.ts`](apps/api/prisma/data/colleges.ts). Every number field is optional. Leave it out rather than guessing, and the site shows "Not available". Record where figures came from in `sourceNote` (e.g. NIRF data submission, official website, JoSAA closing ranks) so students know how much to trust them.
+
+> Upgrading an existing database: migration `1_college_details` clears the old sample colleges, their seeded reviews and saved lists, then `npm run seed` reloads them in the new format.
+
 ## Known limitations
 
 - Mobile OTP codes are stored in memory and no SMS provider is wired up yet. Demo mode is for development only.
-- College data is sample seed data, not official figures.
+- Fee, placement and cutoff figures for the current colleges are sample values that have not been verified. Each college page says so.
