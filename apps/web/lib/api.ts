@@ -29,6 +29,7 @@ export type College = {
   established: number | null;
   campusAcres: number | null;
   website: string | null;
+  logo: string | null;
   overview: string;
   nirfRank: number | null;
   nirfScore: number | null;
@@ -45,6 +46,7 @@ export type College = {
   hostelAvailable: boolean;
   facilities: string[];
   campusLife: string[];
+  sports: string[];
   fests: string[];
   pros: string[];
   cons: string[];
@@ -104,9 +106,21 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
 
 export const NOT_AVAILABLE = 'Not available';
 
+/** Colleges whose numbers are still the old sample values (see apps/api/prisma/data/colleges.ts). */
+export function isUnverified(college: Pick<College, 'sourceNote'>) {
+  return college.sourceNote?.startsWith('Fees, placement and cutoff figures are sample values') ?? false;
+}
+
 export function formatFees(value: number | null | undefined) {
   if (value == null) return NOT_AVAILABLE;
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);
+}
+
+/** Compact rupees for tight spaces: 225000 → "₹2.25L", 55000 → "₹55K". */
+export function formatLakh(value: number | null | undefined) {
+  if (value == null) return NOT_AVAILABLE;
+  if (value >= 100000) return `₹${Number((value / 100000).toFixed(2))}L`;
+  return `₹${Math.round(value / 1000)}K`;
 }
 
 export function formatLpa(value: number | null | undefined) {
