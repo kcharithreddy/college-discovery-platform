@@ -1588,5 +1588,162 @@ export const colleges: CollegeSeed[] = [
     ],
     courses: [{ name: "B.Tech Petroleum Engineering", duration: "4 years" }],
     sourceNote: "From the official IIPE website (Sports, Student Life, hostel pages). Its NIRF report and admission flyer refused automated downloads, so fees and placement figures aren't available."
-  }
+  },
+  {
+    name: "NIT Rourkela", slug: "nit-rourkela", city: "Rourkela", state: "Odisha",
+    nirfRank: 13, nirfScore: 66.62, nirfYear: 2025,
+    // Source: official NIT Rourkela website (nitrkl.ac.in: home, Campus Facility) + NITR NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1961, website: "https://www.nitrkl.ac.in",
+    logo: "/logos/nit-rourkela.png",
+    overview: "NIT Rourkela began as the Regional Engineering College, Rourkela in 1961 and was raised to a National Institute of Technology with university status by the Government of India, which funds it. It is run by the Board of Governors of the NIT Rourkela Society and trains engineers and scientists at undergraduate and postgraduate levels. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 81, medianPackage: 18.38,
+    hostelAvailable: true,
+    facilities: [
+      "Biju Patnaik Central Library, running since 1965, with print and electronic collections",
+      "Residential halls where students live in single or shared study bedrooms",
+      "Central Research Facility for advanced instruments"
+    ],
+    pros: [
+      "Of 1,021 B.Tech students graduating in 2024-25, 829 were placed and 155 went on to higher studies",
+      "Median B.Tech salary of ₹18.38 lakh (2024-25 graduates)",
+      "NIRF 2025 Engineering rank 13"
+    ],
+    cons: [
+      "Rourkela is a smaller industrial city, far from big metro job hubs"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Rourkela website (home page, Campus Facility) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Siksha 'O' Anusandhan (ITER)", slug: "siksha-o-anusandhan", city: "Bhubaneswar", state: "Odisha",
+    nirfRank: 22, nirfScore: 62.58, nirfYear: 2025,
+    // Source: official Siksha 'O' Anusandhan website (soa.ac.in: home). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", website: "https://www.soa.ac.in",
+    overview: "Siksha 'O' Anusandhan is a deemed-to-be university in Bhubaneswar, Odisha. Its engineering faculty is the Institute of Technical Education and Research (ITER). Admission is through the university's own entrance test, SAAT.",
+    course: "B.Tech Computer Science and Engineering", exam: "SAAT",
+    hostelAvailable: true,
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SOA website. Its NIRF data files are hosted on an outside file-sharing site we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Amrita Vishwa Vidyapeetham", slug: "amrita-coimbatore", city: "Coimbatore", state: "Tamil Nadu",
+    nirfRank: 23, nirfScore: 62.46, nirfYear: 2025,
+    // Source: official Amrita website (amrita.edu: About). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", website: "https://www.amrita.edu",
+    overview: "Amrita Vishwa Vidyapeetham is a multi-disciplinary, research-intensive private deemed university with over 31,000 students and more than 2,150 faculty members, accredited A++ by NAAC. It has ten campuses: Amaravati, Amritapuri, Bengaluru, Chennai, Coimbatore, Kochi, Mysuru, Nagercoil, NCR Delhi (Faridabad) and Haridwar, together spanning over 1,200 acres. Its engineering school is headquartered in Coimbatore. B.Tech admission is through the Amrita Engineering Entrance Exam (AEEE).",
+    course: "B.Tech Computer Science and Engineering", exam: "AEEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ accreditation",
+      "More than 300 UG, PG and doctoral programmes across ten campuses",
+      "Ranked 8th in NIRF 2025 Overall"
+    ],
+    cons: [
+      "Branches and fees differ by campus; check the campus you are applying to"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Amrita website (About). Its NIRF data file is on a separate server we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Jamia Millia Islamia", slug: "jamia-millia-islamia", city: "New Delhi", state: "Delhi",
+    nirfRank: 24, nirfScore: 62.42, nirfYear: 2025,
+    // Source: official Jamia Millia Islamia website (jmi.ac.in: History). Checked 24 Nov 2026.
+    type: "Central University", ownership: "Government", established: 1920, website: "https://www.jmi.ac.in",
+    logo: "/logos/jamia-millia-islamia.svg",
+    overview: "Jamia Millia Islamia was founded at Aligarh in 1920, when nationalist teachers and students answered Mahatma Gandhi's call to boycott colonial-supported institutions. It moved to New Delhi and became a Central University by an Act of Parliament in 1988. In Urdu, Jamia means 'university' and Millia means 'national'. Its Faculty of Engineering and Technology offers B.Tech programmes, with admission through JEE (Main).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "Central university in New Delhi with low government fees",
+      "Sports facilities run by its Games & Sports department"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Jamia Millia Islamia website (History). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Warangal", slug: "nit-warangal", city: "Warangal", state: "Telangana",
+    nirfRank: 28, nirfScore: 61.05, nirfYear: 2025,
+    // Source: official NIT Warangal website (nitw.ac.in: home). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1959, website: "https://www.nitw.ac.in",
+    logo: "/logos/nit-warangal.png",
+    overview: "NIT Warangal was the first of the Regional Engineering Colleges, set up in 1959, and is now an Institution of National Importance under the NIT Act, funded by the Government of India. Its campus is in Warangal, Telangana. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "First of India's Regional Engineering Colleges (now NITs)",
+      "NIRF 2025 Engineering rank 28"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "The NIT Warangal website only loads with JavaScript, so we could only confirm its logo and basic facts. Placement and fee figures are not shown yet. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Thapar Institute of Engineering and Technology", slug: "thapar", city: "Patiala", state: "Punjab",
+    nirfRank: 29, nirfScore: 60.97, nirfYear: 2025,
+    // Source: official Thapar Institute website (thapar.edu: About us) + Thapar NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1956, website: "https://www.thapar.edu",
+    logo: "/logos/thapar.png", campusAcres: 250,
+    overview: "Thapar Institute of Engineering and Technology (TIET), founded in 1956, is one of India's oldest private engineering institutions. Its 250-acre campus is in Patiala, Punjab, and it is a deemed-to-be university accredited A++ by NAAC. B.Tech admission is mainly through JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 86, medianPackage: 10,
+    hostelAvailable: true,
+    pros: [
+      "Of 2,205 B.Tech students graduating in 2024-25, 1,900 were placed and 140 went on to higher studies",
+      "Median B.Tech salary of ₹10 lakh (2024-25 graduates)",
+      "NAAC A++ accreditation and a 250-acre campus"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Thapar website (About us) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Chandigarh University", slug: "chandigarh-university", city: "Mohali", state: "Punjab",
+    nirfRank: 31, nirfScore: 60.46, nirfYear: 2025,
+    // Source: official Chandigarh University website (cuchd.in: About) + CU NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Private University", ownership: "Private", established: 2012, website: "https://www.cuchd.in",
+    logo: "/logos/chandigarh-university.png",
+    overview: "Chandigarh University is a private university set up by the Punjab State Legislature and recognised by the UGC. Its campus is at Gharuan, Mohali, near Chandigarh. It is accredited A+ by NAAC and says it was the youngest private university in India to get an A+ in its first accreditation cycle. Admission is through its own test, CUCET.",
+    course: "B.Tech Computer Science and Engineering", exam: "CUCET",
+    placementRate: 75, medianPackage: 8,
+    hostelAvailable: true,
+    pros: [
+      "Of 3,011 B.Tech students graduating in 2024-25, 2,258 were placed and 703 went on to higher studies",
+      "Median B.Tech salary of ₹8 lakh (2024-25 graduates)",
+      "NAAC A+ accreditation"
+    ],
+    cons: [
+      "Very large batches (about 3,000 B.Tech graduates a year), so ask about class sizes and branch-wise placement"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Chandigarh University website (About) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Founding year from its establishment by the Punjab State Legislature. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Kalasalingam Academy of Research and Education", slug: "kalasalingam", city: "Krishnan Koil", state: "Tamil Nadu",
+    nirfRank: 33, nirfScore: 59.03, nirfYear: 2025,
+    // Source: official Kalasalingam website (kalasalingam.ac.in: About us, Campus life, Hostel & mess, Admissions) + KARE NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1984, website: "https://www.kalasalingam.ac.in",
+    logo: "/logos/kalasalingam.png",
+    overview: "Kalasalingam Academy of Research and Education (KARE), formerly Arulmigu Kalasalingam College of Engineering, was founded in 1984 by freedom fighter and philanthropist T. Kalasalingam. It is a deemed-to-be university at the foothills of the Western Ghats in southern Tamil Nadu, near Krishnankoil. B.Tech applicants are shortlisted on their marks in KUEE, the university's entrance exam, and must have at least 50% in Physics, Chemistry and Mathematics in Class 12.",
+    course: "B.Tech Computer Science and Engineering", exam: "KUEE",
+    placementRate: 94, medianPackage: 6.35,
+    hostelAvailable: true,
+    facilities: [
+      "Separate furnished hostel buildings for boys and girls inside the main campus",
+      "Hostels close to academic buildings and sports facilities"
+    ],
+    campusLife: [
+      "Green campus where peacocks, deer and bison from the Western Ghats are often seen",
+      "Cultural, recreational and educational programmes run by the hostel directorate",
+      "International students on campus"
+    ],
+    pros: [
+      "Of 1,610 B.Tech students graduating in 2024-25, 1,507 were placed",
+      "Median B.Tech salary of ₹6.35 lakh (2024-25 graduates)",
+      "Fully residential campus with on-campus hostels"
+    ],
+    cons: [
+      "Rural location, far from big cities"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Kalasalingam website (About us, Campus life, Hostel & mess, Admissions) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
 ];
