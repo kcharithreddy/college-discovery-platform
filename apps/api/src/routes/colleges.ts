@@ -72,7 +72,7 @@ router.get('/filters', asyncHandler(async (_req, res) => {
   res.json({
     states: unique(colleges.map(c => c.state)),
     types: unique(colleges.map(c => c.type)),
-    exams: unique(colleges.map(c => c.exam)),
+    exams: unique(colleges.map(c => c.exam)).filter(exam => exam !== 'See official website'),
     courses: courses.map(c => c.name)
   });
 }));

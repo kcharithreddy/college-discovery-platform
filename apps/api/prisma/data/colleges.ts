@@ -1746,4 +1746,201 @@ export const colleges: CollegeSeed[] = [
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
     sourceNote: "From the official Kalasalingam website (About us, Campus life, Hostel & mess, Admissions) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
+  {
+    name: "SASTRA Deemed University", slug: "sastra", city: "Thanjavur", state: "Tamil Nadu",
+    nirfRank: 40, nirfScore: 58.02, nirfYear: 2025,
+    // Source: official SASTRA website (sastra.edu: About us, Accreditation & Ranking). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1984, website: "https://www.sastra.edu",
+    logo: "/logos/sastra.png",
+    overview: "SASTRA (Shanmugha Arts, Science, Technology & Research Academy) is a deemed-to-be university in Thanjavur, Tamil Nadu, teaching engineering, management, law, sciences and humanities. It was re-accredited in its fourth NAAC cycle with the top A++ grade and a score of 3.76, which it says makes it the top university of its kind in Tamil Nadu. B.Tech admission uses JEE (Main) scores together with Class 12 marks.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ grade with a score of 3.76 (fourth cycle)",
+      "Consistently ranked in the NIRF Engineering top 50"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SASTRA website (About us, Accreditation & Ranking). Its NIRF data is shown in a page-flip viewer we could not read, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "UPES", slug: "upes", city: "Dehradun", state: "Uttarakhand",
+    nirfRank: 43, nirfScore: 56.99, nirfYear: 2025,
+    // Source: official UPES website (upes.ac.in: About us) + UPES NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Private University", ownership: "Private", established: 2003, website: "https://www.upes.ac.in",
+    logo: "/logos/upes.svg",
+    overview: "UPES is a UGC-recognised private university in Dehradun, Uttarakhand, set up under the UPES Act, 2003 of the Uttarakhand State Legislature. It teaches through seven schools, including the School of Advanced Engineering and the School of Computer Science, and has about 19,100 students and 1,500 faculty and staff. In NIRF 2025 it ranked 43 in Engineering and 45 among universities. Admission is through its own test, UPESEAT, or other accepted scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "UPESEAT",
+    placementRate: 94, medianPackage: 6.75,
+    hostelAvailable: true,
+    pros: [
+      "Of 1,133 B.Tech students graduating in 2024-25, 1,070 were placed",
+      "Median B.Tech salary of ₹6.75 lakh (2024-25 graduates)",
+      "NIRF 2025: Engineering 43, Universities 45, Law 18, Management 36",
+      "Over 50 faculty members on Stanford's list of the world's top 2% researchers, according to UPES"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official UPES website (About us) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Saveetha Institute of Medical and Technical Sciences (SIMATS)", slug: "saveetha", city: "Chennai", state: "Tamil Nadu",
+    nirfRank: 45, nirfScore: 56.55, nirfYear: 2025,
+    // Source: official SIMATS website (saveetha.com: About us). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", website: "https://www.saveetha.com",
+    campusAcres: 245,
+    overview: "Saveetha Institute of Medical and Technical Sciences (SIMATS) is a deemed-to-be university in Chennai, accredited A++ by NAAC. Its campus covers more than 245 acres with 14 institutions, about 17,000 students and 5,500 staff. Engineering is taught at the Saveetha School of Engineering.",
+    course: "B.Tech Computer Science and Engineering", exam: "See official website",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ accreditation",
+      "Large campus of more than 245 acres"
+    ],
+    cons: [
+      "Best known for medicine and dentistry; check engineering-specific placement figures before joining"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SIMATS website (About us). Its NIRF data and logo are on outside servers we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Symbiosis International University (SIT Pune)", slug: "symbiosis", city: "Pune", state: "Maharashtra",
+    nirfRank: 46, nirfScore: 56.22, nirfYear: 2025,
+    // Source: official Symbiosis International University website (siu.edu.in: home, About us, Faculty of Engineering). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 2002, website: "https://www.siu.edu.in",
+    logo: "/logos/symbiosis.webp",
+    overview: "Symbiosis International (Deemed University) in Pune has Category-I status from the UGC and an A++ grade from NAAC. Its Faculty of Engineering, mainly the Symbiosis Institute of Technology, offers B.Tech programmes such as Computer Science, Artificial Intelligence and Machine Learning, and Electronics & Telecommunication. Admission is through the Symbiosis Institute of Technology Engineering Entrance Exam (SITEEE) or JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "SITEEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ and UGC Category-I status",
+      "Research centres in nanoscience and applied artificial intelligence"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }, { name: "B.Tech Artificial Intelligence and Machine Learning", duration: "4 years" }, { name: "B.Tech Electronics & Tele-Communication Engineering", duration: "4 years" }],
+    sourceNote: "From the official Symbiosis International University website (home, About us, Faculty of Engineering). Placement and fee figures were not on these pages. Founding year is when it became a deemed university. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Sri Sivasubramaniya Nadar (SSN) College of Engineering", slug: "ssn-college", city: "Kalavakkam", state: "Tamil Nadu",
+    nirfRank: 47, nirfScore: 56.08, nirfYear: 2025,
+    // Source: official SSN website (ssn.edu.in: home). Checked 24 Nov 2026.
+    type: "Private College", ownership: "Private", established: 1996, website: "https://www.ssn.edu.in",
+    logo: "/logos/ssn-college.png",
+    overview: "Sri Sivasubramaniya Nadar (SSN) College of Engineering in Kalavakkam, near Chennai, was founded by Shiv Nadar. Important: its website now says SSN College of Engineering is no longer accepting applications, and asks students to apply to similar programmes at the SSN School of Engineering, Shiv Nadar University Chennai (SNUC). The campus also houses the SSN Research Centre.",
+    course: "B.Tech Computer Science and Engineering", exam: "See official website",
+    hostelAvailable: true,
+    pros: [
+      "NIRF 2025 Engineering rank 47",
+      "SSN Research Centre with multidisciplinary research labs"
+    ],
+    cons: [
+      "No longer accepting applications: new students apply to the SSN School of Engineering at Shiv Nadar University Chennai instead"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SSN website (home page). The NIRF rank belongs to SSN College of Engineering; check the separate Shiv Nadar University Chennai programme before applying. Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Durgapur", slug: "nit-durgapur", city: "Durgapur", state: "West Bengal",
+    nirfRank: 49, nirfScore: 55.94, nirfYear: 2025,
+    // Source: official NIT Durgapur website (nitdgp.ac.in: home). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1960, website: "https://www.nitdgp.ac.in",
+    logo: "/logos/nit-durgapur.png",
+    overview: "NIT Durgapur in West Bengal started as a Regional Engineering College in 1960 and is now an Institution of National Importance under the NIT Act, funded by the Government of India. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "NIRF 2025 Engineering rank 49",
+      "Government-funded research projects, such as next-generation nano-dielectrics for high-speed devices"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Durgapur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Silchar", slug: "nit-silchar", city: "Silchar", state: "Assam",
+    nirfRank: 50, nirfScore: 55.91, nirfYear: 2025,
+    // Source: official NIT Silchar website (nits.ac.in: History, Hostels). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1967, website: "https://www.nits.ac.in",
+    logo: "/logos/nit-silchar.png", campusAcres: 540,
+    overview: "NIT Silchar began in 1967 as a Regional Engineering College, working first from a camp office in Shillong, and admitted its first 60 B.E. students in 1977. It became a National Institute of Technology with deemed university status on 28 June 2002. Its campus of about 540 acres is 8 km south of Silchar town, Assam, on the Silchar–Hailakandi road. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Eight boys' hostels and three girls' hostels, each with its own mess committee",
+      "A 1,000-bed boys' hostel, a 300-bed PG hostel and a married scholars' hostel have been built"
+    ],
+    pros: [
+      "Large 540-acre campus",
+      "NIRF 2025 Engineering rank 50"
+    ],
+    cons: [
+      "Silchar is far from major cities; travel to and from home takes longer"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Silchar website (History, Hostels). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Patna", slug: "nit-patna", city: "Patna", state: "Bihar",
+    nirfRank: 53, nirfScore: 53.89, nirfYear: 2025,
+    // Source: official NIT Patna website (nitp.ac.in: home). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1886, website: "https://www.nitp.ac.in",
+    logo: "/logos/nit-patna.png",
+    overview: "NIT Patna is an Institution of National Importance under the Ministry of Education, on the banks of the Ganga in Patna, Bihar. It traces its history to 1886 and was the Bihar College of Engineering before it became an NIT in 2004. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    fests: [
+      "Tatva (techno-management fest)"
+    ],
+    pros: [
+      "One of India's oldest engineering institutions",
+      "NIRF 2025 Engineering rank 53"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Patna website (home page). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "IIEST Shibpur", slug: "iiest-shibpur", city: "Howrah", state: "West Bengal",
+    nirfRank: 54, nirfScore: 53.63, nirfYear: 2025,
+    // Source: official IIEST Shibpur website (iiests.ac.in: home). Checked 24 Nov 2026.
+    type: "Institute of National Importance", ownership: "Government", established: 1856, website: "https://www.iiests.ac.in",
+    logo: "/logos/iiest-shibpur.png",
+    overview: "The Indian Institute of Engineering Science and Technology (IIEST), Shibpur, in Howrah near Kolkata, is an Institution of National Importance. It traces its roots to 1856 and was long known as Bengal Engineering College, one of India's oldest engineering colleges. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "One of India's oldest engineering colleges, on the banks of the Hooghly",
+      "NIRF 2025 Engineering rank 54"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIEST Shibpur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Manipal University Jaipur", slug: "manipal-jaipur", city: "Jaipur", state: "Rajasthan",
+    nirfRank: 58, nirfScore: 52.69, nirfYear: 2025,
+    // Source: official Manipal University Jaipur website (jaipur.manipal.edu: About, NIRF). Checked 24 Nov 2026.
+    type: "Private University", ownership: "Private", established: 2011, website: "https://www.jaipur.manipal.edu",
+    logo: "/logos/manipal-jaipur.svg",
+    overview: "Manipal University Jaipur (MUJ) is a private university in Jaipur, Rajasthan, run by the Manipal group. Its engineering faculty offers B.Tech programmes in Computer Science, Data Science, Computer & Communication, Civil and other branches, including dual-degree options with partner universities in Australia. Admission is through the Manipal Entrance Test (MET).",
+    course: "B.Tech Computer Science and Engineering", exam: "MET",
+    hostelAvailable: true,
+    pros: [
+      "Dual-degree options with universities such as Melbourne and Deakin",
+      "NIRF 2025 Engineering rank 58"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Manipal University Jaipur website (About, NIRF). Its NIRF data file is a scanned image we could not read, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Madan Mohan Malaviya University of Technology", slug: "mmmut", city: "Gorakhpur", state: "Uttar Pradesh",
+    nirfRank: 60, nirfScore: 52.45, nirfYear: 2025,
+    // Source: official MMMUT website (mmmut.ac.in: About) + MMMUT NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "State University", ownership: "Government", established: 1962, website: "https://www.mmmut.ac.in",
+    logo: "/logos/mmmut.jpg",
+    overview: "Madan Mohan Malaviya University of Technology (MMMUT) is a state government university in Gorakhpur, Uttar Pradesh, with a NAAC 'A' grade. It started as an engineering college in 1962 and now teaches engineering, applied sciences, management and other subjects. B.Tech admission is based on JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 88, medianPackage: 13.75,
+    hostelAvailable: true,
+    pros: [
+      "Of 858 B.Tech students graduating in 2024-25, 756 were placed and 102 went on to higher studies",
+      "Median B.Tech salary of ₹13.75 lakh (2024-25 graduates), as submitted to NIRF",
+      "Low state-government fees"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official MMMUT website (About) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
 ];
