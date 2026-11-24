@@ -193,7 +193,7 @@ function CollegeExplorer() {
           </dl>
           </div>
 
-          <aside className="hidden rounded-3xl border border-line bg-surface/90 p-6 shadow-lift backdrop-blur lg:block">
+          <div className="hidden rounded-3xl border border-line bg-surface/90 p-6 shadow-lift backdrop-blur lg:block">
             <p className="flex items-center gap-2 text-sm font-bold"><BadgeCheck className="h-5 w-5 text-emerald-500" /> Before you join, check</p>
             <ul className="mt-4 space-y-3">
               {CHECKS.map(({ icon: Icon, title, text }) => (
@@ -206,7 +206,7 @@ function CollegeExplorer() {
                 </li>
               ))}
             </ul>
-          </aside>
+          </div>
         </div>
       </section>
 
