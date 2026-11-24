@@ -391,21 +391,66 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "Amity University", slug: "amity-university", city: "Noida", state: "Uttar Pradesh",
+    // Source: official Amity University website (amity.edu: About, Hostel, Sports, Library). Checked 24 Nov 2026.
     type: "Private University", ownership: "Private", established: 2005, website: "https://www.amity.edu",
-    overview: "Private university with large campus, multidisciplinary programs and industry exposure.",
-    course: "B.Tech IT", exam: "JEE", minRank: 5000, maxRank: 50000,
-    fees: 320000, placementRate: 62, averagePackage: 5.5,
-    courses: [{ name: "B.Tech IT", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/amity-university.png",
+    overview: "Amity University is a private university with its main campus in Noida, Uttar Pradesh. It describes its academic system as industry-aligned, built to give students practical skills, global exposure and career readiness, and runs programmes across engineering, management, fashion and many other fields.",
+    course: "B.Tech", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Separate on-campus hostels for boys and girls, with wardens and security",
+      "Air-conditioned apartment suites of 4 single rooms with attached bathrooms and a lounge with TV and fridge; non-AC rooms also available",
+      "Central Library run as an integrated knowledge resource centre with study spaces for individuals and groups"
+    ],
+    campusLife: [
+      "Programmes across engineering, management, fashion and other faculties on the same campus",
+      "Hostel life designed to help students who are living away from home for the first time"
+    ],
+    sports: [
+      "15-acre sports complex on campus",
+      "All-weather, 8-layer cushioned synthetic tennis courts"
+    ],
+    pros: [
+      "Choice of AC apartment suites with single rooms",
+      "Large 15-acre sports complex",
+      "Many programmes and faculties on one campus"
+    ],
+    cons: [
+      "Private university fees, and AC hostel rooms cost more",
+      "Fees and placement figures weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official Amity University website (About, Hostel, Sports facilities, Library). NIRF data, fees and placement figures weren't on the pages checked."
   },
   {
     name: "COEP Technological University", slug: "coep-pune", city: "Pune", state: "Maharashtra",
+    // Source: official COEP Tech website (coeptech.ac.in: About the University). Checked 24 Nov 2026.
     type: "State University", ownership: "Government", established: 1854, website: "https://www.coeptech.ac.in",
-    overview: "Historic public engineering college with strong technical culture and alumni network.",
-    course: "B.Tech Civil", exam: "MHTCET", minRank: 1, maxRank: 3000,
-    fees: 120000, placementRate: 80, averagePackage: 10.2,
-    courses: [{ name: "B.Tech Civil", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/coep-pune.svg",
+    overview: "Founded in July 1854 as the Poona Engineering Class and Mechanical School, College of Engineering Pune, now COEP Technological University, is the third-oldest engineering college in Asia, after College of Engineering Guindy and IIT Roorkee. It is a unitary public university of the Government of Maharashtra on Wellesley Road, Shivajinagar, Pune, and has been fully autonomous since 2003-04. It set up India's first Department of Electronics and Telecommunication.",
+    course: "B.Tech", exam: "MHTCET",
+    hostelAvailable: true,
+    facilities: [
+      "Central campus in Shivajinagar, Pune",
+      "Hostels and general campus services for students",
+      "Facilities for differently-abled students",
+      "Internships and placements office"
+    ],
+    campusLife: [
+      "More than 170 years of history; alumni include Bharat Ratna Sir M. Visvesvaraya, in whose honour Engineers' Day is celebrated",
+      "Started PG and PhD programmes in the early 1950s, before the IITs were established",
+      "Alumni include Padma awardees such as Prof. Thomas Kailath and Dr. Vijay Kelkar"
+    ],
+    pros: [
+      "One of the oldest engineering colleges in Asia, with a famous alumni network",
+      "Government university in the middle of Pune",
+      "Fully autonomous since 2003-04"
+    ],
+    cons: [
+      "Fees, placement figures and hostel details weren't on the pages checked, so confirm them during admission"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official COEP Technological University website (About the University). NIRF data, fees, placements and hostel details weren't on the pages checked."
   },
   {
     name: "NIT Andhra Pradesh", slug: "nit-andhra", city: "Tadepalligudem", state: "Andhra Pradesh",
@@ -419,6 +464,7 @@ export const colleges: CollegeSeed[] = [
   {
     name: "NIT Arunachal Pradesh", slug: "nit-arunachal", city: "Jote", state: "Arunachal Pradesh",
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitap.ac.in",
+    logo: "/logos/nit-arunachal.png",
     overview: "NIT located in the serene northeast.",
     course: "B.Tech ECE", exam: "JEE", minRank: 20000, maxRank: 45000,
     fees: 135000, placementRate: 70, averagePackage: 7.5,
@@ -427,21 +473,84 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Guwahati", slug: "iit-guwahati", city: "Guwahati", state: "Assam",
+    // Source: official IIT Guwahati website (iitg.ac.in: About, Campus Life) + IIT Guwahati NIRF 2026 Engineering data. Checked 24 Nov 2026.
     type: "IIT", ownership: "Government", established: 1994, website: "https://www.iitg.ac.in",
-    overview: "One of the top IITs with a beautiful campus.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 500, maxRank: 2000,
-    fees: 210000, placementRate: 90, averagePackage: 21.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/iit-guwahati.jpg", campusAcres: 704,
+    overview: "IIT Guwahati, the sixth IIT, was established in 1994 and began teaching in 1995. Its 285-hectare campus sits on the north bank of the Brahmaputra, about 20 km from the centre of Guwahati, with hills and lakes around it. It has eleven departments, seven interdisciplinary centres and five schools covering engineering, science, healthcare, management and humanities. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 74, medianPackage: 17.0,
+    hostelAvailable: true,
+    facilities: [
+      "Eleven men's and two women's hostels, all with single-occupancy rooms",
+      "Each hostel has its own mess, canteen, gym, music room, library, TV room, laundry and indoor games",
+      "30-bed hospital, a commercial complex with shops and a restaurant, and a multi-cuisine food court",
+      "Lakshminath Bezbaroa Central Library and a Computer & Communication Centre open almost round the clock",
+      "74,000 m² academic complex, a lecture hall complex and a 1,500-seat auditorium",
+      "Campus-wide gigabit network with access points in every hostel room",
+      "Guest houses where visiting parents can stay, and flats for married students"
+    ],
+    campusLife: [
+      "Counted among India's most scenic campuses, between the Brahmaputra, hills and lakes",
+      "Diverse student community from across India",
+      "Students Gymkhana runs student activities"
+    ],
+    sports: [
+      "Indoor stadium with synthetic badminton, table tennis and squash courts",
+      "8-lane, 50 m swimming pool",
+      "Flood-lit playing fields for all major outdoor games",
+      "Gymnasium, plus a gym in every hostel"
+    ],
+    pros: [
+      "Every student gets a single room",
+      "Of 902 B.Tech students graduating in 2024-25, 663 were placed and 209 went on to higher studies",
+      "Median B.Tech salary of ₹17 lakh (2024-25 graduates)",
+      "Large 285-hectare riverside campus with a 30-bed hospital"
+    ],
+    cons: [
+      "The campus is about 20 km from the centre of Guwahati",
+      "Fee amounts weren't on the pages checked, so confirm them during admission"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Guwahati website (About, Campus Life) and its NIRF 2026 Engineering data submission. Campus size converted from 285 hectares. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
-    name: "IIT Patna", slug: "iit-patna", city: "Patna", state: "Bihar",
+    // Source: official IIT Patna website (iitp.ac.in: About, History, Campus Life, Hostels). Checked 24 Nov 2026.
+    name: "IIT Patna", slug: "iit-patna", city: "Bihta", state: "Bihar",
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitp.ac.in",
-    overview: "Fast growing new generation IIT.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 2000, maxRank: 5000,
-    fees: 205000, placementRate: 85, averagePackage: 16.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/iit-patna.png",
+    overview: "IIT Patna is one of the newer IITs, established by an Act of Parliament on 6 August 2008. Its campus is at Bihta on the banks of the Ganges, about 40 km from Patna. It has ten departments, including Computer Science & Engineering, Electrical, Mechanical, Chemical & Biochemical, Civil & Environmental and Materials Science & Engineering, and offers B.Tech, M.Tech and PhD programmes. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "8-storey boys' hostel with 912 rooms, each with a balcony, plus common rooms, a gym, 6 lifts and two mess halls",
+      "5-storey girls' hostel with 108 spacious rooms, lifts, washing machines and its own mess",
+      "Hostels are close to the academic area; apartments for married PhD and Master's scholars",
+      "Ten departments, with interdisciplinary M.Tech programmes in mechatronics, nanoscience and VLSI"
+    ],
+    campusLife: [
+      "Small, close-knit campus on the banks of the Ganges",
+      "Six student-run festivals a year: cultural nights, tech expos, a TEDx stage and an inter-hostel league",
+      "Students elect a Gymkhana body every April, and a mess secretary to look after food",
+      "Mess menus change every month"
+    ],
+    sports: [
+      "Infinito, the annual student-run sports meet",
+      "Inter-hostel league and football on campus",
+      "Gymnasium with free weights and machines in the boys' hostel"
+    ],
+    fests: ["Anwesha (cultural)", "Celesta (technical)", "Infinito (sports)", "Reverberance (music)", "Nebula (literary & arts)", "TEDx IIT Patna"],
+    pros: [
+      "Six student-run festivals a year for a small campus",
+      "Modern hostels with lifts and attached gym",
+      "Ten departments with interdisciplinary programmes"
+    ],
+    cons: [
+      "The campus is at Bihta, about 40 km from Patna city",
+      "A newer IIT that is still growing; more hostels are planned",
+      "Placement figures and fees weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Patna website (About, History, Campus Life, Hostels). NIRF data, fees and placement figures weren't on the pages checked."
   },
   {
     name: "NIT Raipur", slug: "nit-raipur", city: "Raipur", state: "Chhattisgarh",
@@ -472,12 +581,49 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "NIT Kurukshetra", slug: "nit-kurukshetra", city: "Kurukshetra", state: "Haryana",
+    // Source: official NIT Kurukshetra website (nitkkr.ac.in: Campus & Infrastructure, Sports, Computer Engg)
+    // + NIT Kurukshetra NIRF 2025 Engineering data submission. Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1963, website: "https://nitkkr.ac.in",
-    overview: "One of the oldest and most reputed NITs.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 5000, maxRank: 15000,
-    fees: 155000, placementRate: 85, averagePackage: 12.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/nit-kurukshetra.png", campusAcres: 292,
+    overview: "NIT Kurukshetra is a National Institute of Technology on a 292-acre campus in Kurukshetra, Haryana. Its Computer Engineering department has offered B.Tech since 1987 (now with an intake of 210), added Information Technology in 2006 and a B.Tech in Artificial Intelligence & Machine Learning from 2023-24. Physical education, sports or yoga is part of the curriculum for every engineering student. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Engineering", exam: "JEE",
+    placementRate: 54, medianPackage: 9.0,
+    hostelAvailable: true,
+    facilities: [
+      "Visvesvaraya Hostel: a 1,000-capacity single-seater mega hostel",
+      "Girls' hostels with 200 and 300 single-seater rooms",
+      "Older boys' hostels with three-seater and single rooms",
+      "Health centre on campus",
+      "292-acre campus with materials characterisation and other central laboratories"
+    ],
+    campusLife: [
+      "Physical education, sports or yoga counts for 1 credit in the curriculum",
+      "Campus events for National Sports Day, International Yoga Day, Anti-Ragging Day and Run for Unity"
+    ],
+    sports: [
+      "Standard 400 m track and field",
+      "International-standard swimming pool with 3, 5 and 7 m diving boards (open March to October)",
+      "Sports complex of about 20 acres",
+      "Floodlit badminton, tennis, basketball and volleyball courts, plus cricket pitch, hockey and football grounds and kabaddi",
+      "Indoor badminton hall and a modern gymnasium",
+      "Sports Committee of faculty and student captains plans games and tournaments"
+    ],
+    pros: [
+      "Most first-year and girls' hostel rooms are single-seater",
+      "Swimming pool with diving boards and a 400 m track",
+      "B.Tech in Computer Engineering, IT and AI & ML"
+    ],
+    cons: [
+      "Of 1,100 B.Tech students graduating in 2023-24, 590 were placed and 266 went on to higher studies",
+      "Median B.Tech salary was ₹9 lakh for 2023-24 graduates",
+      "Some older boys' hostels have three students per room"
+    ],
+    courses: [
+      { name: "B.Tech Computer Engineering", duration: "4 years" },
+      { name: "B.Tech Information Technology", duration: "4 years" },
+      { name: "B.Tech Artificial Intelligence & Machine Learning", duration: "4 years" }
+    ],
+    sourceNote: "From the official NIT Kurukshetra website (Campus & Infrastructure, Sports Section, Computer Engineering department) and its NIRF 2025 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "IIT Mandi", slug: "iit-mandi", city: "Mandi", state: "Himachal Pradesh",
