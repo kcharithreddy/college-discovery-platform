@@ -15,7 +15,7 @@
     "seed": "npm run seed -w apps/api"
   },
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "concurrently": "^10.0.7"
   },
   "engines": {
     "node": ">=20"
