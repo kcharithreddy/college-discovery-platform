@@ -1943,4 +1943,161 @@ export const colleges: CollegeSeed[] = [
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
     sourceNote: "From the official MMMUT website (About) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
+  {
+    name: "Birla Institute of Technology, Mesra", slug: "bit-mesra", city: "Ranchi", state: "Jharkhand",
+    nirfRank: 51, nirfScore: 55.28, nirfYear: 2025,
+    // Source: official BIT Mesra website (bitmesra.ac.in: home). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1955, website: "https://bitmesra.ac.in",
+    logo: "/logos/bit-mesra.png",
+    overview: "Birla Institute of Technology (BIT) Mesra, founded in 1955 by industrialist and philanthropist B.M. Birla, is one of the oldest institutes of technology in independent India. It is a deemed-to-be university in Mesra, Ranchi, the capital of Jharkhand, set among forests and hills. B.Tech admission is based on JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "One of the oldest technology institutes in independent India",
+      "GP Birla scholarships and BIT financial assistantships for students, awarded on semester results"
+    ],
+    cons: [
+      "Campus is outside Ranchi city"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official BIT Mesra website (home page). Its NIRF data files are on a separate server we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Graphic Era (Deemed to be University)", slug: "graphic-era", city: "Dehradun", state: "Uttarakhand",
+    nirfRank: 52, nirfScore: 55.26, nirfYear: 2025,
+    // Source: official Graphic Era website (geu.ac.in: About overview) + GEU NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1993, website: "https://geu.ac.in",
+    logo: "/logos/graphic-era.webp",
+    overview: "Graphic Era began in 1993 as a small computer centre founded by Prof. (Dr.) Kamal Ghanshala and was granted deemed-to-be university status in 2008. It is in Dehradun, Uttarakhand, and was placed among India's top 50 universities in NIRF 2025.",
+    course: "B.Tech Computer Science and Engineering", exam: "See official website",
+    placementRate: 81, medianPackage: 6.75,
+    hostelAvailable: true,
+    pros: [
+      "Of 974 B.Tech students graduating in 2024-25, 786 were placed and 68 went on to higher studies",
+      "Median B.Tech salary of ₹6.75 lakh (2024-25 graduates)"
+    ],
+    cons: [
+      "Placement % was much lower in earlier years (452 of 916 graduates placed in 2023-24)"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Graphic Era website (About overview) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Indian Institute of Space Science and Technology (IIST)", slug: "iist", city: "Thiruvananthapuram", state: "Kerala",
+    nirfRank: 61, nirfScore: 52.44, nirfYear: 2025,
+    // Source: official IIST website (iist.ac.in: About IIST) + IIST NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Government", established: 2007, website: "https://www.iist.ac.in",
+    logo: "/logos/iist.png",
+    overview: "The Indian Institute of Space Science and Technology (IIST) was set up in 2007 at Valiamala, Thiruvananthapuram, Kerala, under the Department of Space, to promote education and research in space science and technology. It offers B.Tech in Aerospace Engineering and Electronics & Communication Engineering, and a dual degree with a B.Tech in Engineering Physics. B.Tech admission is based on JEE (Advanced) ranks.",
+    course: "B.Tech Aerospace Engineering", exam: "JEE",
+    placementRate: 67, medianPackage: 11.98,
+    hostelAvailable: true,
+    pros: [
+      "Of 119 B.Tech students graduating in 2024-25, 80 were placed and 21 went on to higher studies",
+      "Median B.Tech salary of ₹11.98 lakh (2024-25 graduates)",
+      "Small batches and a focus on space science, under the Department of Space"
+    ],
+    cons: [
+      "Only a few B.Tech branches, all space-related"
+    ],
+    courses: [{ name: "B.Tech Aerospace Engineering", duration: "4 years" }, { name: "B.Tech Electronics and Communication Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIST website (About IIST) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "MNNIT Allahabad", slug: "mnnit-allahabad", city: "Prayagraj", state: "Uttar Pradesh",
+    nirfRank: 62, nirfScore: 52.15, nirfYear: 2025,
+    // Source: official MNNIT Allahabad website (mnnit.ac.in: home) + MNNIT NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1961, website: "https://www.mnnit.ac.in",
+    logo: "/logos/mnnit-allahabad.png",
+    overview: "Motilal Nehru National Institute of Technology (MNNIT) Allahabad in Prayagraj, Uttar Pradesh, is an Institution of National Importance under the NIT Act. It began as a Regional Engineering College in 1961. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 94, medianPackage: 12.6,
+    hostelAvailable: true,
+    pros: [
+      "Of 1,032 B.Tech students graduating in 2024-25, 966 were placed",
+      "Median B.Tech salary of ₹12.6 lakh (2024-25 graduates)",
+      "Four-star rating from the Ministry of Education's Institutions' Innovation Council"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official MNNIT Allahabad website (home page) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Delhi", slug: "nit-delhi", city: "Delhi", state: "Delhi",
+    nirfRank: 65, nirfScore: 50.79, nirfYear: 2025,
+    // Source: official NIT Delhi website (nitdelhi.ac.in: home, campus pages). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 2010, website: "https://nitdelhi.ac.in",
+    logo: "/logos/nit-delhi.svg",
+    overview: "NIT Delhi is one of the newer National Institutes of Technology, set up in 2010, and is an Institution of National Importance under the NIT Act. Its campus is at Narela, Delhi. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Hostels such as Dhauladhar on campus",
+      "Campus transport service"
+    ],
+    sports: [
+      "Sports club for students"
+    ],
+    pros: [
+      "Located in the national capital",
+      "NIRF 2025 Engineering rank 65"
+    ],
+    cons: [
+      "A young institute that is still building out its campus"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Delhi website (home and campus pages). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "SVNIT Surat", slug: "svnit-surat", city: "Surat", state: "Gujarat",
+    nirfRank: 66, nirfScore: 50.77, nirfYear: 2025,
+    // Source: official SVNIT website (svnit.ac.in: home, NIRF) + SVNIT NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1961, website: "https://www.svnit.ac.in",
+    logo: "/logos/svnit-surat.png",
+    overview: "Sardar Vallabhbhai National Institute of Technology (SVNIT) in Surat, Gujarat, is an Institution of National Importance under the NIT Act. It began as a Regional Engineering College in 1961. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 74, medianPackage: 10,
+    hostelAvailable: true,
+    pros: [
+      "Of 801 B.Tech students graduating in 2024-25, 591 were placed and 144 went on to higher studies",
+      "Median B.Tech salary of ₹10 lakh (2024-25 graduates)",
+      "Anti-ragging helpline publicised on the home page"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SVNIT website (home, NIRF) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Hostel fee notices are on the website; tuition fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Sathyabama Institute of Science and Technology", slug: "sathyabama", city: "Chennai", state: "Tamil Nadu",
+    nirfRank: 67, nirfScore: 50.64, nirfYear: 2025,
+    // Source: official Sathyabama website (sathyabama.ac.in: home, About us). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1987, website: "https://www.sathyabama.ac.in",
+    logo: "/logos/sathyabama.png",
+    overview: "Sathyabama Institute of Science and Technology is a deemed-to-be university in Chennai, Tamil Nadu, with Category-I status from the UGC and a NAAC A++ grade. It is celebrating 39 years since its founding. Admission to engineering is through its own entrance exam, SAEEE.",
+    course: "B.Tech Computer Science and Engineering", exam: "SAEEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ and UGC Category-I status",
+      "Ranked 53 among universities in NIRF"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Sathyabama website (home, About us). Its NIRF data is in a page-flip viewer on a separate server we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "IIIT Bangalore", slug: "iiit-bangalore", city: "Bengaluru", state: "Karnataka",
+    nirfRank: 69, nirfScore: 50.46, nirfYear: 2025,
+    // Source: official IIIT Bangalore website (iiitb.ac.in: home, About) + IIITB NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1999, website: "https://www.iiitb.ac.in",
+    logo: "/logos/iiit-bangalore.png",
+    overview: "The International Institute of Information Technology Bangalore (IIITB) is a deemed-to-be university in Electronic City, Bengaluru, focused on IT, data science, electronics and digital society. It is best known for its Integrated M.Tech and postgraduate programmes, and started a 4-year B.Tech in 2024 with 210 seats. Admission is based on JEE (Main) ranks.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "Strong postgraduate and research focus in IT and data science",
+      "Located in Electronic City, a major IT hub"
+    ],
+    cons: [
+      "The B.Tech only started in 2024, so there are no B.Tech placement results yet"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }, { name: "Integrated M.Tech", duration: "5 years" }],
+    sourceNote: "From the official IIIT Bangalore website (home, About) and its NIRF 2026 Engineering data submission, which shows 210 B.Tech seats from 2024-25 and no B.Tech graduates yet. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
 ];
