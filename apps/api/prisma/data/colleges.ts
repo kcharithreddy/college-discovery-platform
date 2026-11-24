@@ -628,56 +628,204 @@ export const colleges: CollegeSeed[] = [
   {
     name: "IIT Mandi", slug: "iit-mandi", city: "Mandi", state: "Himachal Pradesh",
     type: "IIT", ownership: "Government", established: 2009, website: "https://www.iitmandi.ac.in",
-    overview: "IIT set in the Himalayas with a unique curriculum.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 4000, maxRank: 8000,
-    fees: 215000, placementRate: 82, averagePackage: 14.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Mandi website (iitmandi.ac.in: About, Sports) + IIT Mandi NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/iit-mandi.png",
+    overview: "IIT Mandi is one of the second-generation IITs and describes itself as a research university. Its campus is in the Kamand Valley, on the left bank of the Uhl River at Kamand and Salgi villages, about 14 km from Mandi town in Himachal Pradesh. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 78, medianPackage: 17.0,
+    hostelAvailable: true,
+    facilities: [
+      "Residential campus in the Kamand Valley in the Himalayan foothills",
+      "Indoor and outdoor sports facilities with experienced coaches for most games"
+    ],
+    campusLife: [
+      "Mountain setting in Himachal Pradesh, with weather that varies a lot through the year",
+      "National Sports Organisation (NSO) programme for students"
+    ],
+    sports: [
+      "Diverse indoor and outdoor facilities with coaches for most games",
+      "NSO (National Sports Organisation) programme",
+      "Inter-IIT medals: silver in cricket and women's table tennis (2022), bronze in cricket (2019), athletics medals (2018, 2019)"
+    ],
+    pros: [
+      "Of 272 B.Tech students graduating in 2024-25, 211 were placed and 61 went on to higher studies",
+      "Median B.Tech salary of ₹17 lakh (2024-25 graduates)",
+      "Scenic Himalayan campus with a strong sports culture for a young IIT"
+    ],
+    cons: [
+      "The campus is about 14 km from Mandi town, in a remote mountain valley",
+      "Fee amounts weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Mandi website (About, Sports Facilities) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "IIT (ISM) Dhanbad", slug: "iit-dhanbad", city: "Dhanbad", state: "Jharkhand",
     type: "IIT", ownership: "Government", established: 1926, website: "https://www.iitism.ac.in",
-    overview: "Formerly ISM, premier institute for earth sciences and engineering.",
-    course: "B.Tech Mining", exam: "JEE", minRank: 3000, maxRank: 10000,
-    fees: 200000, placementRate: 88, averagePackage: 15.0,
-    courses: [{ name: "B.Tech Mining", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT (ISM) Dhanbad website (iitism.ac.in: History) + IIT (ISM) NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/iit-dhanbad-on-dark.png",
+    overview: "IIT (ISM) Dhanbad was founded on 9 December 1926 by Viceroy Lord Irwin as the Indian School of Mines & Applied Geology, following the McPherson Committee's recommendation for an institution teaching mining and geology. It later added petroleum engineering and applied geophysics, was renamed Indian School of Mines, began admitting students through IIT-JEE and introduced Computer Science and Engineering. It became an Indian Institute of Technology on 6 September 2016. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 79, medianPackage: 15.0,
+    hostelAvailable: true,
+    facilities: [
+      "Central Library, with roots going back to the 1920s",
+      "Career Development Centre for internships and placements",
+      "Students' Welfare office"
+    ],
+    campusLife: [
+      "Nearly a century of history in mining, geology and earth sciences",
+      "Programmes from B.Tech and BS-MS to MBA and PhD"
+    ],
+    pros: [
+      "Of 910 B.Tech students graduating in 2024-25, 715 were placed and 160 went on to higher studies",
+      "Median B.Tech salary of ₹15 lakh (2024-25 graduates)",
+      "One of India's oldest technical institutions, with a unique strength in mining and earth sciences"
+    ],
+    cons: [
+      "Fee amounts weren't on the pages checked, so confirm them during admission"
+    ],
+    courses: [
+      { name: "B.Tech Computer Science and Engineering", duration: "4 years" },
+      { name: "B.Tech Mining Engineering", duration: "4 years" }
+    ],
+    sourceNote: "From the official IIT (ISM) Dhanbad website (History) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "NITK Surathkal", slug: "nitk-surathkal", city: "Mangaluru", state: "Karnataka",
+    // Source: official NITK website (nitk.ac.in: About Us) + NITK NIRF 2023 Engineering data (latest on its site). Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1960, website: "https://www.nitk.ac.in",
-    overview: "Top NIT with a private beach and stellar placements.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 1000, maxRank: 4000,
-    fees: 160000, placementRate: 92, averagePackage: 19.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/nitk-surathkal.png",
+    overview: "NIT Karnataka, Surathkal, began as Karnataka Regional Engineering College (KREC) in 1960 and was upgraded to a National Institute of Technology in 2002. It is in Surathkal, Mangaluru, the headquarters of the coastal Dakshina Kannada district. Undergraduate admission is through JEE (Main) and JoSAA/CSAB counselling.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 88, medianPackage: 12.84,
+    hostelAvailable: true,
+    facilities: [
+      "Central Library, Central Research Facility and Central Computer Centre",
+      "Health Care Centre and Guest House",
+      "Career Development Centre for internships and placements",
+      "STEP incubation centre and Centre for System Design"
+    ],
+    campusLife: [
+      "Students' Council and student activities",
+      "NSS and NCC units",
+      "Anti-ragging committee and contacts published on the website"
+    ],
+    sports: ["Sports and games section for students", "Takes part in the All India Inter-NIT Sports Meet (athletics and chess, 2025-26)"],
+    pros: [
+      "Of 837 B.Tech students graduating in 2021-22, 734 were placed and 32 went on to higher studies (latest NIRF data on its site)",
+      "Median B.Tech salary of ₹12.84 lakh in 2021-22",
+      "Coastal campus in Mangaluru"
+    ],
+    cons: [
+      "The newest placement data on its website is for the 2021-22 batch, so ask for recent figures",
+      "Fee amounts weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NITK website (About Us) and its NIRF 2023 Engineering data submission, the latest on its site (covers students graduating in 2021-22). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "NIT Calicut", slug: "nit-calicut", city: "Kozhikode", state: "Kerala",
+    // Source: official NIT Calicut website (nitc.ac.in: About, Hostels, Tathva, news) + NITC NIRF 2026 Engineering data. Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1961, website: "https://nitc.ac.in",
-    overview: "Reputed NIT with strong architecture and engineering programs.",
-    course: "B.Tech ECE", exam: "JEE", minRank: 3000, maxRank: 10000,
-    fees: 150000, placementRate: 86, averagePackage: 13.5,
-    courses: [{ name: "B.Tech ECE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/nit-calicut.svg", campusAcres: 297,
+    overview: "NIT Calicut is an Institution of National Importance under the National Institutes of Technology Act, 2007, fully funded by the Government of India. Its fully residential campus lies at the foothills of the Western Ghats, about 22 km north-east of Kozhikode, stretching 1.5 km along the Calicut–Mukkam road over about 120 hectares. It offers 11 UG and 29 PG programmes including an MBA. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 88, medianPackage: 12.16,
+    hostelAvailable: true,
+    facilities: [
+      "Eleven boys' and three girls' hostels housing about 6,800 students",
+      "Seven of the boys' hostels have single or double rooms; four have triple or quadruple rooms",
+      "Every hostel has common rooms, indoor games, guest rooms for families, 24/7 water, power and internet, and CCTV",
+      "Girls' hostels also have a gym",
+      "Health centre, guest house and research centres such as Biomaterials, Tissue Engineering & Medical Devices"
+    ],
+    campusLife: [
+      "Hostel councils of wardens and student representatives run each hostel",
+      "Inter-hostel and intra-hostel sports and cultural events every year",
+      "Clubs such as Club Mathematica and the Enquire Quiz club; Club AeroUnwired won All India Rank 3 at SAE Aerothon 2026"
+    ],
+    sports: [
+      "Major Dhyan Chand Sports Complex and a new basketball court",
+      "Jwala, the annual sports meet",
+      "Inter-hostel tournaments every year"
+    ],
+    fests: ["Tathva (techno-management, since 2000)"],
+    pros: [
+      "Of 915 B.Tech students graduating in 2024-25, 803 were placed and 106 went on to higher studies",
+      "Median B.Tech salary of ₹12.16 lakh (2024-25 graduates)",
+      "Tathva, which it describes as South India's largest techno-management fest",
+      "Green 120-hectare campus at the foot of the Western Ghats"
+    ],
+    cons: [
+      "The campus is about 22 km from Kozhikode city",
+      "Some boys' hostels have three or four students per room"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Calicut website (About, Hostels, Tathva, campus news) and its NIRF 2026 Engineering data submission. Campus size converted from about 120 hectares. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "IIT Indore", slug: "iit-indore", city: "Indore", state: "Madhya Pradesh",
     type: "IIT", ownership: "Government", established: 2009, website: "https://www.iiti.ac.in",
-    overview: "Top-ranking newer IIT with excellent research output.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 1500, maxRank: 4500,
-    fees: 220000, placementRate: 85, averagePackage: 18.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Indore website (iiti.ac.in: About). Checked 24 Nov 2026.
+    logo: "/logos/iit-indore.png", campusAcres: 501,
+    overview: "IIT Indore was established by the Government of India in 2009 as one of the new-generation IITs. Mentored at first by IIT Bombay and starting from a temporary campus in the city, it moved in 2016 to its permanent 501-acre residential campus at Simrol, near Indore. Its research areas include artificial intelligence, advanced materials, communications, renewable energy, healthcare technology and environmental sustainability. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "501-acre residential campus at Simrol, in use since 2016",
+      "Advanced research labs, modern lecture halls and student residences",
+      "Facilities for startup incubation, technology development and industry engagement",
+      "Separate websites for hostels, placements and sports"
+    ],
+    campusLife: [
+      "Undergraduate, postgraduate and doctoral programmes across science, engineering and humanities",
+      "Strong focus on innovation and entrepreneurship"
+    ],
+    pros: [
+      "Large 501-acre permanent campus",
+      "Mentored by IIT Bombay in its early years",
+      "Startup incubation support on campus"
+    ],
+    cons: [
+      "Simrol is outside Indore city",
+      "Placement figures and fees are on separate IIT Indore sites that weren't checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Indore website (About). NIRF data, fees, placements and hostel details are on separate sites that weren't checked."
   },
   {
     name: "VNIT Nagpur", slug: "vnit-nagpur", city: "Nagpur", state: "Maharashtra",
+    // Source: official VNIT website (vnit.ac.in: History, Hostel, Sports). Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1960, website: "https://vnit.ac.in",
-    overview: "Highly sought-after NIT in central India.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 4000, maxRank: 12000,
-    fees: 155000, placementRate: 84, averagePackage: 11.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    logo: "/logos/vnit-nagpur.png", campusAcres: 214,
+    overview: "VNIT began in June 1960 as Visvesvaraya Regional College of Engineering (VRCE), set up by the Government of India and the Government of Maharashtra by merging the state engineering college that had run in Nagpur since 1956. It became a deemed university in June 2002 and an Institution of National Importance under the National Institutes of Technology Act, 2007. Its campus of about 214 acres is in Nagpur. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Ten boys' hostels and two girls' hostels for more than 4,000 students",
+      "Hostels have TV, sports equipment, water coolers, water heaters, kettles and a smart laundry service",
+      "Separate gyms for boys and girls",
+      "About 214-acre campus in Nagpur"
+    ],
+    campusLife: [
+      "Admitted 100 international undergraduate students in 2026-27",
+      "Internships and placements office (Training & Placement)"
+    ],
+    sports: [
+      "Physical education programme promoting fitness and healthy competition",
+      "Takes part in All India Inter-NIT tournaments, including badminton, table tennis and yoga"
+    ],
+    pros: [
+      "Hostel places for more than 4,000 students with separate gyms",
+      "Long history: started in 1960 as a Regional Engineering College",
+      "Growing international student community"
+    ],
+    cons: [
+      "Placement figures and fees weren't published on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official VNIT Nagpur website (History, Hostel, Sports). NIRF data, fees and placement figures weren't on the pages checked."
   },
   {
     name: "NIT Manipur", slug: "nit-manipur", city: "Imphal", state: "Manipur",
@@ -689,22 +837,56 @@ export const colleges: CollegeSeed[] = [
     sourceNote: UNVERIFIED
   },
   {
-    name: "NIT Meghalaya", slug: "nit-meghalaya", city: "Shillong", state: "Meghalaya",
+    name: "NIT Meghalaya", slug: "nit-meghalaya", city: "Sohra", state: "Meghalaya",
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitm.ac.in",
-    overview: "Known for its scenic location and growing academics.",
-    course: "B.Tech ECE", exam: "JEE", minRank: 20000, maxRank: 45000,
-    fees: 140000, placementRate: 72, averagePackage: 8.0,
-    courses: [{ name: "B.Tech ECE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official NIT Meghalaya website (nitm.ac.in: About NIT). Checked 24 Nov 2026.
+    logo: "/logos/nit-meghalaya.png",
+    overview: "NIT Meghalaya is one of the 31 NITs established under the NIT Act 2007 (amended 2012) as an Institute of National Importance, fully funded by the Ministry of Education. Its permanent campus in the hills of Sohra is now fully functional, with academic buildings, student hostels, administrative blocks and faculty residences. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "New permanent campus at Sohra with modern academic buildings",
+      "Student hostels on campus with published rules and a hostel patrolling committee",
+      "Health facilities and campus bus service"
+    ],
+    campusLife: ["Ecologically rich hill setting at Sohra, Meghalaya"],
+    pros: [
+      "Brand-new, fully functional permanent campus",
+      "Institute of National Importance, fully funded by the central government"
+    ],
+    cons: [
+      "Placement figures and fees weren't on the pages checked",
+      "Sohra is a small hill town, so check travel connections"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official NIT Meghalaya website (About NIT). Recent NIRF data, fees and placement figures weren't on the pages checked."
   },
   {
     name: "NIT Mizoram", slug: "nit-mizoram", city: "Aizawl", state: "Mizoram",
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitmz.ac.in",
-    overview: "Emerging institute in the northeastern region.",
-    course: "B.Tech Civil", exam: "JEE", minRank: 30000, maxRank: 55000,
-    fees: 135000, placementRate: 65, averagePackage: 6.5,
-    courses: [{ name: "B.Tech Civil", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official NIT Mizoram website (nitmz.ac.in: Hostels) + NIT Mizoram NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/nit-mizoram.png",
+    overview: "NIT Mizoram is a National Institute of Technology in Aizawl, Mizoram. It is fully residential, with separate hostels for boys and girls, a mess in every hostel and institute buses between the hostels and the academic blocks. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech", exam: "JEE",
+    placementRate: 92, medianPackage: 8.4,
+    hostelAvailable: true,
+    facilities: [
+      "Four hostels: two for girls and two for boys",
+      "A mess in every hostel serving breakfast, lunch, evening tea and dinner",
+      "Institute buses between the hostels and the academic blocks",
+      "Health facility on campus"
+    ],
+    campusLife: ["Training and placement cell for internships and jobs"],
+    pros: [
+      "Of 137 B.Tech students graduating in 2024-25, 126 were placed and 7 went on to higher studies",
+      "Placement rate has stayed above 85% for the last three batches (NIRF 2026 data)"
+    ],
+    cons: [
+      "Median B.Tech salary was ₹8.4 lakh for 2024-25 graduates",
+      "Hostels and academic blocks are apart, so you depend on institute buses"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official NIT Mizoram website (Hostels, Transportation, Health) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "NIT Nagaland", slug: "nit-nagaland", city: "Chumukedima", state: "Nagaland",
