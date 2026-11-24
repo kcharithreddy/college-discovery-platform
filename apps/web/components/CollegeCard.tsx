@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ArrowUpRight, Check, Heart, MapPin, Plus, Star, Trash2, Trophy } from 'lucide-react';
+import { AlertTriangle, ArrowUpRight, Check, Heart, MapPin, Plus, Star, Trash2, Trophy } from 'lucide-react';
 import { CollegeLogo } from '@/components/CollegeLogo';
 import { useCompare } from '@/components/CompareProvider';
-import { ApiError, College, api, formatLakh, formatPercent, NOT_AVAILABLE } from '@/lib/api';
+import { ApiError, College, api, formatLakh, formatPercent, isUnverified, NOT_AVAILABLE } from '@/lib/api';
 
 type Props = {
   college: College;
@@ -58,6 +58,11 @@ export function CollegeCard({ college, onRemoved, savedView }: Props) {
             </span>
           )}
           <span className="chip bg-muted text-sub">{college.type}</span>
+          {isUnverified(college) && (
+            <span title="These figures are sample values that haven't been checked against official sources yet" className="chip bg-amber-50 text-amber-800 dark:bg-amber-400/10 dark:text-amber-300">
+              <AlertTriangle className="h-3 w-3" /> Unverified
+            </span>
+          )}
         </div>
       </div>
 

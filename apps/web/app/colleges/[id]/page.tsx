@@ -9,7 +9,7 @@ import type { LucideIcon } from 'lucide-react';
 import { CollegeActions } from '@/components/CollegeActions';
 import { CollegeLogo } from '@/components/CollegeLogo';
 import { ReviewSection } from '@/components/ReviewSection';
-import { API_URL, College, NOT_AVAILABLE, formatFees, formatLakh, formatLpa, formatPercent } from '@/lib/api';
+import { API_URL, College, NOT_AVAILABLE, formatFees, formatLakh, formatLpa, formatPercent, isUnverified } from '@/lib/api';
 import { buildBeforeYouJoin, JOINING_CHECKLIST } from '@/lib/beforeYouJoin';
 
 async function getCollege(id: string): Promise<College | null> {
@@ -81,6 +81,13 @@ export default async function CollegeDetail({ params }: { params: { id: string }
             </div>
             <CollegeActions college={college} />
           </div>
+
+          {isUnverified(college) && (
+            <p className="mt-6 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200">
+              <Info className="mt-0.5 h-4 w-4 shrink-0" />
+              The fee, placement and cutoff figures for this college are sample values that haven&apos;t been checked against official sources yet.
+            </p>
+          )}
 
           {/* Key numbers */}
           <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3 lg:grid-cols-5">
