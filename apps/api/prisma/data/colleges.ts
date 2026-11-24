@@ -1357,5 +1357,109 @@ export const colleges: CollegeSeed[] = [
       { name: "BS Interdisciplinary Sciences (Mathematics / Physics major)", duration: "4 years" }
     ],
     sourceNote: "From the official IIT Dharwad website (About, Programmes) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+  },
+  {
+    // Source: official IIITDM Kurnool website (iiitk.ac.in: About, Sports Facilities). Checked 25 Nov 2026.
+    name: "IIITDM Kurnool", slug: "iiitdm-kurnool", city: "Kurnool", state: "Andhra Pradesh",
+    type: "IIIT", ownership: "Government", established: 2015, website: "https://iiitk.ac.in",
+    logo: "/logos/iiitdm-kurnool.png", campusAcres: 151,
+    overview: "The Indian Institute of Information Technology, Design & Manufacturing, Kurnool was announced in 2014 under the IIIT Act, 2014, to meet the Government of India's commitment under the Andhra Pradesh Reorganisation Act. It is fully funded by the Ministry of Education and began teaching in August 2015 at its mentor institute, IIITDM Kancheepuram. It became an Institute of National Importance in August 2017. Its 151-acre permanent campus sits on a hill overlooking Kurnool, with strong winds from the Tungabhadra river.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "151-acre hilltop campus in the Rayalaseema region, overlooking Kurnool city",
+      "Institute Fitness Centre with modern gym equipment and a trainer, plus open-air gym",
+      "Training and Placement Cell and Internship & Placement Cell"
+    ],
+    campusLife: [
+      "Faculty and staff regularly play sports with students",
+      "Quiet campus away from city life, described by the institute as like a hill station"
+    ],
+    sports: [
+      "Sardar Vallabhbhai Patel Indoor Stadium with badminton courts and a seating gallery",
+      "Basketball, volleyball, tennis, throwball, kabaddi and kho kho courts",
+      "Table tennis, carrom and chess facilities",
+      "Shri Krishnadevaraya ground for outdoor games"
+    ],
+    pros: [
+      "Institute of National Importance, fully funded by the Ministry of Education",
+      "Wide range of sports facilities and a supervised fitness centre",
+      "Peaceful hilltop campus"
+    ],
+    cons: [
+      "Campus is far from a metro city",
+      "Placement figures and fees weren't readable on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIITDM Kurnool website (About, Sports Facilities). Its NIRF data is on a separate file site that wasn't checked; fees and placement figures weren't readable."
+  },
+  {
+    // Source: official IIIT Sri City website (iiits.ac.in: About, Hostels & Dining, Sports, Placements). Checked 25 Nov 2026.
+    name: "IIIT Sri City", slug: "iiit-sri-city", city: "Sri City", state: "Andhra Pradesh",
+    type: "IIIT (PPP)", ownership: "Government", established: 2013, website: "https://iiits.ac.in",
+    logo: "/logos/iiit-sri-city.png",
+    overview: "IIIT Sri City was established in 2013 by the Ministry of Education as an Institute of National Importance. It was set up as a public-private partnership between the Government of India, the Government of Andhra Pradesh and industry partners represented by the Sri City Foundation. It is in Sri City, about 60 km from Chennai on the Nellore highway, with Chennai and Tirupati airports each about 70 km away. It offers B.Tech, M.Tech, MS and PhD programmes and is known for undergraduate-led research.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Two hostel blocks with a large dining hall; two more blocks are being built",
+      "Leased apartments in and around Sri City while new hostels are completed",
+      "Buses between hostels and the institute during academic hours and for meals",
+      "Multi-gym with modern equipment"
+    ],
+    campusLife: [
+      "Undergraduates take part in research from early on",
+      "Internships encouraged from the first year",
+      "CSE students follow a full-stack development stream from the second year",
+      "Students can move around campus until 10 pm; some study areas stay open later"
+    ],
+    sports: [
+      "Sports facilities and a physical education programme",
+      "General Championship sports competition among students",
+      "Multi-gym for aerobic training"
+    ],
+    pros: [
+      "Strong focus on undergraduate research and practical programming",
+      "About an hour from Chennai",
+      "Internships from the first year"
+    ],
+    cons: [
+      "Some students live in leased apartments until new hostels are ready",
+      "Mess is compulsory for all students",
+      "Fees and placement figures weren't on the pages checked"
+    ],
+    courses: [
+      { name: "B.Tech Computer Science and Engineering", duration: "4 years" },
+      { name: "B.Tech Electronics and Communication Engineering", duration: "4 years" }
+    ],
+    sourceNote: "From the official IIIT Sri City website (About, Hostels & Dining, Sports, Campus Placement). NIRF data, fees and placement figures weren't on the pages checked."
+  },
+  {
+    // Source: official IIPE website (iipe.ac.in: Sports, Student Life). Checked 25 Nov 2026.
+    name: "Indian Institute of Petroleum & Energy (IIPE)", slug: "iipe-visakhapatnam", city: "Visakhapatnam", state: "Andhra Pradesh",
+    type: "National Institute", ownership: "Government", website: "https://iipe.ac.in",
+    overview: "The Indian Institute of Petroleum and Energy (IIPE) in Visakhapatnam focuses on petroleum, energy and earth sciences, with a Department of Petroleum Engineering & Earth Sciences. It offers two B.Tech branches with a common first year, plus M.Tech and PhD programmes. Undergraduate admission is through JEE (Main).",
+    course: "B.Tech Petroleum Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Separate boys' and girls' hostels",
+      "Career Development Centre"
+    ],
+    campusLife: [
+      "Students' Council with elected President, Vice President, Secretary and executives",
+      "Common first year for both B.Tech branches",
+      "Online certification courses in data science and machine learning"
+    ],
+    sports: ["Sports and Games Committee that runs sports activities and competitions"],
+    pros: [
+      "Specialised in petroleum and energy, a niche few colleges offer",
+      "Located in Visakhapatnam, a major port and industrial city"
+    ],
+    cons: [
+      "Only two B.Tech branches",
+      "Logo, fees, placement figures and NIRF data couldn't be read from its website"
+    ],
+    courses: [{ name: "B.Tech Petroleum Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIPE website (Sports, Student Life, hostel pages). Its NIRF report and admission flyer refused automated downloads, so fees and placement figures aren't available."
   }
 ];
