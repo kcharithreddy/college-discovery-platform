@@ -4,6 +4,9 @@ import { config } from '../config';
 
 export type AuthRequest = Request & { userId?: string };
 
+export const JWT_ALGORITHM = 'HS256' as const;
+export const JWT_ISSUER = 'college-discovery-api';
+
 export function requireAuth(req: AuthRequest, res: Response, next: NextFunction) {
   const header = req.headers.authorization;
   if (!header?.startsWith('Bearer ')) {
@@ -13,7 +16,9 @@ export function requireAuth(req: AuthRequest, res: Response, next: NextFunction)
 
   try {
     const token = header.slice('Bearer '.length);
-    const payload = jwt.verify(token, config.jwtSecret) as { userId: string };
+    // Pin the algorithm and issuer so forged tokens (e.g. "alg: none") are rejected.
+    const payload = jwt.verify(token, config.jwtSecret, { algorithms: [JWT_ALGORITHM], issuer: JWT_ISSUER }) as { userId?: unknown };
+    if (typeof payload.userId !== 'string' || !payload.userId) throw new Error('bad payload');
     req.userId = payload.userId;
     next();
   } catch {

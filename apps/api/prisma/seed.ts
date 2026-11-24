@@ -20,7 +20,7 @@ async function main() {
   await prisma.user.upsert({
     where: { email: 'demo@student.com' },
     update: {},
-    create: { name: 'Demo Student', email: 'demo@student.com', password: await bcrypt.hash('password123', 10) }
+    create: { name: 'Demo Student', email: 'demo@student.com', password: await bcrypt.hash('password123', 12) }
   });
 
   for (const { courses, ...college } of colleges) {
