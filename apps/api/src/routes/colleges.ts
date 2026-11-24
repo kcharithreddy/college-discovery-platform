@@ -15,7 +15,8 @@ const SORTS: Record<string, Prisma.CollegeOrderByWithRelationInput[]> = {
   nirf: [{ nirfRank: { sort: 'asc', nulls: 'last' } }, { name: 'asc' }],
   fees: [{ fees: { sort: 'asc', nulls: 'last' } }, { name: 'asc' }],
   placement: [{ placementRate: { sort: 'desc', nulls: 'last' } }, { name: 'asc' }],
-  package: [{ averagePackage: { sort: 'desc', nulls: 'last' } }, { name: 'asc' }],
+  // Official NIRF data gives the median; older sample data only has an average.
+  package: [{ medianPackage: { sort: 'desc', nulls: 'last' } }, { averagePackage: { sort: 'desc', nulls: 'last' } }, { name: 'asc' }],
   rating: [{ rating: { sort: 'desc', nulls: 'last' } }, { reviewCount: 'desc' }, { name: 'asc' }],
   name: [{ name: 'asc' }]
 };

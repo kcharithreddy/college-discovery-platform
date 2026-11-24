@@ -562,13 +562,40 @@ export const colleges: CollegeSeed[] = [
     sourceNote: UNVERIFIED
   },
   {
-    name: "NIT Goa", slug: "nit-goa", city: "Ponda", state: "Goa",
+    name: "NIT Goa", slug: "nit-goa", city: "Cuncolim", state: "Goa",
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitgoa.ac.in",
-    overview: "Rapidly improving NIT in a prime location.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 8000, maxRank: 20000,
-    fees: 150000, placementRate: 82, averagePackage: 11.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official NIT Goa website (nitgoa.ac.in: About). Checked 24 Nov 2026.
+    overview: "NIT Goa was established in 2010 under the NIT Act, 2007 and NIT (Amendment) Act, 2012, and is an autonomous Institute of National Importance under the Ministry of Education. Its campus is on Kottamoll Plateau in the Cuncolim municipal area of South Goa, about 15 km from Margao. It offers B.Tech in five branches with a small intake of 42–44 students per branch, admitted through JEE (Main) with JoSAA/CSAB, plus DASA for students from abroad.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Laboratories, workshops and a library with print and electronic resources",
+      "Training and Placement Cell, with companies from R&D, engineering, IT and other sectors visiting regularly",
+      "Sports facilities for students"
+    ],
+    campusLife: [
+      "Student clubs and study circles such as SPECTRA, TESLA, QUANTA, CESCO and META",
+      "SPIE and IEEE student chapters running science and research events",
+      "Students celebrate cultural festivals from different states"
+    ],
+    sports: ["Sports facilities for students; organised the All India Inter-NIT Faculty and Staff Tournament in 2018"],
+    fests: ["SAAVYAS (techno-cultural)"],
+    pros: [
+      "Very small batches: 42–44 students per B.Tech branch",
+      "Campus in South Goa, 15 km from Margao and reachable from Dabolim airport"
+    ],
+    cons: [
+      "Only five B.Tech branches",
+      "Placement figures and fees weren't on the pages checked"
+    ],
+    courses: [
+      { name: "B.Tech Computer Science and Engineering", duration: "4 years" },
+      { name: "B.Tech Electronics and Communication Engineering", duration: "4 years" },
+      { name: "B.Tech Electrical and Electronics Engineering", duration: "4 years" },
+      { name: "B.Tech Civil Engineering", duration: "4 years" },
+      { name: "B.Tech Mechanical Engineering", duration: "4 years" }
+    ],
+    sourceNote: "From the official NIT Goa website (About). NIRF data, fees, placement figures and the logo weren't available when checked."
   },
   {
     name: "IIT Gandhinagar", slug: "iit-gandhinagar", city: "Gandhinagar", state: "Gujarat",
@@ -1191,20 +1218,73 @@ export const colleges: CollegeSeed[] = [
   {
     name: "IIT (BHU) Varanasi", slug: "iit-bhu", city: "Varanasi", state: "Uttar Pradesh",
     type: "IIT", ownership: "Government", established: 1919, website: "https://www.iitbhu.ac.in",
-    overview: "Historic institute located within the Banaras Hindu University campus.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 800, maxRank: 3000,
-    fees: 205000, placementRate: 88, averagePackage: 19.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT (BHU) website (iitbhu.ac.in: Hostels) + IIT (BHU) NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/iit-bhu.png",
+    overview: "IIT (BHU) Varanasi is an Indian Institute of Technology located on the Banaras Hindu University campus in Varanasi, Uttar Pradesh. It is fully residential, with hostels ranging from some of the oldest, such as Dr. C. V. Raman and Dhanarajgiri, to the Satish Dhawan Hostel opened in May 2022. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 97, medianPackage: 18.0,
+    hostelAvailable: true,
+    facilities: [
+      "Hostels named after great Indian scientists and leaders, including Aryabhatta, Dr. C. V. Raman and Satish Dhawan",
+      "Satish Dhawan Hostel, the newest boys' hostel, opened in May 2022",
+      "Girls' hostels including the newer Nivedita Girls Hostel",
+      "Central Instrument Facility for research",
+      "Training & Placement Cell"
+    ],
+    campusLife: [
+      "Life on the historic Banaras Hindu University campus in Varanasi",
+      "Hostel communities with long traditions in the older hostels"
+    ],
+    pros: [
+      "Of 1,090 B.Tech students graduating in 2024-25, 1,061 were placed and 26 went on to higher studies",
+      "Median B.Tech salary of ₹18 lakh (2024-25 graduates)",
+      "Placement rate above 90% for each of the last three batches (NIRF 2026 data)"
+    ],
+    cons: [
+      "Fee amounts weren't on the pages checked, so confirm them during admission"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT (BHU) Varanasi website (Hostels) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "IIT Palakkad", slug: "iit-palakkad", city: "Palakkad", state: "Kerala",
     type: "IIT", ownership: "Government", established: 2015, website: "https://iitpkd.ac.in",
-    overview: "Rapidly growing new IIT with modern infrastructure.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 3500, maxRank: 8000,
-    fees: 200000, placementRate: 80, averagePackage: 12.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Palakkad website (iitpkd.ac.in: About, Hostels) + IIT Palakkad NIRF 2025 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/iit-palakkad-on-dark.png", campusAcres: 504,
+    overview: "IIT Palakkad was established in 2015, starting with 120 students in July 2015 and growing to about 1,700. It sits at the Palakkad Gap in the Western Ghats, the northern gateway to Kerala, near the Silent Valley rainforests. It completed its move to its permanent Nila and Sahyadri campuses at the foothills of the Sahyadri range in 2023; the Sahyadri campus alone covers 504 acres. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 67, medianPackage: 12.0,
+    hostelAvailable: true,
+    facilities: [
+      "Six hostels: four on the Nila campus and two on the Sahyadri campus",
+      "Rooms are double, triple or quadruple sharing on Nila; single, triple or quadruple on Sahyadri",
+      "Hostels have water heaters, RO drinking water, washing machines, Wi-Fi and LAN, a dining hall, games area and fitness centre",
+      "Saraswati academic block with a 2,000-seat classroom complex, Central Fabrication Facility and research complex",
+      "Institute clinic, amenity centre, Csquare innovation lab and eateries including Kaapi and an Amul outlet",
+      "Shuttle between the two campuses"
+    ],
+    campusLife: [
+      "Green campus at the foot of the Western Ghats, near the Silent Valley rainforests",
+      "Separate messes on both campuses plus campus cafés",
+      "Guest rooms for visiting family"
+    ],
+    sports: [
+      "On-campus football, volleyball, basketball and table tennis",
+      "Professional coaches for athletics, football, volleyball and cricket",
+      "Badminton at the 4GB Badminton Academy in Palakkad"
+    ],
+    pros: [
+      "Of 156 B.Tech students graduating in 2023-24, 105 were placed and 16 went on to higher studies",
+      "Median B.Tech salary of ₹12 lakh (2023-24 graduates)",
+      "Brand-new permanent campus with modern labs and coaching for several sports"
+    ],
+    cons: [
+      "Most rooms are shared, often by three or four students",
+      "Two separate campuses connected by shuttle",
+      "Fee amounts weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Palakkad website (About, Hostels) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "IIT Tirupati", slug: "iit-tirupati", city: "Tirupati", state: "Andhra Pradesh",
@@ -1245,10 +1325,37 @@ export const colleges: CollegeSeed[] = [
   {
     name: "IIT Dharwad", slug: "iit-dharwad", city: "Dharwad", state: "Karnataka",
     type: "IIT", ownership: "Government", established: 2016, website: "https://www.iitdh.ac.in",
-    overview: "New IIT mentored by IIT Bombay with promising growth.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 4000, maxRank: 9500,
-    fees: 200000, placementRate: 77, averagePackage: 10.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Dharwad website (iitdh.ac.in: About, Programmes) + IIT Dharwad NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/iit-dharwad.png",
+    overview: "IIT Dharwad is one of the newer IITs, in Dharwad, Karnataka. It offers B.Tech programmes in Computer Science & Engineering, Electrical Engineering, Chemical & Biochemical Engineering, Civil & Infrastructure Engineering and more, plus interdisciplinary BS degrees in mathematics and physics, M.Sc., M.Tech and PhD. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 69, medianPackage: 13.25,
+    hostelAvailable: true,
+    facilities: [
+      "Departments of Computer Science & Engineering, Electrical, Electronics & Communication, Mechanical, Materials & Aerospace, Chemical, and Civil & Infrastructure Engineering",
+      "Hostels with resident wardens",
+      "Crèche facility on campus"
+    ],
+    campusLife: [
+      "Orientation programmes on sports, physical fitness and holistic development",
+      "Interdisciplinary BS programmes alongside B.Tech"
+    ],
+    pros: [
+      "Of 159 B.Tech students graduating in 2024-25, 110 were placed and 31 went on to higher studies",
+      "Median B.Tech salary of ₹13.25 lakh (2024-25 graduates)",
+      "Small batches at a newer IIT"
+    ],
+    cons: [
+      "Placement rate was 62%–69% over the last three batches, so check the numbers for your branch",
+      "Fee amounts weren't on the pages checked"
+    ],
+    courses: [
+      { name: "B.Tech Computer Science & Engineering", duration: "4 years" },
+      { name: "B.Tech Electrical Engineering", duration: "4 years" },
+      { name: "B.Tech Chemical & Biochemical Engineering", duration: "4 years" },
+      { name: "B.Tech Civil & Infrastructure Engineering", duration: "4 years" },
+      { name: "BS Interdisciplinary Sciences (Mathematics / Physics major)", duration: "4 years" }
+    ],
+    sourceNote: "From the official IIT Dharwad website (About, Programmes) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   }
 ];
