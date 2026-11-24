@@ -925,20 +925,63 @@ export const colleges: CollegeSeed[] = [
   {
     name: "NIT Nagaland", slug: "nit-nagaland", city: "Chumukedima", state: "Nagaland",
     type: "NIT", ownership: "Government", established: 2009, website: "https://www.nitnagaland.ac.in",
-    overview: "Provides quality technical education in Nagaland.",
-    course: "B.Tech EIE", exam: "JEE", minRank: 28000, maxRank: 52000,
-    fees: 135000, placementRate: 66, averagePackage: 6.8,
-    courses: [{ name: "B.Tech EIE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official NIT Nagaland website (nitnagaland.ac.in: Hostels, Medical). Checked 25 Nov 2026.
+    logo: "/logos/nit-nagaland.png",
+    overview: "NIT Nagaland is a National Institute of Technology at Chumukedima, Nagaland. It is a small, residential campus whose hostels are named after the mountains of the region, with separate hostels for first-year students. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Six hostels on campus: four 64-seat boys' hostels, a 56-seat girls' hostel and a new 32-seat PG boys' hostel",
+      "Patkai A, B and C hostels are only for first-year students",
+      "Medical centre with doctors on rotation, equipped like a district primary health centre",
+      "Library, data centre, bank & ATM and post office on campus"
+    ],
+    campusLife: [
+      "Hostels named after local peaks: Saramati (Nagaland's highest), Patkai, Japfu, Dzukou and Zanibu",
+      "First, second and third, and final-year students live in separate hostels",
+      "Student sports activities and a placement cell"
+    ],
+    pros: [
+      "Dedicated hostels for first-year students",
+      "Small hostels of 32–64 students each"
+    ],
+    cons: [
+      "Very small campus with limited hostel capacity",
+      "Placement figures, fees and NIRF data weren't readable (the website was intermittently unavailable)"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official NIT Nagaland website (Hostels, Medical). Its website was intermittently unavailable, so placement figures, fees and NIRF data weren't checked."
   },
   {
     name: "IIT Bhubaneswar", slug: "iit-bhubaneswar", city: "Bhubaneswar", state: "Odisha",
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitbbs.ac.in",
-    overview: "Well-established newer IIT with a massive campus.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 3000, maxRank: 8000,
-    fees: 215000, placementRate: 83, averagePackage: 15.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Bhubaneswar website (iitbbs.ac.in: About, About Campus) + IIT Bhubaneswar NIRF 2026 Engineering data. Checked 25 Nov 2026.
+    logo: "/logos/iit-bhubaneswar.png", campusAcres: 936,
+    overview: "IIT Bhubaneswar came into existence on 22 July 2008. After starting in two transit campuses in Bhubaneswar, it moved to its permanent 936-acre campus at the foot of the historic Barunei Hill, which has academic and residential areas plus space for training centres and a research park. Its vision is to be globally recognised for outstanding graduates and new knowledge. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 77, medianPackage: 13.3,
+    hostelAvailable: true,
+    facilities: [
+      "936-acre permanent campus with academic, residential, training-centre and research-park areas",
+      "Central Research Instrumentation Facility (CRIF)",
+      "Career Development Centre for placements and internships",
+      "Campus transport service"
+    ],
+    campusLife: [
+      "Green, pollution-free campus with a planting programme since 2015 (fruit, flower, medicinal and pine trees)",
+      "Focus on cross-discipline work, innovation, design and entrepreneurship"
+    ],
+    pros: [
+      "Of 315 B.Tech students graduating in 2024-25, 243 were placed and 50 went on to higher studies",
+      "Median B.Tech salary of ₹13.3 lakh (2024-25 graduates)",
+      "Very large 936-acre campus"
+    ],
+    cons: [
+      "Median salary has fallen over the last three batches (₹15.98 lakh → ₹14 lakh → ₹13.3 lakh)",
+      "Fee amounts and hostel details weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Bhubaneswar website (About, About Campus) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not in these sources."
   },
   {
     name: "NIT Jalandhar", slug: "nit-jalandhar", city: "Jalandhar", state: "Punjab",
@@ -990,11 +1033,33 @@ export const colleges: CollegeSeed[] = [
   {
     name: "NIT Sikkim", slug: "nit-sikkim", city: "Ravangla", state: "Sikkim",
     type: "NIT", ownership: "Government", established: 2010, website: "https://nitsikkim.ac.in",
-    overview: "Beautiful campus setting with a growing academic profile.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 22000, maxRank: 48000,
-    fees: 140000, placementRate: 70, averagePackage: 7.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official NIT Sikkim website (nitsikkim.ac.in: Campus, Information). Checked 25 Nov 2026.
+    logo: "/logos/nit-sikkim.png",
+    overview: "NIT Sikkim is an Institute of National Importance under the Ministry of Education. It currently runs from a temporary campus at Ravangla, South Sikkim, next to the Jawahar Navodaya Vidyalaya campus, while its permanent campus at Khamdong is under construction. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Temporary campus at Ravangla: 16 three-storey blocks of furnished 2-bedroom apartments used as boys' and girls' hostels and staff housing",
+      "Academic building with classrooms and computer rooms, and an administrative building",
+      "SBI branch, post office and an army hospital within 2.5 km",
+      "Permanent campus at Khamdong under construction"
+    ],
+    campusLife: [
+      "Small hill-town campus in the Himalayas",
+      "Departments include Electrical & Electronics and Electronics & Communication Engineering"
+    ],
+    sports: ["Common playground for outdoor games"],
+    pros: [
+      "Institute of National Importance",
+      "Students live in furnished apartments rather than large dormitories"
+    ],
+    cons: [
+      "Still on a temporary campus with limited facilities; the permanent campus isn't finished",
+      "Remote location in Ravangla",
+      "Placement figures, fees and NIRF data weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official NIT Sikkim website (Campus, Information). Parts of the campus description may be out of date. Placement figures, fees and NIRF data weren't on the pages checked."
   },
   {
     // Source: official IIT Madras website (iitm.ac.in) + IIT Madras NIRF 2026 Engineering data submission.
