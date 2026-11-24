@@ -74,7 +74,7 @@ function CompareTray() {
   if (items.length === 0 || pathname === '/compare') return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 px-3 pb-3 sm:px-4 sm:pb-4">
+    <aside aria-label="Colleges selected for comparison" className="fixed inset-x-0 bottom-0 z-30 px-3 pb-3 sm:px-4 sm:pb-4">
       <div className="mx-auto flex max-w-3xl animate-fade-up items-center gap-3 rounded-2xl border border-line bg-surface/95 p-3 shadow-lift backdrop-blur">
         <div className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto">
           {items.map(item => (
@@ -95,6 +95,6 @@ function CompareTray() {
           <span className="btn-primary shrink-0 opacity-50">Compare</span>
         )}
       </div>
-    </div>
+    </aside>
   );
 }

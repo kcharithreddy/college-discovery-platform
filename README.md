@@ -182,6 +182,10 @@ College data lives in [`apps/api/prisma/data/colleges.ts`](apps/api/prisma/data/
 
 > Upgrading an existing database: migration `1_college_details` clears the old sample colleges, their seeded reviews and saved lists, then `npm run seed` reloads them in the new format.
 
+## Security
+
+See [SECURITY.md](SECURITY.md) for how user data is protected, the defences against common attacks, and the checklist to follow before deploying.
+
 ## Known limitations
 
 - Mobile OTP codes are stored in memory and no SMS provider is wired up yet. Demo mode is for development only.

@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { requireAuth, AuthRequest } from '../middleware/auth';
 import { prisma } from '../prisma';
 import { asyncHandler } from '../utils';
+import { writeLimiter } from '../security';
 
 const router = Router();
 
@@ -71,7 +72,7 @@ router.get('/filters', asyncHandler(async (_req, res) => {
   res.json({
     states: unique(colleges.map(c => c.state)),
     types: unique(colleges.map(c => c.type)),
-    exams: unique(colleges.map(c => c.exam)),
+    exams: unique(colleges.map(c => c.exam)).filter(exam => exam !== 'See official website'),
     courses: courses.map(c => c.name)
   });
 }));
@@ -145,7 +146,7 @@ const reviewSchema = z.object({
 });
 
 // A logged-in student writes (or updates) their own review of a college.
-router.post('/:id/reviews', requireAuth, asyncHandler(async (req, res) => {
+router.post('/:id/reviews', requireAuth, writeLimiter, asyncHandler(async (req, res) => {
   const userId = (req as AuthRequest).userId!;
   const parsed = reviewSchema.safeParse(req.body);
   if (!parsed.success) {

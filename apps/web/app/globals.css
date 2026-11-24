@@ -14,7 +14,7 @@
     --line: 226 231 240;
     --ink: 15 23 42;
     --sub: 71 85 105;
-    --faint: 120 133 155;
+    --faint: 96 108 129; /* ≥4.5:1 on page, surface and muted (WCAG AA for small text) */
     color-scheme: light;
   }
 
@@ -25,7 +25,7 @@
     --line: 38 47 70;
     --ink: 236 240 247;
     --sub: 168 179 199;
-    --faint: 120 133 158;
+    --faint: 138 150 174; /* ≥4.5:1 on page, surface and muted */
     color-scheme: dark;
   }
 
@@ -48,6 +48,23 @@
 
   input, select, textarea {
     @apply text-ink;
+  }
+
+  /* Dropdown option lists are drawn by the browser/OS. Without an explicit
+     background they can render white while inheriting light dark-mode text,
+     which makes the options unreadable. */
+  option, optgroup {
+    background-color: rgb(var(--surface));
+    color: rgb(var(--ink));
+  }
+
+  /* Stop browser autofill from painting inputs white with dark text in dark mode. */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgb(var(--ink));
+    box-shadow: 0 0 0 1000px rgb(var(--surface)) inset;
+    caret-color: rgb(var(--ink));
   }
 
   @media (prefers-reduced-motion: reduce) {

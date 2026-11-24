@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { requireAuth, AuthRequest } from '../middleware/auth';
 import { prisma } from '../prisma';
 import { asyncHandler } from '../utils';
+import { writeLimiter } from '../security';
 
 const router = Router();
 router.use(requireAuth);
@@ -16,7 +17,7 @@ router.get('/', asyncHandler(async (req, res) => {
   res.json(saved.map(s => s.college));
 }));
 
-router.post('/:collegeId', asyncHandler(async (req, res) => {
+router.post('/:collegeId', writeLimiter, asyncHandler(async (req, res) => {
   const authReq = req as AuthRequest;
   const college = await prisma.college.findUnique({ where: { id: req.params.collegeId } });
   if (!college) {
@@ -32,7 +33,7 @@ router.post('/:collegeId', asyncHandler(async (req, res) => {
   res.status(201).json({ message: 'College saved' });
 }));
 
-router.delete('/:collegeId', asyncHandler(async (req, res) => {
+router.delete('/:collegeId', writeLimiter, asyncHandler(async (req, res) => {
   const authReq = req as AuthRequest;
   await prisma.savedCollege.deleteMany({ where: { userId: authReq.userId!, collegeId: req.params.collegeId } });
   res.json({ message: 'College removed from saved list' });

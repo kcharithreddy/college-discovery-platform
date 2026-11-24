@@ -61,9 +61,13 @@ export function buildBeforeYouJoin(college: College): Faq[] {
   return faqs;
 }
 
+/** Used as `exam` when the official pages we could read did not name the entrance test. */
+const OFFICIAL_SITE = 'See official website';
+
 function admissionRoute(college: College) {
   if (college.type === 'IIT') return 'Admission to IITs is through JEE Advanced, followed by JoSAA counselling.';
   if (college.type === 'NIT' || college.type === 'IIIT') return 'Admission is through JEE Main, followed by JoSAA/CSAB counselling.';
+  if (college.exam === OFFICIAL_SITE) return 'Check the official website for the admission process and entrance test.';
   return `Admission is through ${college.exam}.`;
 }
 

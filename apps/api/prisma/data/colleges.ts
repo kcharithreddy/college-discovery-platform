@@ -47,13 +47,17 @@ const UNVERIFIED = 'Fees, placement and cutoff figures are sample values and hav
 export const colleges: CollegeSeed[] = [
   {
     name: "IIT Delhi", slug: "iit-delhi", city: "New Delhi", state: "Delhi",
+    nirfRank: 2, nirfScore: 85.74, nirfYear: 2025,
     // Source: official IIT Delhi website (home.iitd.ac.in: About, Why IIT Delhi, Facilities). Checked 24 Nov 2026.
     type: "IIT", ownership: "Government", established: 1961, website: "https://home.iitd.ac.in",
     logo: "/logos/iit-delhi.png",
     overview: "IIT Delhi began in 1961 as a College of Engineering set up with the help of the UK government. It was declared an Institution of National Importance under the Institutes of Technology (Amendment) Act, 1963, renamed Indian Institute of Technology Delhi, and made a deemed university that sets its own academic policy and awards its own degrees. More than 15,700 students have graduated from it with a B.Tech, and nearly 5,070 with a PhD.",
     course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 75, medianPackage: 19.08,
     hostelAvailable: true,
     facilities: [
+      "677 faculty members and 2,866 full-time PhD scholars (NIRF 2025 data)",
+      "₹367 crore of sponsored research across 1,006 projects in 2023-24",
       "Central Research Facility and Nanoscale Research Facility",
       "Central Workshop and DAILAB",
       "High Performance Computing facility",
@@ -64,19 +68,22 @@ export const colleges: CollegeSeed[] = [
       "Board for Student Welfare with student counselling services"
     ],
     pros: [
+      "Of 946 B.Tech students graduating in 2023-24, 711 were placed and 49 went on to higher studies",
+      "Median B.Tech salary of ₹19.08 lakh (2023-24 graduates)",
       "More than 15,700 B.Tech graduates and nearly 5,070 PhDs since it started",
       "Research facilities for nanoscale work and high-performance computing on campus",
       "Located in the national capital"
     ],
     cons: [
-      "Fees, placement figures and hostel details are on separate IIT Delhi sites, so check them during admission"
+      "Fees and hostel details are on separate IIT Delhi sites, so check them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Delhi website (About, Why IIT Delhi, Facilities). Fees, placements, NIRF rank, hostel and sports details were not on these pages."
+    sourceNote: "From the official IIT Delhi website (About, Why IIT Delhi, Facilities) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees, hostel and sports details were not in these sources. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     // Source: official IIT Bombay website (iitb.ac.in) + IIT Bombay NIRF 2026 Engineering data submission. Checked 24 Nov 2026.
     name: "IIT Bombay", slug: "iit-bombay", city: "Mumbai", state: "Maharashtra",
+    nirfRank: 3, nirfScore: 83.65, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 1958, website: "https://www.iitb.ac.in",
     logo: "/logos/iit-bombay.png", campusAcres: 494,
     overview: "Established in 1958 with support from UNESCO and the government of the USSR, IIT Bombay was declared an Institution of National Importance by an Act of Parliament in 1961. It is a fully residential campus of 200 hectares in Powai, Mumbai, with 17 academic departments plus schools of design, management and entrepreneurship. Undergraduate entry is through JEE (Advanced).",
@@ -84,6 +91,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 72, medianPackage: 20.21,
     hostelAvailable: true,
     facilities: [
+      "792 faculty members and 3,523 full-time PhD scholars (NIRF 2025 data)",
+      "₹592 crore of sponsored research across 1,572 projects in 2023-24",
       "Fully residential campus with hostels, dining, sports and recreational facilities",
       "On-campus hospital, cafeterias and e-buggies for getting around",
       "Central Library and a Student Wellness Centre",
@@ -116,10 +125,11 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts are published on the academic website, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Bombay website (About, Why IITB, Sports, Academic units) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees, NIRF rank and the full programme list were not on these pages."
+    sourceNote: "From the official IIT Bombay website (About, Why IITB, Sports, Academic units) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and the full programme list were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Tiruchirappalli", slug: "nit-trichy", city: "Tiruchirappalli", state: "Tamil Nadu",
+    nirfRank: 9, nirfScore: 68.14, nirfYear: 2025,
     // Source: official NIT Trichy website (nitt.edu) + NIT Trichy NIRF 2026 Engineering data submission. Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1964, website: "https://www.nitt.edu",
     logo: "/logos/nit-trichy.jpg",
@@ -162,10 +172,11 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Production Engineering", duration: "4 years" },
       { name: "B.Arch", duration: "5 years" }
     ],
-    sourceNote: "From the official NIT Trichy website (About, At a Glance, Programmes, Hostels, Hospital, Library) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official NIT Trichy website (About, At a Glance, Programmes, Hostels, Hospital, Library) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "BITS Pilani", slug: "bits-pilani", city: "Pilani", state: "Rajasthan",
+    nirfRank: 11, nirfScore: 67.02, nirfYear: 2025,
     // Source: official BITS Pilani website (bits-pilani.ac.in) + BITS NIRF 2025 Engineering data submission. Checked 24 Nov 2026.
     type: "Deemed University", ownership: "Private", established: 1964, website: "https://www.bits-pilani.ac.in",
     logo: "/logos/bits-pilani.webp", campusAcres: 328,
@@ -195,10 +206,11 @@ export const colleges: CollegeSeed[] = [
       "Placement figures cover all BITS campuses together, not Pilani alone"
     ],
     courses: [{ name: "B.E. Computer Science", duration: "4 years" }],
-    sourceNote: "From the official BITS Pilani website (About, Legacy) and its NIRF 2025 Engineering data submission, which covers all BITS campuses. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official BITS Pilani website (About, Legacy) and its NIRF 2025 Engineering data submission, which covers all BITS campuses. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "VIT Vellore", slug: "vit-vellore", city: "Vellore", state: "Tamil Nadu",
+    nirfRank: 16, nirfScore: 65.25, nirfYear: 2025,
     // Source: official VIT website (vit.ac.in) + VIT NIRF 2026 Engineering data submission. Checked 24 Nov 2026.
     type: "Deemed University", ownership: "Private", established: 1984, website: "https://vit.ac.in",
     logo: "/logos/vit-vellore-on-dark.webp", campusAcres: 372,
@@ -229,10 +241,11 @@ export const colleges: CollegeSeed[] = [
       "Private university fees, so confirm the fee category you'll be placed in"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official VIT website (About, Infrastructure) and its NIRF 2026 Engineering data submission for the Vellore campus. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official VIT website (About, Infrastructure) and its NIRF 2026 Engineering data submission for the Vellore campus. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "SRM Institute of Science and Technology", slug: "srm-institute", city: "Chennai", state: "Tamil Nadu",
+    nirfRank: 14, nirfScore: 65.83, nirfYear: 2025,
     // Source: official SRMIST website (srmist.edu.in: Life at SRM, Sports, Clubs, Facilities). Checked 24 Nov 2026.
     type: "Deemed University", ownership: "Private", established: 1985, website: "https://www.srmist.edu.in",
     overview: "SRM Institute of Science and Technology is a private university in Chennai that describes itself as a green campus built for research and learning, with students and faculty from across India and abroad. Life on campus covers cultural activities, sports, fine arts and entrepreneurship, and the university has a Directorate of Sports with sports-quota admissions. Admission to B.Tech is through SRMJEEE.",
@@ -268,10 +281,11 @@ export const colleges: CollegeSeed[] = [
       "Private university fees"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official SRMIST website (Life at SRM, Sports, Clubs, Facilities & Operations). SRM's NIRF data, fees and placement figures are on a separate file site that wasn't checked, so they're shown as not available."
+    sourceNote: "From the official SRMIST website (Life at SRM, Sports, Clubs, Facilities & Operations). SRM's Fees and placement figures are on a separate file site that wasn't checked, so they're shown as not available. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "Manipal Institute of Technology", slug: "mit-manipal", city: "Manipal", state: "Karnataka",
+    nirfRank: 59, nirfScore: 52.55, nirfYear: 2025,
     // Source: official MAHE website (manipal.edu/mit-manipal). Checked 24 Nov 2026.
     // Logo: the parent university's (MAHE) logo, as shown in the site header.
     type: "Deemed University", ownership: "Private", established: 1957, website: "https://www.manipal.edu/mit-manipal",
@@ -301,10 +315,11 @@ export const colleges: CollegeSeed[] = [
       "Placement figures weren't available on the pages checked"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official MAHE website (MIT Manipal page). The logo shown is MAHE's. NIRF data, fees and placement figures weren't available on the pages checked."
+    sourceNote: "From the official MAHE website (MIT Manipal page). The logo shown is MAHE's. Fees and placement figures weren't available on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "Delhi Technological University", slug: "dtu-delhi", city: "New Delhi", state: "Delhi",
+    nirfRank: 30, nirfScore: 60.85, nirfYear: 2025,
     type: "State University", ownership: "Government", established: 1941, website: "https://dtu.ac.in",
     overview: "Strong government university with good placements and NCR industry exposure.",
     course: "B.Tech Mechanical", exam: "JEE", minRank: 1000, maxRank: 12000,
@@ -314,6 +329,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "Anna University", slug: "anna-university", city: "Chennai", state: "Tamil Nadu",
+    nirfRank: 20, nirfScore: 63.51, nirfYear: 2025,
     // Source: official Anna University website (annauniv.edu: University Profile, Sports Board, CEG fee structure 2025-26)
     // + Anna University NIRF 2026 Engineering data submission. Checked 24 Nov 2026.
     type: "State University", ownership: "Government", established: 1978, website: "https://www.annauniv.edu",
@@ -350,7 +366,7 @@ export const colleges: CollegeSeed[] = [
       "Hostel admission is handled separately through the CEG hostel portal"
     ],
     courses: [{ name: "B.E. / B.Tech (Regular & Self Supporting)", duration: "4 years", fees: 30400 }],
-    sourceNote: "From the official Anna University website (University Profile, Sports Board, CEG B.E./B.Tech fee structure 2025-26) and its NIRF 2026 Engineering data submission. Fees = semester fees × 2 for the CEG regular programme, general category, excluding about ₹16,800 of one-time fees and deposits. Placement % = students placed ÷ students graduating."
+    sourceNote: "From the official Anna University website (University Profile, Sports Board, CEG B.E./B.Tech fee structure 2025-26) and its NIRF 2026 Engineering data submission. Fees = semester fees × 2 for the CEG regular programme, general category, excluding about ₹16,800 of one-time fees and deposits. Placement % = students placed ÷ students graduating. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "PES University", slug: "pes-university", city: "Bengaluru", state: "Karnataka",
@@ -387,10 +403,11 @@ export const colleges: CollegeSeed[] = [
       "Private university fees, so confirm the current fee structure"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official PES University website (About, History, Campus Life, Hostel, Sports) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official PES University website (About, History, Campus Life, Hostel, Sports) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages, and it is not in the NIRF 2025 Engineering top 100."
   },
   {
     name: "Amity University", slug: "amity-university", city: "Noida", state: "Uttar Pradesh",
+    nirfRank: 37, nirfScore: 58.53, nirfYear: 2025,
     // Source: official Amity University website (amity.edu: About, Hostel, Sports, Library). Checked 24 Nov 2026.
     type: "Private University", ownership: "Private", established: 2005, website: "https://www.amity.edu",
     logo: "/logos/amity-university.png",
@@ -420,10 +437,11 @@ export const colleges: CollegeSeed[] = [
       "Fees and placement figures weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official Amity University website (About, Hostel, Sports facilities, Library). NIRF data, fees and placement figures weren't on the pages checked."
+    sourceNote: "From the official Amity University website (About, Hostel, Sports facilities, Library). Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "COEP Technological University", slug: "coep-pune", city: "Pune", state: "Maharashtra",
+    nirfRank: 90, nirfScore: 47.31, nirfYear: 2025,
     // Source: official COEP Tech website (coeptech.ac.in: About the University). Checked 24 Nov 2026.
     type: "State University", ownership: "Government", established: 1854, website: "https://www.coeptech.ac.in",
     logo: "/logos/coep-pune.svg",
@@ -450,7 +468,7 @@ export const colleges: CollegeSeed[] = [
       "Fees, placement figures and hostel details weren't on the pages checked, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official COEP Technological University website (About the University). NIRF data, fees, placements and hostel details weren't on the pages checked."
+    sourceNote: "From the official COEP Technological University website (About the University). Fees, placements and hostel details weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Andhra Pradesh", slug: "nit-andhra", city: "Tadepalligudem", state: "Andhra Pradesh",
@@ -473,6 +491,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Guwahati", slug: "iit-guwahati", city: "Guwahati", state: "Assam",
+    nirfRank: 8, nirfScore: 72.24, nirfYear: 2025,
     // Source: official IIT Guwahati website (iitg.ac.in: About, Campus Life) + IIT Guwahati NIRF 2026 Engineering data. Checked 24 Nov 2026.
     type: "IIT", ownership: "Government", established: 1994, website: "https://www.iitg.ac.in",
     logo: "/logos/iit-guwahati.jpg", campusAcres: 704,
@@ -511,11 +530,12 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Guwahati website (About, Campus Life) and its NIRF 2026 Engineering data submission. Campus size converted from 285 hectares. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Guwahati website (About, Campus Life) and its NIRF 2026 Engineering data submission. Campus size converted from 285 hectares. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     // Source: official IIT Patna website (iitp.ac.in: About, History, Campus Life, Hostels). Checked 24 Nov 2026.
     name: "IIT Patna", slug: "iit-patna", city: "Bihta", state: "Bihar",
+    nirfRank: 19, nirfScore: 64.52, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitp.ac.in",
     logo: "/logos/iit-patna.png",
     overview: "IIT Patna is one of the newer IITs, established by an Act of Parliament on 6 August 2008. Its campus is at Bihta on the banks of the Ganges, about 40 km from Patna. It has ten departments, including Computer Science & Engineering, Electrical, Mechanical, Chemical & Biochemical, Civil & Environmental and Materials Science & Engineering, and offers B.Tech, M.Tech and PhD programmes. Undergraduate entry is through JEE (Advanced).",
@@ -550,10 +570,11 @@ export const colleges: CollegeSeed[] = [
       "Placement figures and fees weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Patna website (About, History, Campus Life, Hostels). NIRF data, fees and placement figures weren't on the pages checked."
+    sourceNote: "From the official IIT Patna website (About, History, Campus Life, Hostels). Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Raipur", slug: "nit-raipur", city: "Raipur", state: "Chhattisgarh",
+    nirfRank: 86, nirfScore: 47.59, nirfYear: 2025,
     type: "NIT", ownership: "Government", established: 1956, website: "https://nitrr.ac.in",
     overview: "Established institute with strong regional presence.",
     course: "B.Tech IT", exam: "JEE", minRank: 15000, maxRank: 35000,
@@ -599,6 +620,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Gandhinagar", slug: "iit-gandhinagar", city: "Gandhinagar", state: "Gujarat",
+    nirfRank: 25, nirfScore: 62.31, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://iitgn.ac.in",
     overview: "Innovative curriculum and excellent facilities.",
     course: "B.Tech Mechanical", exam: "JEE", minRank: 3000, maxRank: 7000,
@@ -608,6 +630,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "NIT Kurukshetra", slug: "nit-kurukshetra", city: "Kurukshetra", state: "Haryana",
+    nirfRank: 85, nirfScore: 47.98, nirfYear: 2025,
     // Source: official NIT Kurukshetra website (nitkkr.ac.in: Campus & Infrastructure, Sports, Computer Engg)
     // + NIT Kurukshetra NIRF 2025 Engineering data submission. Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1963, website: "https://nitkkr.ac.in",
@@ -650,10 +673,11 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Information Technology", duration: "4 years" },
       { name: "B.Tech Artificial Intelligence & Machine Learning", duration: "4 years" }
     ],
-    sourceNote: "From the official NIT Kurukshetra website (Campus & Infrastructure, Sports Section, Computer Engineering department) and its NIRF 2025 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official NIT Kurukshetra website (Campus & Infrastructure, Sports Section, Computer Engineering department) and its NIRF 2025 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Mandi", slug: "iit-mandi", city: "Mandi", state: "Himachal Pradesh",
+    nirfRank: 26, nirfScore: 62.08, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2009, website: "https://www.iitmandi.ac.in",
     // Source: official IIT Mandi website (iitmandi.ac.in: About, Sports) + IIT Mandi NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-mandi.png",
@@ -684,10 +708,11 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Mandi website (About, Sports Facilities) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Mandi website (About, Sports Facilities) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT (ISM) Dhanbad", slug: "iit-dhanbad", city: "Dhanbad", state: "Jharkhand",
+    nirfRank: 15, nirfScore: 65.37, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 1926, website: "https://www.iitism.ac.in",
     // Source: official IIT (ISM) Dhanbad website (iitism.ac.in: History) + IIT (ISM) NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-dhanbad-on-dark.png",
@@ -716,10 +741,11 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Computer Science and Engineering", duration: "4 years" },
       { name: "B.Tech Mining Engineering", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT (ISM) Dhanbad website (History) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT (ISM) Dhanbad website (History) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NITK Surathkal", slug: "nitk-surathkal", city: "Mangaluru", state: "Karnataka",
+    nirfRank: 17, nirfScore: 64.59, nirfYear: 2025,
     // Source: official NITK website (nitk.ac.in: About Us) + NITK NIRF 2023 Engineering data (latest on its site). Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1960, website: "https://www.nitk.ac.in",
     logo: "/logos/nitk-surathkal.png",
@@ -749,10 +775,11 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NITK website (About Us) and its NIRF 2023 Engineering data submission, the latest on its site (covers students graduating in 2021-22). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official NITK website (About Us) and its NIRF 2023 Engineering data submission, the latest on its site (covers students graduating in 2021-22). Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Calicut", slug: "nit-calicut", city: "Kozhikode", state: "Kerala",
+    nirfRank: 21, nirfScore: 63.05, nirfYear: 2025,
     // Source: official NIT Calicut website (nitc.ac.in: About, Hostels, Tathva, news) + NITC NIRF 2026 Engineering data. Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1961, website: "https://nitc.ac.in",
     logo: "/logos/nit-calicut.svg", campusAcres: 297,
@@ -789,10 +816,11 @@ export const colleges: CollegeSeed[] = [
       "Some boys' hostels have three or four students per room"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NIT Calicut website (About, Hostels, Tathva, campus news) and its NIRF 2026 Engineering data submission. Campus size converted from about 120 hectares. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official NIT Calicut website (About, Hostels, Tathva, campus news) and its NIRF 2026 Engineering data submission. Campus size converted from about 120 hectares. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Indore", slug: "iit-indore", city: "Indore", state: "Madhya Pradesh",
+    nirfRank: 12, nirfScore: 66.65, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2009, website: "https://www.iiti.ac.in",
     // Source: official IIT Indore website (iiti.ac.in: About). Checked 24 Nov 2026.
     logo: "/logos/iit-indore.png", campusAcres: 501,
@@ -819,10 +847,11 @@ export const colleges: CollegeSeed[] = [
       "Placement figures and fees are on separate IIT Indore sites that weren't checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Indore website (About). NIRF data, fees, placements and hostel details are on separate sites that weren't checked."
+    sourceNote: "From the official IIT Indore website (About). Fees, placements and hostel details are on separate sites that weren't checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "VNIT Nagpur", slug: "vnit-nagpur", city: "Nagpur", state: "Maharashtra",
+    nirfRank: 44, nirfScore: 56.58, nirfYear: 2025,
     // Source: official VNIT website (vnit.ac.in: History, Hostel, Sports). Checked 24 Nov 2026.
     type: "NIT", ownership: "Government", established: 1960, website: "https://vnit.ac.in",
     logo: "/logos/vnit-nagpur.png", campusAcres: 214,
@@ -852,7 +881,7 @@ export const colleges: CollegeSeed[] = [
       "Placement figures and fees weren't published on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official VNIT Nagpur website (History, Hostel, Sports). NIRF data, fees and placement figures weren't on the pages checked."
+    sourceNote: "From the official VNIT Nagpur website (History, Hostel, Sports). Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Manipur", slug: "nit-manipur", city: "Imphal", state: "Manipur",
@@ -865,6 +894,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "NIT Meghalaya", slug: "nit-meghalaya", city: "Sohra", state: "Meghalaya",
+    nirfRank: 83, nirfScore: 48.21, nirfYear: 2025,
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitm.ac.in",
     // Source: official NIT Meghalaya website (nitm.ac.in: About NIT). Checked 24 Nov 2026.
     logo: "/logos/nit-meghalaya.png",
@@ -886,7 +916,7 @@ export const colleges: CollegeSeed[] = [
       "Sohra is a small hill town, so check travel connections"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official NIT Meghalaya website (About NIT). Recent NIRF data, fees and placement figures weren't on the pages checked."
+    sourceNote: "From the official NIT Meghalaya website (About NIT). Recent Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Mizoram", slug: "nit-mizoram", city: "Aizawl", state: "Mizoram",
@@ -913,28 +943,73 @@ export const colleges: CollegeSeed[] = [
       "Hostels and academic blocks are apart, so you depend on institute buses"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official NIT Mizoram website (Hostels, Transportation, Health) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official NIT Mizoram website (Hostels, Transportation, Health) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages, and it is not in the NIRF 2025 Engineering top 100."
   },
   {
     name: "NIT Nagaland", slug: "nit-nagaland", city: "Chumukedima", state: "Nagaland",
     type: "NIT", ownership: "Government", established: 2009, website: "https://www.nitnagaland.ac.in",
-    overview: "Provides quality technical education in Nagaland.",
-    course: "B.Tech EIE", exam: "JEE", minRank: 28000, maxRank: 52000,
-    fees: 135000, placementRate: 66, averagePackage: 6.8,
-    courses: [{ name: "B.Tech EIE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official NIT Nagaland website (nitnagaland.ac.in: Hostels, Medical). Checked 25 Nov 2026.
+    logo: "/logos/nit-nagaland.png",
+    overview: "NIT Nagaland is a National Institute of Technology at Chumukedima, Nagaland. It is a small, residential campus whose hostels are named after the mountains of the region, with separate hostels for first-year students. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Six hostels on campus: four 64-seat boys' hostels, a 56-seat girls' hostel and a new 32-seat PG boys' hostel",
+      "Patkai A, B and C hostels are only for first-year students",
+      "Medical centre with doctors on rotation, equipped like a district primary health centre",
+      "Library, data centre, bank & ATM and post office on campus"
+    ],
+    campusLife: [
+      "Hostels named after local peaks: Saramati (Nagaland's highest), Patkai, Japfu, Dzukou and Zanibu",
+      "First, second and third, and final-year students live in separate hostels",
+      "Student sports activities and a placement cell"
+    ],
+    pros: [
+      "Dedicated hostels for first-year students",
+      "Small hostels of 32–64 students each"
+    ],
+    cons: [
+      "Very small campus with limited hostel capacity",
+      "Placement figures, fees and NIRF data weren't readable (the website was intermittently unavailable)"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official NIT Nagaland website (Hostels, Medical). Its website was intermittently unavailable, so placement figures, fees and NIRF data weren't checked."
   },
   {
     name: "IIT Bhubaneswar", slug: "iit-bhubaneswar", city: "Bhubaneswar", state: "Odisha",
+    nirfRank: 39, nirfScore: 58.22, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitbbs.ac.in",
-    overview: "Well-established newer IIT with a massive campus.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 3000, maxRank: 8000,
-    fees: 215000, placementRate: 83, averagePackage: 15.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Bhubaneswar website (iitbbs.ac.in: About, About Campus) + IIT Bhubaneswar NIRF 2026 Engineering data. Checked 25 Nov 2026.
+    logo: "/logos/iit-bhubaneswar.png", campusAcres: 936,
+    overview: "IIT Bhubaneswar came into existence on 22 July 2008. After starting in two transit campuses in Bhubaneswar, it moved to its permanent 936-acre campus at the foot of the historic Barunei Hill, which has academic and residential areas plus space for training centres and a research park. Its vision is to be globally recognised for outstanding graduates and new knowledge. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 77, medianPackage: 13.3,
+    hostelAvailable: true,
+    facilities: [
+      "936-acre permanent campus with academic, residential, training-centre and research-park areas",
+      "Central Research Instrumentation Facility (CRIF)",
+      "Career Development Centre for placements and internships",
+      "Campus transport service"
+    ],
+    campusLife: [
+      "Green, pollution-free campus with a planting programme since 2015 (fruit, flower, medicinal and pine trees)",
+      "Focus on cross-discipline work, innovation, design and entrepreneurship"
+    ],
+    pros: [
+      "Of 315 B.Tech students graduating in 2024-25, 243 were placed and 50 went on to higher studies",
+      "Median B.Tech salary of ₹13.3 lakh (2024-25 graduates)",
+      "Very large 936-acre campus"
+    ],
+    cons: [
+      "Median salary has fallen over the last three batches (₹15.98 lakh → ₹14 lakh → ₹13.3 lakh)",
+      "Fee amounts and hostel details weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Bhubaneswar website (About, About Campus) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not in these sources. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Jalandhar", slug: "nit-jalandhar", city: "Jalandhar", state: "Punjab",
+    nirfRank: 55, nirfScore: 53.38, nirfYear: 2025,
     type: "NIT", ownership: "Government", established: 1987, website: "https://www.nitj.ac.in",
     logo: "/logos/nit-jalandhar.png",
     overview: "Good infrastructure and placement records.",
@@ -945,6 +1020,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "MNIT Jaipur", slug: "mnit-jaipur", city: "Jaipur", state: "Rajasthan",
+    nirfRank: 42, nirfScore: 57.45, nirfYear: 2025,
     type: "NIT", ownership: "Government", established: 1963, website: "https://www.mnit.ac.in",
     // Source: official MNIT Jaipur website (mnit.ac.in: About MNIT, Sports) + MNIT NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/mnit-jaipur.png", campusAcres: 317,
@@ -978,21 +1054,44 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official MNIT Jaipur website (About MNIT, Sports) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official MNIT Jaipur website (About MNIT, Sports) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Sikkim", slug: "nit-sikkim", city: "Ravangla", state: "Sikkim",
     type: "NIT", ownership: "Government", established: 2010, website: "https://nitsikkim.ac.in",
-    overview: "Beautiful campus setting with a growing academic profile.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 22000, maxRank: 48000,
-    fees: 140000, placementRate: 70, averagePackage: 7.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official NIT Sikkim website (nitsikkim.ac.in: Campus, Information). Checked 25 Nov 2026.
+    logo: "/logos/nit-sikkim.png",
+    overview: "NIT Sikkim is an Institute of National Importance under the Ministry of Education. It currently runs from a temporary campus at Ravangla, South Sikkim, next to the Jawahar Navodaya Vidyalaya campus, while its permanent campus at Khamdong is under construction. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Temporary campus at Ravangla: 16 three-storey blocks of furnished 2-bedroom apartments used as boys' and girls' hostels and staff housing",
+      "Academic building with classrooms and computer rooms, and an administrative building",
+      "SBI branch, post office and an army hospital within 2.5 km",
+      "Permanent campus at Khamdong under construction"
+    ],
+    campusLife: [
+      "Small hill-town campus in the Himalayas",
+      "Departments include Electrical & Electronics and Electronics & Communication Engineering"
+    ],
+    sports: ["Common playground for outdoor games"],
+    pros: [
+      "Institute of National Importance",
+      "Students live in furnished apartments rather than large dormitories"
+    ],
+    cons: [
+      "Still on a temporary campus with limited facilities; the permanent campus isn't finished",
+      "Remote location in Ravangla",
+      "Placement figures, fees and NIRF data weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech", duration: "4 years" }],
+    sourceNote: "From the official NIT Sikkim website (Campus, Information). Parts of the campus description may be out of date. Placement figures, fees and NIRF data weren't on the pages checked."
   },
   {
     // Source: official IIT Madras website (iitm.ac.in) + IIT Madras NIRF 2026 Engineering data submission.
-    // Checked 24 Nov 2026. Fee amounts and the NIRF rank are not published on those pages, so they are left empty.
+    // Checked 24 Nov 2026. Fee amounts are not published on those pages, so they are left empty. NIRF rank: official NIRF 2025 Engineering ranking.
     name: "IIT Madras", slug: "iit-madras", city: "Chennai", state: "Tamil Nadu",
+    nirfRank: 1, nirfScore: 88.72, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 1959, website: "https://www.iitm.ac.in",
     logo: "/logos/iit-madras.png", campusAcres: 630,
     overview: "Set up in 1959 with technical assistance from the West German government and declared an Institute of National Importance in 1961, IIT Madras is a fully residential institute in South Chennai. It has 16 academic departments, nearly 100 laboratories and about 550 faculty, and has been named an Institute of Eminence. Undergraduate entry is through JEE (Main) and JEE (Advanced).",
@@ -1000,6 +1099,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 81, medianPackage: 17.78,
     hostelAvailable: true,
     facilities: [
+      "686 faculty members and 1,798 full-time PhD scholars (NIRF 2025 data)",
+      "₹956 crore of sponsored research across 794 projects in 2023-24",
       "20 hostels named after Indian rivers (15 for men, 5 for women), with internet/LAN in every room",
       "Central Library: five-storey, air-conditioned and Wi-Fi enabled, with 2 million+ books and 1,000+ journal subscriptions",
       "Institute hospital with visiting specialists (including a psychiatrist), lab tests, X-ray, in-patient wards and an ambulance; pharmacy run by Apollo",
@@ -1067,17 +1168,21 @@ export const colleges: CollegeSeed[] = [
       { name: "B.S. Medical Sciences & Engineering", duration: "4 years" },
       { name: "Bachelor of Cyber Security", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Sports, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not published on these pages."
+    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Sports, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not published on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Hyderabad", slug: "iit-hyderabad", city: "Sangareddy", state: "Telangana",
+    nirfRank: 7, nirfScore: 72.31, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iith.ac.in",
     // Source: official IIT Hyderabad website (iith.ac.in: About IITH, Campus Services). Checked 24 Nov 2026.
     logo: "/logos/iit-hyderabad.png",
     overview: "IIT Hyderabad was established in 2008 and says it has consistently ranked among India's top 10 engineering institutes in NIRF. It offers undergraduate programmes in classical engineering, applied sciences, design and interdisciplinary areas, with a strong focus on research, innovation and entrepreneurship, and has a special relationship with Japanese universities and industry. Undergraduate entry is through JEE (Advanced).",
     course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 77, medianPackage: 21.0,
     hostelAvailable: true,
     facilities: [
+      "282 faculty members and 711 full-time PhD scholars (NIRF 2025 data)",
+      "₹129 crore of sponsored research in 2023-24",
       "Every student gets a single room, in hostels with radiant cooling",
       "More than 100 research labs, with new equipment added every year",
       "Library with more than 20,000 books and 10,000 periodicals",
@@ -1092,16 +1197,18 @@ export const colleges: CollegeSeed[] = [
       "Programmes in design and interdisciplinary areas alongside engineering"
     ],
     pros: [
+      "Of 399 B.Tech students graduating in 2023-24, 306 were placed and 37 went on to higher studies",
+      "Median B.Tech salary of ₹21 lakh (2023-24 graduates)",
       "Single rooms for every student",
       "Says it has consistently ranked in NIRF's top 10 for engineering",
       "Strong research culture with 100+ labs"
     ],
     cons: [
       "Limited campus transport; the campus is outside Hyderabad city, near Lingampally",
-      "Placement figures and fees weren't on the pages checked"
+      "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Hyderabad website (About IITH, Campus Services). NIRF data, fees and placement figures weren't on the pages checked."
+    sourceNote: "From the official IIT Hyderabad website (About IITH, Campus Services) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees weren't available. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "NIT Agartala", slug: "nit-agartala", city: "Agartala", state: "Tripura",
@@ -1115,6 +1222,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Kanpur", slug: "iit-kanpur", city: "Kanpur", state: "Uttar Pradesh",
+    nirfRank: 4, nirfScore: 81.82, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 1959, website: "https://www.iitk.ac.in",
     // Source: official IIT Kanpur website (iitk.ac.in: Students) + IIT Kanpur NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-kanpur.png",
@@ -1123,6 +1231,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 71, medianPackage: 21.7,
     hostelAvailable: true,
     facilities: [
+      "579 faculty members and 2,068 full-time PhD scholars (NIRF 2025 data)",
+      "₹225 crore of sponsored research across 1,155 projects in 2023-24",
       "SIDBI Innovation & Incubation Centre (SIIC) for technology startups",
       "Center for Mental Health and Wellbeing offering confidential support",
       "Students' Placement Office run by staff and students"
@@ -1141,16 +1251,20 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Kanpur website (Students) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Kanpur website (Students) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Roorkee", slug: "iit-roorkee", city: "Roorkee", state: "Uttarakhand",
+    nirfRank: 6, nirfScore: 75.44, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 1847, website: "https://www.iitr.ac.in",
     // Source: official IIT Roorkee website (iitr.ac.in: Institute, History). Checked 24 Nov 2026.
     overview: "IIT Roorkee traces its roots to Thomason College, which it describes as the oldest engineering college in India. The college was proposed around 1846 by Colonel Cautley, who was building the Ganges Canal, to James Thomason, Lieutenant-Governor of the North-West Provinces, to train civil engineers for canals, roads and irrigation works across northern India. Today it is an IIT administered through the IIT Council, and undergraduate entry is through JEE (Advanced).",
     course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 70, medianPackage: 17.0,
     hostelAvailable: true,
     facilities: [
+      "601 faculty members and 2,806 full-time PhD scholars (NIRF 2025 data)",
+      "1,054 consultancy projects for 832 client organisations in 2023-24",
       "Historic campus in Roorkee, Uttarakhand, beside the Ganges Canal"
     ],
     campusLife: [
@@ -1158,17 +1272,20 @@ export const colleges: CollegeSeed[] = [
       "International partnerships and exchange initiatives"
     ],
     pros: [
+      "Of 1,102 B.Tech students graduating in 2023-24, 769 were placed and 333 went on to higher studies",
+      "Median B.Tech salary of ₹17 lakh (2023-24 graduates)",
       "Merit-cum-means scholarship for 25% of undergraduate students",
       "One of the oldest engineering institutions in Asia"
     ],
     cons: [
-      "Placement figures, fees and hostel details weren't on the pages checked"
+      "Fees and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Roorkee website (Institute, History). NIRF data, fees, placements and the logo weren't available on the pages checked."
+    sourceNote: "From the official IIT Roorkee website (Institute, History) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees and the logo weren't available. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Kharagpur", slug: "iit-kharagpur", city: "Kharagpur", state: "West Bengal",
+    nirfRank: 5, nirfScore: 78.69, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 1951, website: "https://www.iitkgp.ac.in",
     // Source: official IIT Kharagpur website (iitkgp.ac.in: About) + IIT Kharagpur NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-kharagpur.png",
@@ -1177,6 +1294,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 50, medianPackage: 20.74,
     hostelAvailable: true,
     facilities: [
+      "868 faculty members and 3,409 full-time PhD scholars (NIRF 2025 data)",
+      "₹160 crore of sponsored research across 892 projects in 2023-24",
       "Schools and programmes in engineering, architecture, management and law on one campus",
       "Sponsored research and consultancy across industrial and social areas"
     ],
@@ -1194,10 +1313,11 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Kharagpur website (About) and its NIRF 2026 Engineering data submission (4-year UG programmes). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Kharagpur website (About) and its NIRF 2026 Engineering data submission (4-year UG programmes). Placement % = students placed ÷ students graduating. Fees were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Ropar", slug: "iit-ropar", city: "Rupnagar", state: "Punjab",
+    nirfRank: 32, nirfScore: 59.66, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitrpr.ac.in",
     logo: "/logos/iit-ropar.png",
     overview: "Established IIT with strong research focus and good placements.",
@@ -1208,6 +1328,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Jodhpur", slug: "iit-jodhpur", city: "Jodhpur", state: "Rajasthan",
+    nirfRank: 27, nirfScore: 61.31, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitj.ac.in",
     overview: "Known for multidisciplinary programs and AI advancements.",
     course: "B.Tech CSE", exam: "JEE", minRank: 2500, maxRank: 6000,
@@ -1217,6 +1338,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT (BHU) Varanasi", slug: "iit-bhu", city: "Varanasi", state: "Uttar Pradesh",
+    nirfRank: 10, nirfScore: 67.24, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 1919, website: "https://www.iitbhu.ac.in",
     // Source: official IIT (BHU) website (iitbhu.ac.in: Hostels) + IIT (BHU) NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-bhu.png",
@@ -1244,10 +1366,11 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT (BHU) Varanasi website (Hostels) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT (BHU) Varanasi website (Hostels) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Palakkad", slug: "iit-palakkad", city: "Palakkad", state: "Kerala",
+    nirfRank: 64, nirfScore: 51.2, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2015, website: "https://iitpkd.ac.in",
     // Source: official IIT Palakkad website (iitpkd.ac.in: About, Hostels) + IIT Palakkad NIRF 2025 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-palakkad-on-dark.png", campusAcres: 504,
@@ -1284,10 +1407,11 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Palakkad website (About, Hostels) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Palakkad website (About, Hostels) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     name: "IIT Tirupati", slug: "iit-tirupati", city: "Tirupati", state: "Andhra Pradesh",
+    nirfRank: 57, nirfScore: 52.73, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2015, website: "https://www.iittp.ac.in",
     overview: "Fastest growing among the newer IITs.",
     course: "B.Tech CSE", exam: "JEE", minRank: 3000, maxRank: 7500,
@@ -1297,6 +1421,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Bhilai", slug: "iit-bhilai", city: "Durg", state: "Chhattisgarh",
+    nirfRank: 72, nirfScore: 50.37, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2016, website: "https://www.iitbhilai.ac.in",
     overview: "Emerging IIT with strong focus on core engineering.",
     course: "B.Tech CSE", exam: "JEE", minRank: 4000, maxRank: 9000,
@@ -1315,6 +1440,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Jammu", slug: "iit-jammu", city: "Jammu", state: "Jammu and Kashmir",
+    nirfRank: 56, nirfScore: 53.08, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2016, website: "https://www.iitjammu.ac.in",
     overview: "Scenic campus with rapidly developing academic programs.",
     course: "B.Tech CSE", exam: "JEE", minRank: 4500, maxRank: 10000,
@@ -1324,6 +1450,7 @@ export const colleges: CollegeSeed[] = [
   },
   {
     name: "IIT Dharwad", slug: "iit-dharwad", city: "Dharwad", state: "Karnataka",
+    nirfRank: 77, nirfScore: 48.61, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2016, website: "https://www.iitdh.ac.in",
     // Source: official IIT Dharwad website (iitdh.ac.in: About, Programmes) + IIT Dharwad NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-dharwad.png",
@@ -1356,7 +1483,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Civil & Infrastructure Engineering", duration: "4 years" },
       { name: "BS Interdisciplinary Sciences (Mathematics / Physics major)", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT Dharwad website (About, Programmes) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Dharwad website (About, Programmes) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
   },
   {
     // Source: official IIITDM Kurnool website (iiitk.ac.in: About, Sports Facilities). Checked 25 Nov 2026.
@@ -1461,5 +1588,516 @@ export const colleges: CollegeSeed[] = [
     ],
     courses: [{ name: "B.Tech Petroleum Engineering", duration: "4 years" }],
     sourceNote: "From the official IIPE website (Sports, Student Life, hostel pages). Its NIRF report and admission flyer refused automated downloads, so fees and placement figures aren't available."
-  }
+  },
+  {
+    name: "NIT Rourkela", slug: "nit-rourkela", city: "Rourkela", state: "Odisha",
+    nirfRank: 13, nirfScore: 66.62, nirfYear: 2025,
+    // Source: official NIT Rourkela website (nitrkl.ac.in: home, Campus Facility) + NITR NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1961, website: "https://www.nitrkl.ac.in",
+    logo: "/logos/nit-rourkela.png",
+    overview: "NIT Rourkela began as the Regional Engineering College, Rourkela in 1961 and was raised to a National Institute of Technology with university status by the Government of India, which funds it. It is run by the Board of Governors of the NIT Rourkela Society and trains engineers and scientists at undergraduate and postgraduate levels. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 81, medianPackage: 18.38,
+    hostelAvailable: true,
+    facilities: [
+      "Biju Patnaik Central Library, running since 1965, with print and electronic collections",
+      "Residential halls where students live in single or shared study bedrooms",
+      "Central Research Facility for advanced instruments"
+    ],
+    pros: [
+      "Of 1,021 B.Tech students graduating in 2024-25, 829 were placed and 155 went on to higher studies",
+      "Median B.Tech salary of ₹18.38 lakh (2024-25 graduates)",
+      "NIRF 2025 Engineering rank 13"
+    ],
+    cons: [
+      "Rourkela is a smaller industrial city, far from big metro job hubs"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Rourkela website (home page, Campus Facility) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Siksha 'O' Anusandhan (ITER)", slug: "siksha-o-anusandhan", city: "Bhubaneswar", state: "Odisha",
+    nirfRank: 22, nirfScore: 62.58, nirfYear: 2025,
+    // Source: official Siksha 'O' Anusandhan website (soa.ac.in: home). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", website: "https://www.soa.ac.in",
+    overview: "Siksha 'O' Anusandhan is a deemed-to-be university in Bhubaneswar, Odisha. Its engineering faculty is the Institute of Technical Education and Research (ITER). Admission is through the university's own entrance test, SAAT.",
+    course: "B.Tech Computer Science and Engineering", exam: "SAAT",
+    hostelAvailable: true,
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SOA website. Its NIRF data files are hosted on an outside file-sharing site we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Amrita Vishwa Vidyapeetham", slug: "amrita-coimbatore", city: "Coimbatore", state: "Tamil Nadu",
+    nirfRank: 23, nirfScore: 62.46, nirfYear: 2025,
+    // Source: official Amrita website (amrita.edu: About). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", website: "https://www.amrita.edu",
+    overview: "Amrita Vishwa Vidyapeetham is a multi-disciplinary, research-intensive private deemed university with over 31,000 students and more than 2,150 faculty members, accredited A++ by NAAC. It has ten campuses: Amaravati, Amritapuri, Bengaluru, Chennai, Coimbatore, Kochi, Mysuru, Nagercoil, NCR Delhi (Faridabad) and Haridwar, together spanning over 1,200 acres. Its engineering school is headquartered in Coimbatore. B.Tech admission is through the Amrita Engineering Entrance Exam (AEEE).",
+    course: "B.Tech Computer Science and Engineering", exam: "AEEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ accreditation",
+      "More than 300 UG, PG and doctoral programmes across ten campuses",
+      "Ranked 8th in NIRF 2025 Overall"
+    ],
+    cons: [
+      "Branches and fees differ by campus; check the campus you are applying to"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Amrita website (About). Its NIRF data file is on a separate server we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Jamia Millia Islamia", slug: "jamia-millia-islamia", city: "New Delhi", state: "Delhi",
+    nirfRank: 24, nirfScore: 62.42, nirfYear: 2025,
+    // Source: official Jamia Millia Islamia website (jmi.ac.in: History). Checked 24 Nov 2026.
+    type: "Central University", ownership: "Government", established: 1920, website: "https://www.jmi.ac.in",
+    logo: "/logos/jamia-millia-islamia.svg",
+    overview: "Jamia Millia Islamia was founded at Aligarh in 1920, when nationalist teachers and students answered Mahatma Gandhi's call to boycott colonial-supported institutions. It moved to New Delhi and became a Central University by an Act of Parliament in 1988. In Urdu, Jamia means 'university' and Millia means 'national'. Its Faculty of Engineering and Technology offers B.Tech programmes, with admission through JEE (Main).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "Central university in New Delhi with low government fees",
+      "Sports facilities run by its Games & Sports department"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Jamia Millia Islamia website (History). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Warangal", slug: "nit-warangal", city: "Warangal", state: "Telangana",
+    nirfRank: 28, nirfScore: 61.05, nirfYear: 2025,
+    // Source: official NIT Warangal website (nitw.ac.in: home). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1959, website: "https://www.nitw.ac.in",
+    logo: "/logos/nit-warangal.png",
+    overview: "NIT Warangal was the first of the Regional Engineering Colleges, set up in 1959, and is now an Institution of National Importance under the NIT Act, funded by the Government of India. Its campus is in Warangal, Telangana. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "First of India's Regional Engineering Colleges (now NITs)",
+      "NIRF 2025 Engineering rank 28"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "The NIT Warangal website only loads with JavaScript, so we could only confirm its logo and basic facts. Placement and fee figures are not shown yet. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Thapar Institute of Engineering and Technology", slug: "thapar", city: "Patiala", state: "Punjab",
+    nirfRank: 29, nirfScore: 60.97, nirfYear: 2025,
+    // Source: official Thapar Institute website (thapar.edu: About us) + Thapar NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1956, website: "https://www.thapar.edu",
+    logo: "/logos/thapar.png", campusAcres: 250,
+    overview: "Thapar Institute of Engineering and Technology (TIET), founded in 1956, is one of India's oldest private engineering institutions. Its 250-acre campus is in Patiala, Punjab, and it is a deemed-to-be university accredited A++ by NAAC. B.Tech admission is mainly through JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 86, medianPackage: 10,
+    hostelAvailable: true,
+    pros: [
+      "Of 2,205 B.Tech students graduating in 2024-25, 1,900 were placed and 140 went on to higher studies",
+      "Median B.Tech salary of ₹10 lakh (2024-25 graduates)",
+      "NAAC A++ accreditation and a 250-acre campus"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Thapar website (About us) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Chandigarh University", slug: "chandigarh-university", city: "Mohali", state: "Punjab",
+    nirfRank: 31, nirfScore: 60.46, nirfYear: 2025,
+    // Source: official Chandigarh University website (cuchd.in: About) + CU NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Private University", ownership: "Private", established: 2012, website: "https://www.cuchd.in",
+    logo: "/logos/chandigarh-university.png",
+    overview: "Chandigarh University is a private university set up by the Punjab State Legislature and recognised by the UGC. Its campus is at Gharuan, Mohali, near Chandigarh. It is accredited A+ by NAAC and says it was the youngest private university in India to get an A+ in its first accreditation cycle. Admission is through its own test, CUCET.",
+    course: "B.Tech Computer Science and Engineering", exam: "CUCET",
+    placementRate: 75, medianPackage: 8,
+    hostelAvailable: true,
+    pros: [
+      "Of 3,011 B.Tech students graduating in 2024-25, 2,258 were placed and 703 went on to higher studies",
+      "Median B.Tech salary of ₹8 lakh (2024-25 graduates)",
+      "NAAC A+ accreditation"
+    ],
+    cons: [
+      "Very large batches (about 3,000 B.Tech graduates a year), so ask about class sizes and branch-wise placement"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Chandigarh University website (About) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Founding year from its establishment by the Punjab State Legislature. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Kalasalingam Academy of Research and Education", slug: "kalasalingam", city: "Krishnan Koil", state: "Tamil Nadu",
+    nirfRank: 33, nirfScore: 59.03, nirfYear: 2025,
+    // Source: official Kalasalingam website (kalasalingam.ac.in: About us, Campus life, Hostel & mess, Admissions) + KARE NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1984, website: "https://www.kalasalingam.ac.in",
+    logo: "/logos/kalasalingam.png",
+    overview: "Kalasalingam Academy of Research and Education (KARE), formerly Arulmigu Kalasalingam College of Engineering, was founded in 1984 by freedom fighter and philanthropist T. Kalasalingam. It is a deemed-to-be university at the foothills of the Western Ghats in southern Tamil Nadu, near Krishnankoil. B.Tech applicants are shortlisted on their marks in KUEE, the university's entrance exam, and must have at least 50% in Physics, Chemistry and Mathematics in Class 12.",
+    course: "B.Tech Computer Science and Engineering", exam: "KUEE",
+    placementRate: 94, medianPackage: 6.35,
+    hostelAvailable: true,
+    facilities: [
+      "Separate furnished hostel buildings for boys and girls inside the main campus",
+      "Hostels close to academic buildings and sports facilities"
+    ],
+    campusLife: [
+      "Green campus where peacocks, deer and bison from the Western Ghats are often seen",
+      "Cultural, recreational and educational programmes run by the hostel directorate",
+      "International students on campus"
+    ],
+    pros: [
+      "Of 1,610 B.Tech students graduating in 2024-25, 1,507 were placed",
+      "Median B.Tech salary of ₹6.35 lakh (2024-25 graduates)",
+      "Fully residential campus with on-campus hostels"
+    ],
+    cons: [
+      "Rural location, far from big cities"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Kalasalingam website (About us, Campus life, Hostel & mess, Admissions) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "SASTRA Deemed University", slug: "sastra", city: "Thanjavur", state: "Tamil Nadu",
+    nirfRank: 40, nirfScore: 58.02, nirfYear: 2025,
+    // Source: official SASTRA website (sastra.edu: About us, Accreditation & Ranking). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1984, website: "https://www.sastra.edu",
+    logo: "/logos/sastra.png",
+    overview: "SASTRA (Shanmugha Arts, Science, Technology & Research Academy) is a deemed-to-be university in Thanjavur, Tamil Nadu, teaching engineering, management, law, sciences and humanities. It was re-accredited in its fourth NAAC cycle with the top A++ grade and a score of 3.76, which it says makes it the top university of its kind in Tamil Nadu. B.Tech admission uses JEE (Main) scores together with Class 12 marks.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ grade with a score of 3.76 (fourth cycle)",
+      "Consistently ranked in the NIRF Engineering top 50"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SASTRA website (About us, Accreditation & Ranking). Its NIRF data is shown in a page-flip viewer we could not read, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "UPES", slug: "upes", city: "Dehradun", state: "Uttarakhand",
+    nirfRank: 43, nirfScore: 56.99, nirfYear: 2025,
+    // Source: official UPES website (upes.ac.in: About us) + UPES NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Private University", ownership: "Private", established: 2003, website: "https://www.upes.ac.in",
+    logo: "/logos/upes.svg",
+    overview: "UPES is a UGC-recognised private university in Dehradun, Uttarakhand, set up under the UPES Act, 2003 of the Uttarakhand State Legislature. It teaches through seven schools, including the School of Advanced Engineering and the School of Computer Science, and has about 19,100 students and 1,500 faculty and staff. In NIRF 2025 it ranked 43 in Engineering and 45 among universities. Admission is through its own test, UPESEAT, or other accepted scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "UPESEAT",
+    placementRate: 94, medianPackage: 6.75,
+    hostelAvailable: true,
+    pros: [
+      "Of 1,133 B.Tech students graduating in 2024-25, 1,070 were placed",
+      "Median B.Tech salary of ₹6.75 lakh (2024-25 graduates)",
+      "NIRF 2025: Engineering 43, Universities 45, Law 18, Management 36",
+      "Over 50 faculty members on Stanford's list of the world's top 2% researchers, according to UPES"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official UPES website (About us) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Saveetha Institute of Medical and Technical Sciences (SIMATS)", slug: "saveetha", city: "Chennai", state: "Tamil Nadu",
+    nirfRank: 45, nirfScore: 56.55, nirfYear: 2025,
+    // Source: official SIMATS website (saveetha.com: About us). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", website: "https://www.saveetha.com",
+    campusAcres: 245,
+    overview: "Saveetha Institute of Medical and Technical Sciences (SIMATS) is a deemed-to-be university in Chennai, accredited A++ by NAAC. Its campus covers more than 245 acres with 14 institutions, about 17,000 students and 5,500 staff. Engineering is taught at the Saveetha School of Engineering.",
+    course: "B.Tech Computer Science and Engineering", exam: "See official website",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ accreditation",
+      "Large campus of more than 245 acres"
+    ],
+    cons: [
+      "Best known for medicine and dentistry; check engineering-specific placement figures before joining"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SIMATS website (About us). Its NIRF data and logo are on outside servers we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Symbiosis International University (SIT Pune)", slug: "symbiosis", city: "Pune", state: "Maharashtra",
+    nirfRank: 46, nirfScore: 56.22, nirfYear: 2025,
+    // Source: official Symbiosis International University website (siu.edu.in: home, About us, Faculty of Engineering). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 2002, website: "https://www.siu.edu.in",
+    logo: "/logos/symbiosis.webp",
+    overview: "Symbiosis International (Deemed University) in Pune has Category-I status from the UGC and an A++ grade from NAAC. Its Faculty of Engineering, mainly the Symbiosis Institute of Technology, offers B.Tech programmes such as Computer Science, Artificial Intelligence and Machine Learning, and Electronics & Telecommunication. Admission is through the Symbiosis Institute of Technology Engineering Entrance Exam (SITEEE) or JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "SITEEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ and UGC Category-I status",
+      "Research centres in nanoscience and applied artificial intelligence"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }, { name: "B.Tech Artificial Intelligence and Machine Learning", duration: "4 years" }, { name: "B.Tech Electronics & Tele-Communication Engineering", duration: "4 years" }],
+    sourceNote: "From the official Symbiosis International University website (home, About us, Faculty of Engineering). Placement and fee figures were not on these pages. Founding year is when it became a deemed university. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Sri Sivasubramaniya Nadar (SSN) College of Engineering", slug: "ssn-college", city: "Kalavakkam", state: "Tamil Nadu",
+    nirfRank: 47, nirfScore: 56.08, nirfYear: 2025,
+    // Source: official SSN website (ssn.edu.in: home). Checked 24 Nov 2026.
+    type: "Private College", ownership: "Private", established: 1996, website: "https://www.ssn.edu.in",
+    logo: "/logos/ssn-college.png",
+    overview: "Sri Sivasubramaniya Nadar (SSN) College of Engineering in Kalavakkam, near Chennai, was founded by Shiv Nadar. Important: its website now says SSN College of Engineering is no longer accepting applications, and asks students to apply to similar programmes at the SSN School of Engineering, Shiv Nadar University Chennai (SNUC). The campus also houses the SSN Research Centre.",
+    course: "B.Tech Computer Science and Engineering", exam: "See official website",
+    hostelAvailable: true,
+    pros: [
+      "NIRF 2025 Engineering rank 47",
+      "SSN Research Centre with multidisciplinary research labs"
+    ],
+    cons: [
+      "No longer accepting applications: new students apply to the SSN School of Engineering at Shiv Nadar University Chennai instead"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SSN website (home page). The NIRF rank belongs to SSN College of Engineering; check the separate Shiv Nadar University Chennai programme before applying. Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Durgapur", slug: "nit-durgapur", city: "Durgapur", state: "West Bengal",
+    nirfRank: 49, nirfScore: 55.94, nirfYear: 2025,
+    // Source: official NIT Durgapur website (nitdgp.ac.in: home). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1960, website: "https://www.nitdgp.ac.in",
+    logo: "/logos/nit-durgapur.png",
+    overview: "NIT Durgapur in West Bengal started as a Regional Engineering College in 1960 and is now an Institution of National Importance under the NIT Act, funded by the Government of India. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "NIRF 2025 Engineering rank 49",
+      "Government-funded research projects, such as next-generation nano-dielectrics for high-speed devices"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Durgapur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Silchar", slug: "nit-silchar", city: "Silchar", state: "Assam",
+    nirfRank: 50, nirfScore: 55.91, nirfYear: 2025,
+    // Source: official NIT Silchar website (nits.ac.in: History, Hostels). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1967, website: "https://www.nits.ac.in",
+    logo: "/logos/nit-silchar.png", campusAcres: 540,
+    overview: "NIT Silchar began in 1967 as a Regional Engineering College, working first from a camp office in Shillong, and admitted its first 60 B.E. students in 1977. It became a National Institute of Technology with deemed university status on 28 June 2002. Its campus of about 540 acres is 8 km south of Silchar town, Assam, on the Silchar–Hailakandi road. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Eight boys' hostels and three girls' hostels, each with its own mess committee",
+      "A 1,000-bed boys' hostel, a 300-bed PG hostel and a married scholars' hostel have been built"
+    ],
+    pros: [
+      "Large 540-acre campus",
+      "NIRF 2025 Engineering rank 50"
+    ],
+    cons: [
+      "Silchar is far from major cities; travel to and from home takes longer"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Silchar website (History, Hostels). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Patna", slug: "nit-patna", city: "Patna", state: "Bihar",
+    nirfRank: 53, nirfScore: 53.89, nirfYear: 2025,
+    // Source: official NIT Patna website (nitp.ac.in: home). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1886, website: "https://www.nitp.ac.in",
+    logo: "/logos/nit-patna.png",
+    overview: "NIT Patna is an Institution of National Importance under the Ministry of Education, on the banks of the Ganga in Patna, Bihar. It traces its history to 1886 and was the Bihar College of Engineering before it became an NIT in 2004. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    fests: [
+      "Tatva (techno-management fest)"
+    ],
+    pros: [
+      "One of India's oldest engineering institutions",
+      "NIRF 2025 Engineering rank 53"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Patna website (home page). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "IIEST Shibpur", slug: "iiest-shibpur", city: "Howrah", state: "West Bengal",
+    nirfRank: 54, nirfScore: 53.63, nirfYear: 2025,
+    // Source: official IIEST Shibpur website (iiests.ac.in: home). Checked 24 Nov 2026.
+    type: "Institute of National Importance", ownership: "Government", established: 1856, website: "https://www.iiests.ac.in",
+    logo: "/logos/iiest-shibpur.png",
+    overview: "The Indian Institute of Engineering Science and Technology (IIEST), Shibpur, in Howrah near Kolkata, is an Institution of National Importance. It traces its roots to 1856 and was long known as Bengal Engineering College, one of India's oldest engineering colleges. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "One of India's oldest engineering colleges, on the banks of the Hooghly",
+      "NIRF 2025 Engineering rank 54"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIEST Shibpur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Manipal University Jaipur", slug: "manipal-jaipur", city: "Jaipur", state: "Rajasthan",
+    nirfRank: 58, nirfScore: 52.69, nirfYear: 2025,
+    // Source: official Manipal University Jaipur website (jaipur.manipal.edu: About, NIRF). Checked 24 Nov 2026.
+    type: "Private University", ownership: "Private", established: 2011, website: "https://www.jaipur.manipal.edu",
+    logo: "/logos/manipal-jaipur.svg",
+    overview: "Manipal University Jaipur (MUJ) is a private university in Jaipur, Rajasthan, run by the Manipal group. Its engineering faculty offers B.Tech programmes in Computer Science, Data Science, Computer & Communication, Civil and other branches, including dual-degree options with partner universities in Australia. Admission is through the Manipal Entrance Test (MET).",
+    course: "B.Tech Computer Science and Engineering", exam: "MET",
+    hostelAvailable: true,
+    pros: [
+      "Dual-degree options with universities such as Melbourne and Deakin",
+      "NIRF 2025 Engineering rank 58"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Manipal University Jaipur website (About, NIRF). Its NIRF data file is a scanned image we could not read, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Madan Mohan Malaviya University of Technology", slug: "mmmut", city: "Gorakhpur", state: "Uttar Pradesh",
+    nirfRank: 60, nirfScore: 52.45, nirfYear: 2025,
+    // Source: official MMMUT website (mmmut.ac.in: About) + MMMUT NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "State University", ownership: "Government", established: 1962, website: "https://www.mmmut.ac.in",
+    logo: "/logos/mmmut.jpg",
+    overview: "Madan Mohan Malaviya University of Technology (MMMUT) is a state government university in Gorakhpur, Uttar Pradesh, with a NAAC 'A' grade. It started as an engineering college in 1962 and now teaches engineering, applied sciences, management and other subjects. B.Tech admission is based on JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 88, medianPackage: 13.75,
+    hostelAvailable: true,
+    pros: [
+      "Of 858 B.Tech students graduating in 2024-25, 756 were placed and 102 went on to higher studies",
+      "Median B.Tech salary of ₹13.75 lakh (2024-25 graduates), as submitted to NIRF",
+      "Low state-government fees"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official MMMUT website (About) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Birla Institute of Technology, Mesra", slug: "bit-mesra", city: "Ranchi", state: "Jharkhand",
+    nirfRank: 51, nirfScore: 55.28, nirfYear: 2025,
+    // Source: official BIT Mesra website (bitmesra.ac.in: home). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1955, website: "https://bitmesra.ac.in",
+    logo: "/logos/bit-mesra.png",
+    overview: "Birla Institute of Technology (BIT) Mesra, founded in 1955 by industrialist and philanthropist B.M. Birla, is one of the oldest institutes of technology in independent India. It is a deemed-to-be university in Mesra, Ranchi, the capital of Jharkhand, set among forests and hills. B.Tech admission is based on JEE (Main) scores.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "One of the oldest technology institutes in independent India",
+      "GP Birla scholarships and BIT financial assistantships for students, awarded on semester results"
+    ],
+    cons: [
+      "Campus is outside Ranchi city"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official BIT Mesra website (home page). Its NIRF data files are on a separate server we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Graphic Era (Deemed to be University)", slug: "graphic-era", city: "Dehradun", state: "Uttarakhand",
+    nirfRank: 52, nirfScore: 55.26, nirfYear: 2025,
+    // Source: official Graphic Era website (geu.ac.in: About overview) + GEU NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1993, website: "https://geu.ac.in",
+    logo: "/logos/graphic-era.webp",
+    overview: "Graphic Era began in 1993 as a small computer centre founded by Prof. (Dr.) Kamal Ghanshala and was granted deemed-to-be university status in 2008. It is in Dehradun, Uttarakhand, and was placed among India's top 50 universities in NIRF 2025.",
+    course: "B.Tech Computer Science and Engineering", exam: "See official website",
+    placementRate: 81, medianPackage: 6.75,
+    hostelAvailable: true,
+    pros: [
+      "Of 974 B.Tech students graduating in 2024-25, 786 were placed and 68 went on to higher studies",
+      "Median B.Tech salary of ₹6.75 lakh (2024-25 graduates)"
+    ],
+    cons: [
+      "Placement % was much lower in earlier years (452 of 916 graduates placed in 2023-24)"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Graphic Era website (About overview) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Indian Institute of Space Science and Technology (IIST)", slug: "iist", city: "Thiruvananthapuram", state: "Kerala",
+    nirfRank: 61, nirfScore: 52.44, nirfYear: 2025,
+    // Source: official IIST website (iist.ac.in: About IIST) + IIST NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Government", established: 2007, website: "https://www.iist.ac.in",
+    logo: "/logos/iist.png",
+    overview: "The Indian Institute of Space Science and Technology (IIST) was set up in 2007 at Valiamala, Thiruvananthapuram, Kerala, under the Department of Space, to promote education and research in space science and technology. It offers B.Tech in Aerospace Engineering and Electronics & Communication Engineering, and a dual degree with a B.Tech in Engineering Physics. B.Tech admission is based on JEE (Advanced) ranks.",
+    course: "B.Tech Aerospace Engineering", exam: "JEE",
+    placementRate: 67, medianPackage: 11.98,
+    hostelAvailable: true,
+    pros: [
+      "Of 119 B.Tech students graduating in 2024-25, 80 were placed and 21 went on to higher studies",
+      "Median B.Tech salary of ₹11.98 lakh (2024-25 graduates)",
+      "Small batches and a focus on space science, under the Department of Space"
+    ],
+    cons: [
+      "Only a few B.Tech branches, all space-related"
+    ],
+    courses: [{ name: "B.Tech Aerospace Engineering", duration: "4 years" }, { name: "B.Tech Electronics and Communication Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIST website (About IIST) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "MNNIT Allahabad", slug: "mnnit-allahabad", city: "Prayagraj", state: "Uttar Pradesh",
+    nirfRank: 62, nirfScore: 52.15, nirfYear: 2025,
+    // Source: official MNNIT Allahabad website (mnnit.ac.in: home) + MNNIT NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1961, website: "https://www.mnnit.ac.in",
+    logo: "/logos/mnnit-allahabad.png",
+    overview: "Motilal Nehru National Institute of Technology (MNNIT) Allahabad in Prayagraj, Uttar Pradesh, is an Institution of National Importance under the NIT Act. It began as a Regional Engineering College in 1961. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 94, medianPackage: 12.6,
+    hostelAvailable: true,
+    pros: [
+      "Of 1,032 B.Tech students graduating in 2024-25, 966 were placed",
+      "Median B.Tech salary of ₹12.6 lakh (2024-25 graduates)",
+      "Four-star rating from the Ministry of Education's Institutions' Innovation Council"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official MNNIT Allahabad website (home page) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "NIT Delhi", slug: "nit-delhi", city: "Delhi", state: "Delhi",
+    nirfRank: 65, nirfScore: 50.79, nirfYear: 2025,
+    // Source: official NIT Delhi website (nitdelhi.ac.in: home, campus pages). Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 2010, website: "https://nitdelhi.ac.in",
+    logo: "/logos/nit-delhi.svg",
+    overview: "NIT Delhi is one of the newer National Institutes of Technology, set up in 2010, and is an Institution of National Importance under the NIT Act. Its campus is at Narela, Delhi. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Hostels such as Dhauladhar on campus",
+      "Campus transport service"
+    ],
+    sports: [
+      "Sports club for students"
+    ],
+    pros: [
+      "Located in the national capital",
+      "NIRF 2025 Engineering rank 65"
+    ],
+    cons: [
+      "A young institute that is still building out its campus"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official NIT Delhi website (home and campus pages). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "SVNIT Surat", slug: "svnit-surat", city: "Surat", state: "Gujarat",
+    nirfRank: 66, nirfScore: 50.77, nirfYear: 2025,
+    // Source: official SVNIT website (svnit.ac.in: home, NIRF) + SVNIT NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "NIT", ownership: "Government", established: 1961, website: "https://www.svnit.ac.in",
+    logo: "/logos/svnit-surat.png",
+    overview: "Sardar Vallabhbhai National Institute of Technology (SVNIT) in Surat, Gujarat, is an Institution of National Importance under the NIT Act. It began as a Regional Engineering College in 1961. B.Tech admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 74, medianPackage: 10,
+    hostelAvailable: true,
+    pros: [
+      "Of 801 B.Tech students graduating in 2024-25, 591 were placed and 144 went on to higher studies",
+      "Median B.Tech salary of ₹10 lakh (2024-25 graduates)",
+      "Anti-ragging helpline publicised on the home page"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official SVNIT website (home, NIRF) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Hostel fee notices are on the website; tuition fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "Sathyabama Institute of Science and Technology", slug: "sathyabama", city: "Chennai", state: "Tamil Nadu",
+    nirfRank: 67, nirfScore: 50.64, nirfYear: 2025,
+    // Source: official Sathyabama website (sathyabama.ac.in: home, About us). Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1987, website: "https://www.sathyabama.ac.in",
+    logo: "/logos/sathyabama.png",
+    overview: "Sathyabama Institute of Science and Technology is a deemed-to-be university in Chennai, Tamil Nadu, with Category-I status from the UGC and a NAAC A++ grade. It is celebrating 39 years since its founding. Admission to engineering is through its own entrance exam, SAEEE.",
+    course: "B.Tech Computer Science and Engineering", exam: "SAEEE",
+    hostelAvailable: true,
+    pros: [
+      "NAAC A++ and UGC Category-I status",
+      "Ranked 53 among universities in NIRF"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official Sathyabama website (home, About us). Its NIRF data is in a page-flip viewer on a separate server we could not open, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
+  {
+    name: "IIIT Bangalore", slug: "iiit-bangalore", city: "Bengaluru", state: "Karnataka",
+    nirfRank: 69, nirfScore: 50.46, nirfYear: 2025,
+    // Source: official IIIT Bangalore website (iiitb.ac.in: home, About) + IIITB NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    type: "Deemed University", ownership: "Private", established: 1999, website: "https://www.iiitb.ac.in",
+    logo: "/logos/iiit-bangalore.png",
+    overview: "The International Institute of Information Technology Bangalore (IIITB) is a deemed-to-be university in Electronic City, Bengaluru, focused on IT, data science, electronics and digital society. It is best known for its Integrated M.Tech and postgraduate programmes, and started a 4-year B.Tech in 2024 with 210 seats. Admission is based on JEE (Main) ranks.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    pros: [
+      "Strong postgraduate and research focus in IT and data science",
+      "Located in Electronic City, a major IT hub"
+    ],
+    cons: [
+      "The B.Tech only started in 2024, so there are no B.Tech placement results yet"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }, { name: "Integrated M.Tech", duration: "5 years" }],
+    sourceNote: "From the official IIIT Bangalore website (home, About) and its NIRF 2026 Engineering data submission, which shows 210 B.Tech seats from 2024-25 and no B.Tech graduates yet. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+  },
 ];
