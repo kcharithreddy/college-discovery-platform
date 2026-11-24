@@ -52,8 +52,11 @@ export const colleges: CollegeSeed[] = [
     logo: "/logos/iit-delhi.png",
     overview: "IIT Delhi began in 1961 as a College of Engineering set up with the help of the UK government. It was declared an Institution of National Importance under the Institutes of Technology (Amendment) Act, 1963, renamed Indian Institute of Technology Delhi, and made a deemed university that sets its own academic policy and awards its own degrees. More than 15,700 students have graduated from it with a B.Tech, and nearly 5,070 with a PhD.",
     course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 75, medianPackage: 19.08,
     hostelAvailable: true,
     facilities: [
+      "677 faculty members and 2,866 full-time PhD scholars (NIRF 2025 data)",
+      "₹367 crore of sponsored research across 1,006 projects in 2023-24",
       "Central Research Facility and Nanoscale Research Facility",
       "Central Workshop and DAILAB",
       "High Performance Computing facility",
@@ -64,15 +67,17 @@ export const colleges: CollegeSeed[] = [
       "Board for Student Welfare with student counselling services"
     ],
     pros: [
+      "Of 946 B.Tech students graduating in 2023-24, 711 were placed and 49 went on to higher studies",
+      "Median B.Tech salary of ₹19.08 lakh (2023-24 graduates)",
       "More than 15,700 B.Tech graduates and nearly 5,070 PhDs since it started",
       "Research facilities for nanoscale work and high-performance computing on campus",
       "Located in the national capital"
     ],
     cons: [
-      "Fees, placement figures and hostel details are on separate IIT Delhi sites, so check them during admission"
+      "Fees and hostel details are on separate IIT Delhi sites, so check them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Delhi website (About, Why IIT Delhi, Facilities). Fees, placements, NIRF rank, hostel and sports details were not on these pages."
+    sourceNote: "From the official IIT Delhi website (About, Why IIT Delhi, Facilities) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees, NIRF rank, hostel and sports details were not in these sources."
   },
   {
     // Source: official IIT Bombay website (iitb.ac.in) + IIT Bombay NIRF 2026 Engineering data submission. Checked 24 Nov 2026.
@@ -84,6 +89,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 72, medianPackage: 20.21,
     hostelAvailable: true,
     facilities: [
+      "792 faculty members and 3,523 full-time PhD scholars (NIRF 2025 data)",
+      "₹592 crore of sponsored research across 1,572 projects in 2023-24",
       "Fully residential campus with hostels, dining, sports and recreational facilities",
       "On-campus hospital, cafeterias and e-buggies for getting around",
       "Central Library and a Student Wellness Centre",
@@ -116,7 +123,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts are published on the academic website, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Bombay website (About, Why IITB, Sports, Academic units) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees, NIRF rank and the full programme list were not on these pages."
+    sourceNote: "From the official IIT Bombay website (About, Why IITB, Sports, Academic units) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees, NIRF rank and the full programme list were not on these pages. Faculty and research figures are from its NIRF 2025 data submission."
   },
   {
     name: "NIT Tiruchirappalli", slug: "nit-trichy", city: "Tiruchirappalli", state: "Tamil Nadu",
@@ -1000,6 +1007,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 81, medianPackage: 17.78,
     hostelAvailable: true,
     facilities: [
+      "686 faculty members and 1,798 full-time PhD scholars (NIRF 2025 data)",
+      "₹956 crore of sponsored research across 794 projects in 2023-24",
       "20 hostels named after Indian rivers (15 for men, 5 for women), with internet/LAN in every room",
       "Central Library: five-storey, air-conditioned and Wi-Fi enabled, with 2 million+ books and 1,000+ journal subscriptions",
       "Institute hospital with visiting specialists (including a psychiatrist), lab tests, X-ray, in-patient wards and an ambulance; pharmacy run by Apollo",
@@ -1067,7 +1076,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.S. Medical Sciences & Engineering", duration: "4 years" },
       { name: "Bachelor of Cyber Security", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Sports, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not published on these pages."
+    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Sports, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not published on these pages. Faculty and research figures are from its NIRF 2025 data submission."
   },
   {
     name: "IIT Hyderabad", slug: "iit-hyderabad", city: "Sangareddy", state: "Telangana",
@@ -1076,8 +1085,11 @@ export const colleges: CollegeSeed[] = [
     logo: "/logos/iit-hyderabad.png",
     overview: "IIT Hyderabad was established in 2008 and says it has consistently ranked among India's top 10 engineering institutes in NIRF. It offers undergraduate programmes in classical engineering, applied sciences, design and interdisciplinary areas, with a strong focus on research, innovation and entrepreneurship, and has a special relationship with Japanese universities and industry. Undergraduate entry is through JEE (Advanced).",
     course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 77, medianPackage: 21.0,
     hostelAvailable: true,
     facilities: [
+      "282 faculty members and 711 full-time PhD scholars (NIRF 2025 data)",
+      "₹129 crore of sponsored research in 2023-24",
       "Every student gets a single room, in hostels with radiant cooling",
       "More than 100 research labs, with new equipment added every year",
       "Library with more than 20,000 books and 10,000 periodicals",
@@ -1092,16 +1104,18 @@ export const colleges: CollegeSeed[] = [
       "Programmes in design and interdisciplinary areas alongside engineering"
     ],
     pros: [
+      "Of 399 B.Tech students graduating in 2023-24, 306 were placed and 37 went on to higher studies",
+      "Median B.Tech salary of ₹21 lakh (2023-24 graduates)",
       "Single rooms for every student",
       "Says it has consistently ranked in NIRF's top 10 for engineering",
       "Strong research culture with 100+ labs"
     ],
     cons: [
       "Limited campus transport; the campus is outside Hyderabad city, near Lingampally",
-      "Placement figures and fees weren't on the pages checked"
+      "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Hyderabad website (About IITH, Campus Services). NIRF data, fees and placement figures weren't on the pages checked."
+    sourceNote: "From the official IIT Hyderabad website (About IITH, Campus Services) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees weren't available."
   },
   {
     name: "NIT Agartala", slug: "nit-agartala", city: "Agartala", state: "Tripura",
@@ -1123,6 +1137,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 71, medianPackage: 21.7,
     hostelAvailable: true,
     facilities: [
+      "579 faculty members and 2,068 full-time PhD scholars (NIRF 2025 data)",
+      "₹225 crore of sponsored research across 1,155 projects in 2023-24",
       "SIDBI Innovation & Incubation Centre (SIIC) for technology startups",
       "Center for Mental Health and Wellbeing offering confidential support",
       "Students' Placement Office run by staff and students"
@@ -1141,7 +1157,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Kanpur website (Students) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Kanpur website (Students) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages. Faculty and research figures are from its NIRF 2025 data submission."
   },
   {
     name: "IIT Roorkee", slug: "iit-roorkee", city: "Roorkee", state: "Uttarakhand",
@@ -1149,8 +1165,11 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Roorkee website (iitr.ac.in: Institute, History). Checked 24 Nov 2026.
     overview: "IIT Roorkee traces its roots to Thomason College, which it describes as the oldest engineering college in India. The college was proposed around 1846 by Colonel Cautley, who was building the Ganges Canal, to James Thomason, Lieutenant-Governor of the North-West Provinces, to train civil engineers for canals, roads and irrigation works across northern India. Today it is an IIT administered through the IIT Council, and undergraduate entry is through JEE (Advanced).",
     course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 70, medianPackage: 17.0,
     hostelAvailable: true,
     facilities: [
+      "601 faculty members and 2,806 full-time PhD scholars (NIRF 2025 data)",
+      "1,054 consultancy projects for 832 client organisations in 2023-24",
       "Historic campus in Roorkee, Uttarakhand, beside the Ganges Canal"
     ],
     campusLife: [
@@ -1158,14 +1177,16 @@ export const colleges: CollegeSeed[] = [
       "International partnerships and exchange initiatives"
     ],
     pros: [
+      "Of 1,102 B.Tech students graduating in 2023-24, 769 were placed and 333 went on to higher studies",
+      "Median B.Tech salary of ₹17 lakh (2023-24 graduates)",
       "Merit-cum-means scholarship for 25% of undergraduate students",
       "One of the oldest engineering institutions in Asia"
     ],
     cons: [
-      "Placement figures, fees and hostel details weren't on the pages checked"
+      "Fees and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Roorkee website (Institute, History). NIRF data, fees, placements and the logo weren't available on the pages checked."
+    sourceNote: "From the official IIT Roorkee website (Institute, History) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees and the logo weren't available."
   },
   {
     name: "IIT Kharagpur", slug: "iit-kharagpur", city: "Kharagpur", state: "West Bengal",
@@ -1177,6 +1198,8 @@ export const colleges: CollegeSeed[] = [
     placementRate: 50, medianPackage: 20.74,
     hostelAvailable: true,
     facilities: [
+      "868 faculty members and 3,409 full-time PhD scholars (NIRF 2025 data)",
+      "₹160 crore of sponsored research across 892 projects in 2023-24",
       "Schools and programmes in engineering, architecture, management and law on one campus",
       "Sponsored research and consultancy across industrial and social areas"
     ],
@@ -1194,7 +1217,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Kharagpur website (About) and its NIRF 2026 Engineering data submission (4-year UG programmes). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
+    sourceNote: "From the official IIT Kharagpur website (About) and its NIRF 2026 Engineering data submission (4-year UG programmes). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages. Faculty and research figures are from its NIRF 2025 data submission."
   },
   {
     name: "IIT Ropar", slug: "iit-ropar", city: "Rupnagar", state: "Punjab",
