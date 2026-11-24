@@ -106,6 +106,11 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
 
 export const NOT_AVAILABLE = 'Not available';
 
+/** Colleges whose numbers are still the old sample values (see apps/api/prisma/data/colleges.ts). */
+export function isUnverified(college: Pick<College, 'sourceNote'>) {
+  return college.sourceNote?.startsWith('Fees, placement and cutoff figures are sample values') ?? false;
+}
+
 export function formatFees(value: number | null | undefined) {
   if (value == null) return NOT_AVAILABLE;
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value);

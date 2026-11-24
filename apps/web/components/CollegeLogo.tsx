@@ -49,8 +49,10 @@ export function initialsFor(name: string) {
  */
 export function CollegeLogo({ college, size = 'sm' }: Props) {
   if (college.logo) {
+    // Logos made for dark headers (white artwork) are saved as "*-on-dark.*" and get a dark tile.
+    const tile = college.logo.includes('-on-dark') ? 'border-transparent bg-brand-950' : 'border-line bg-white';
     return (
-      <div className={`flex shrink-0 items-center rounded-xl border border-line bg-white py-1 ${LOGO_BOX[size]}`}>
+      <div className={`flex shrink-0 items-center rounded-xl border py-1 ${tile} ${LOGO_BOX[size]}`}>
         <img src={college.logo} alt={`${college.name} logo`} className="h-full w-auto object-contain" />
       </div>
     );
