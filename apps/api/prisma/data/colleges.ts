@@ -909,6 +909,7 @@ export const colleges: CollegeSeed[] = [
   {
     name: "NIT Jalandhar", slug: "nit-jalandhar", city: "Jalandhar", state: "Punjab",
     type: "NIT", ownership: "Government", established: 1987, website: "https://www.nitj.ac.in",
+    logo: "/logos/nit-jalandhar.png",
     overview: "Good infrastructure and placement records.",
     course: "B.Tech CSE", exam: "JEE", minRank: 8000, maxRank: 20000,
     fees: 150000, placementRate: 82, averagePackage: 10.5,
@@ -918,11 +919,39 @@ export const colleges: CollegeSeed[] = [
   {
     name: "MNIT Jaipur", slug: "mnit-jaipur", city: "Jaipur", state: "Rajasthan",
     type: "NIT", ownership: "Government", established: 1963, website: "https://www.mnit.ac.in",
-    overview: "Top-tier NIT located in the pink city.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 4000, maxRank: 12000,
-    fees: 155000, placementRate: 86, averagePackage: 12.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official MNIT Jaipur website (mnit.ac.in: About MNIT, Sports) + MNIT NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/mnit-jaipur.png", campusAcres: 317,
+    overview: "MNIT Jaipur was set up in 1963 as Malaviya Regional Engineering College by the Government of India and the Government of Rajasthan. It became a National Institute of Technology on 26 June 2002 and an Institution of National Importance by an Act of Parliament on 15 August 2007, and is fully funded by the Ministry of Education. Its 317-acre campus is in the heart of Jaipur, close to the airport, railway station, hospitals and shopping malls. Undergraduate admission is through JEE (Main) and JoSAA.",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 77, medianPackage: 10.0,
+    hostelAvailable: true,
+    facilities: [
+      "317-acre landscaped campus in the middle of Jaipur",
+      "Hostels and on-campus housing for faculty and staff",
+      "Close to Jaipur airport, the railway station and major hospitals"
+    ],
+    campusLife: [
+      "Campus life in Jaipur, Rajasthan's capital and a major cultural city",
+      "Physical Education & Sports office supporting students with coaches and programmes"
+    ],
+    sports: [
+      "More than 1,000 students regularly take part in sports and conditioning",
+      "Basketball, volleyball, tennis, badminton, table tennis and chess",
+      "Playfields for football, cricket, kabaddi and track & field",
+      "Gymnasium and yoga",
+      "Coaches and athlete support from the Physical Education & Sports office"
+    ],
+    pros: [
+      "Of 732 B.Tech students graduating in 2024-25, 564 were placed and 24 went on to higher studies",
+      "Large 317-acre campus inside the city, close to the airport and railway station",
+      "Strong sports participation"
+    ],
+    cons: [
+      "Median B.Tech salary was ₹10 lakh for 2024-25 graduates",
+      "Fee amounts weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official MNIT Jaipur website (About MNIT, Sports) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "NIT Sikkim", slug: "nit-sikkim", city: "Ravangla", state: "Sikkim",
@@ -1016,15 +1045,41 @@ export const colleges: CollegeSeed[] = [
   {
     name: "IIT Hyderabad", slug: "iit-hyderabad", city: "Sangareddy", state: "Telangana",
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iith.ac.in",
-    overview: "Highly innovative and rapidly growing IIT.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 500, maxRank: 1500,
-    fees: 230000, placementRate: 90, averagePackage: 22.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Hyderabad website (iith.ac.in: About IITH, Campus Services). Checked 24 Nov 2026.
+    logo: "/logos/iit-hyderabad.png",
+    overview: "IIT Hyderabad was established in 2008 and says it has consistently ranked among India's top 10 engineering institutes in NIRF. It offers undergraduate programmes in classical engineering, applied sciences, design and interdisciplinary areas, with a strong focus on research, innovation and entrepreneurship, and has a special relationship with Japanese universities and industry. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Every student gets a single room, in hostels with radiant cooling",
+      "More than 100 research labs, with new equipment added every year",
+      "Library with more than 20,000 books and 10,000 periodicals",
+      "Common dining hall serving north and south Indian food, inspected by student representatives",
+      "Shiru Cafe, the first outside Japan, run by Japanese student interns with free drinks",
+      "Campus transport, including a regular service from Lingampally railway station",
+      "On-campus hospital"
+    ],
+    campusLife: [
+      "Close links with Japanese universities and companies",
+      "Support for innovation and entrepreneurship at every stage",
+      "Programmes in design and interdisciplinary areas alongside engineering"
+    ],
+    pros: [
+      "Single rooms for every student",
+      "Says it has consistently ranked in NIRF's top 10 for engineering",
+      "Strong research culture with 100+ labs"
+    ],
+    cons: [
+      "Limited campus transport; the campus is outside Hyderabad city, near Lingampally",
+      "Placement figures and fees weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Hyderabad website (About IITH, Campus Services). NIRF data, fees and placement figures weren't on the pages checked."
   },
   {
     name: "NIT Agartala", slug: "nit-agartala", city: "Agartala", state: "Tripura",
     type: "NIT", ownership: "Government", established: 1965, website: "https://www.nita.ac.in",
+    logo: "/logos/nit-agartala.png",
     overview: "Large campus with improved connectivity and placements.",
     course: "B.Tech CSE", exam: "JEE", minRank: 15000, maxRank: 35000,
     fees: 145000, placementRate: 75, averagePackage: 8.5,
@@ -1034,33 +1089,90 @@ export const colleges: CollegeSeed[] = [
   {
     name: "IIT Kanpur", slug: "iit-kanpur", city: "Kanpur", state: "Uttar Pradesh",
     type: "IIT", ownership: "Government", established: 1959, website: "https://www.iitk.ac.in",
-    overview: "Pioneer in computer science education in India.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 100, maxRank: 1000,
-    fees: 220000, placementRate: 94, averagePackage: 24.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Kanpur website (iitk.ac.in: Students) + IIT Kanpur NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/iit-kanpur.png",
+    overview: "IIT Kanpur describes itself as known worldwide for a student-centred approach to nurturing future leaders and innovators. Undergraduates can do research through the SURGE summer programme, start companies through the SIDBI Innovation & Incubation Centre, and get confidential support from the Center for Mental Health and Wellbeing. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 71, medianPackage: 21.7,
+    hostelAvailable: true,
+    facilities: [
+      "SIDBI Innovation & Incubation Centre (SIIC) for technology startups",
+      "Center for Mental Health and Wellbeing offering confidential support",
+      "Students' Placement Office run by staff and students"
+    ],
+    campusLife: [
+      "SURGE (Students Undergraduate Research Graduate Excellence) summer research programme",
+      "Scholarships, prizes and medals for academics and extra-curricular activities",
+      "Cultural activities and a strong student community"
+    ],
+    pros: [
+      "Of 1,205 B.Tech students graduating in 2024-25, 855 were placed and 257 went on to higher studies",
+      "Median B.Tech salary of ₹21.7 lakh (2024-25 graduates)",
+      "Undergraduate research through SURGE and startup support through SIIC"
+    ],
+    cons: [
+      "Fee amounts and hostel details weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Kanpur website (Students) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "IIT Roorkee", slug: "iit-roorkee", city: "Roorkee", state: "Uttarakhand",
     type: "IIT", ownership: "Government", established: 1847, website: "https://www.iitr.ac.in",
-    overview: "Oldest engineering college with a glorious legacy.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 200, maxRank: 1500,
-    fees: 215000, placementRate: 92, averagePackage: 23.0,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Roorkee website (iitr.ac.in: Institute, History). Checked 24 Nov 2026.
+    overview: "IIT Roorkee traces its roots to Thomason College, which it describes as the oldest engineering college in India. The college was proposed around 1846 by Colonel Cautley, who was building the Ganges Canal, to James Thomason, Lieutenant-Governor of the North-West Provinces, to train civil engineers for canals, roads and irrigation works across northern India. Today it is an IIT administered through the IIT Council, and undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    hostelAvailable: true,
+    facilities: [
+      "Historic campus in Roorkee, Uttarakhand, beside the Ganges Canal"
+    ],
+    campusLife: [
+      "Nearly two centuries of engineering tradition",
+      "International partnerships and exchange initiatives"
+    ],
+    pros: [
+      "Merit-cum-means scholarship for 25% of undergraduate students",
+      "One of the oldest engineering institutions in Asia"
+    ],
+    cons: [
+      "Placement figures, fees and hostel details weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Roorkee website (Institute, History). NIRF data, fees, placements and the logo weren't available on the pages checked."
   },
   {
     name: "IIT Kharagpur", slug: "iit-kharagpur", city: "Kharagpur", state: "West Bengal",
     type: "IIT", ownership: "Government", established: 1951, website: "https://www.iitkgp.ac.in",
-    overview: "Largest and oldest IIT campus with diverse courses.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 200, maxRank: 1800,
-    fees: 210000, placementRate: 91, averagePackage: 22.5,
-    courses: [{ name: "B.Tech CSE", duration: '4 years' }],
-    sourceNote: UNVERIFIED
+    // Source: official IIT Kharagpur website (iitkgp.ac.in: About) + IIT Kharagpur NIRF 2026 Engineering data. Checked 24 Nov 2026.
+    logo: "/logos/iit-kharagpur.png",
+    overview: "IIT Kharagpur, in West Bengal, has the motto 'Yogah Karmasu Kaushalam' (excellence in action is yoga), from the Bhagavad Gita. It aims to give broad-based education, build a spirit of entrepreneurship and innovation, and bring together expertise in science, technology, management and law, with programmes including architecture, management and law alongside engineering. Undergraduate entry is through JEE (Advanced).",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    placementRate: 50, medianPackage: 20.74,
+    hostelAvailable: true,
+    facilities: [
+      "Schools and programmes in engineering, architecture, management and law on one campus",
+      "Sponsored research and consultancy across industrial and social areas"
+    ],
+    campusLife: [
+      "Strong push for entrepreneurship and innovation among students",
+      "Programmes across science, technology, management and law"
+    ],
+    pros: [
+      "Of 882 four-year B.Tech students graduating in 2024-25, 438 took jobs and 367 went on to higher studies",
+      "Median B.Tech salary of ₹20.74 lakh (2024-25 graduates)",
+      "Unusually wide range of programmes, including law and architecture"
+    ],
+    cons: [
+      "Placement figures cover 4-year B.Tech only, not the 5-year dual degrees, so check your programme",
+      "Fee amounts and hostel details weren't on the pages checked"
+    ],
+    courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
+    sourceNote: "From the official IIT Kharagpur website (About) and its NIRF 2026 Engineering data submission (4-year UG programmes). Placement % = students placed ÷ students graduating. Fees and NIRF rank were not on these pages."
   },
   {
     name: "IIT Ropar", slug: "iit-ropar", city: "Rupnagar", state: "Punjab",
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitrpr.ac.in",
+    logo: "/logos/iit-ropar.png",
     overview: "Established IIT with strong research focus and good placements.",
     course: "B.Tech CSE", exam: "JEE", minRank: 2000, maxRank: 5000,
     fees: 210000, placementRate: 85, averagePackage: 16.0,
