@@ -23,7 +23,8 @@ export const config = {
   /** Comma-separated list of allowed frontend origins. */
   clientUrls: (process.env.CLIENT_URL || 'http://localhost:3000')
     .split(',')
-    .map(url => url.trim())
+    // Browsers send the origin without a trailing slash, so drop any that were pasted in.
+    .map(url => url.trim().replace(/\/+$/, ''))
     .filter(Boolean),
   googleClientId: process.env.GOOGLE_CLIENT_ID || '',
   /** Demo OTP mode returns a fixed code instead of sending an SMS. Off in production unless explicitly enabled. */
