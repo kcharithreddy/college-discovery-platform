@@ -12,6 +12,16 @@ async function main() {
     slugs.add(college.slug);
   }
 
+  // `--if-changed` (used when the server starts) skips seeding when the database already has
+  // exactly this many colleges, so restarts don't wipe students' reviews and saved lists.
+  if (process.argv.includes('--if-changed')) {
+    const existing = await prisma.college.count();
+    if (existing === colleges.length) {
+      console.log(`Database already has ${existing} colleges; skipping seed`);
+      return;
+    }
+  }
+
   await prisma.savedCollege.deleteMany();
   await prisma.review.deleteMany();
   await prisma.course.deleteMany();
