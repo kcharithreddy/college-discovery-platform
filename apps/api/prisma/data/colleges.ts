@@ -52,7 +52,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIT", ownership: "Government", established: 1961, website: "https://home.iitd.ac.in",
     logo: "/logos/iit-delhi.png",
     overview: "IIT Delhi began in 1961 as a College of Engineering set up with the help of the UK government. It was declared an Institution of National Importance under the Institutes of Technology (Amendment) Act, 1963, renamed Indian Institute of Technology Delhi, and made a deemed university that sets its own academic policy and awards its own degrees. More than 15,700 students have graduated from it with a B.Tech, and nearly 5,070 with a PhD.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 35, maxRank: 12730,
     placementRate: 75, medianPackage: 19.08,
     hostelAvailable: true,
     facilities: [
@@ -68,6 +68,7 @@ export const colleges: CollegeSeed[] = [
       "Board for Student Welfare with student counselling services"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 128 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 946 B.Tech students graduating in 2023-24, 711 were placed and 49 went on to higher studies",
       "Median B.Tech salary of ₹19.08 lakh (2023-24 graduates)",
       "More than 15,700 B.Tech graduates and nearly 5,070 PhDs since it started",
@@ -78,7 +79,7 @@ export const colleges: CollegeSeed[] = [
       "Fees and hostel details are on separate IIT Delhi sites, so check them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Delhi website (About, Why IIT Delhi, Facilities) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees, hostel and sports details were not in these sources. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Delhi website (About, Why IIT Delhi, Facilities) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees, hostel and sports details were not in these sources. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     // Source: official IIT Bombay website (iitb.ac.in) + IIT Bombay NIRF 2026 Engineering data submission. Checked 24 Nov 2026.
@@ -87,7 +88,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIT", ownership: "Government", established: 1958, website: "https://www.iitb.ac.in",
     logo: "/logos/iit-bombay.png", campusAcres: 494,
     overview: "Established in 1958 with support from UNESCO and the government of the USSR, IIT Bombay was declared an Institution of National Importance by an Act of Parliament in 1961. It is a fully residential campus of 200 hectares in Powai, Mumbai, with 17 academic departments plus schools of design, management and entrepreneurship. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 1, maxRank: 5473,
     placementRate: 72, medianPackage: 20.21,
     hostelAvailable: true,
     facilities: [
@@ -115,6 +116,7 @@ export const colleges: CollegeSeed[] = [
     ],
     fests: ["Mood Indigo (cultural)"],
     pros: [
+      "Computer Science closed at JEE Advanced rank 67 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 1,017 B.Tech students graduating in 2024-25, 730 were placed and 287 went on to higher studies",
       "Median B.Tech salary of ₹20.21 lakh (2024-25 graduates)",
       "Design, management and entrepreneurship schools on the same campus",
@@ -125,7 +127,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts are published on the academic website, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Bombay website (About, Why IITB, Sports, Academic units) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and the full programme list were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Bombay website (About, Why IITB, Sports, Academic units) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees and the full programme list were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "NIT Tiruchirappalli", slug: "nit-trichy", city: "Tiruchirappalli", state: "Tamil Nadu",
@@ -134,7 +136,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1964, website: "https://www.nitt.edu",
     logo: "/logos/nit-trichy.jpg",
     overview: "Started on 13 July 1964 as Regional Engineering College Tiruchirappalli, a joint venture of the Government of India and the Government of Tamil Nadu, it became a deemed university and was renamed NIT in 2003, and was made an Institution of National Importance by an Act of Parliament in 2007. The campus is at Thuvakudi on the Trichy–Tanjore highway, 17 km from Trichy Railway Junction, near the river Cauvery. Undergraduate admission is through JEE (Main) and JoSAA/CSAB counselling.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 103, maxRank: 20111,
     placementRate: 75, medianPackage: 14.01,
     hostelAvailable: true,
     facilities: [
@@ -151,6 +153,7 @@ export const colleges: CollegeSeed[] = [
     ],
     sports: ["Physical Education department and Sports Center on campus"],
     pros: [
+      "Computer Science closed at JEE Main rank 1,373 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 981 B.Tech students graduating in 2024-25, 738 were placed and 159 went on to higher studies",
       "Median B.Tech salary of ₹14.01 lakh (2024-25 graduates)",
       "Round-the-clock hospital on campus with imaging funded by the alumni association",
@@ -172,7 +175,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Production Engineering", duration: "4 years" },
       { name: "B.Arch", duration: "5 years" }
     ],
-    sourceNote: "From the official NIT Trichy website (About, At a Glance, Programmes, Hostels, Hospital, Library) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Trichy website (About, At a Glance, Programmes, Hostels, Hospital, Library) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "BITS Pilani", slug: "bits-pilani", city: "Pilani", state: "Rajasthan",
@@ -322,7 +325,7 @@ export const colleges: CollegeSeed[] = [
     nirfRank: 30, nirfScore: 60.85, nirfYear: 2025,
     type: "State University", ownership: "Government", established: 1941, website: "https://dtu.ac.in",
     overview: "Strong government university with good placements and NCR industry exposure.",
-    course: "B.Tech Mechanical", exam: "JEE", minRank: 1000, maxRank: 12000,
+    course: "B.Tech Mechanical", exam: "JEE Main",
     fees: 190000, placementRate: 84, averagePackage: 14.6,
     courses: [{ name: "B.Tech Mechanical", duration: '4 years' }],
     sourceNote: UNVERIFIED
@@ -412,7 +415,7 @@ export const colleges: CollegeSeed[] = [
     type: "Private University", ownership: "Private", established: 2005, website: "https://www.amity.edu",
     logo: "/logos/amity-university.png",
     overview: "Amity University is a private university with its main campus in Noida, Uttar Pradesh. It describes its academic system as industry-aligned, built to give students practical skills, global exposure and career readiness, and runs programmes across engineering, management, fashion and many other fields.",
-    course: "B.Tech", exam: "JEE",
+    course: "B.Tech", exam: "JEE Main",
     hostelAvailable: true,
     facilities: [
       "Separate on-campus hostels for boys and girls, with wardens and security",
@@ -474,8 +477,11 @@ export const colleges: CollegeSeed[] = [
     name: "NIT Andhra Pradesh", slug: "nit-andhra", city: "Tadepalligudem", state: "Andhra Pradesh",
     type: "NIT", ownership: "Government", established: 2015, website: "https://www.nitandhra.ac.in",
     overview: "Growing NIT with good academics.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 10000, maxRank: 30000,
+    course: "B.Tech CSE", exam: "JEE Main", minRank: 12944, maxRank: 54682,
     fees: 140000, placementRate: 75, averagePackage: 8.5,
+    pros: [
+      "Computer Science closed at JEE Main rank 22,225 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -484,8 +490,11 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitap.ac.in",
     logo: "/logos/nit-arunachal.png",
     overview: "NIT located in the serene northeast.",
-    course: "B.Tech ECE", exam: "JEE", minRank: 20000, maxRank: 45000,
+    course: "B.Tech ECE", exam: "JEE Main", minRank: 29270, maxRank: 64048,
     fees: 135000, placementRate: 70, averagePackage: 7.5,
+    pros: [
+      "Computer Science closed at JEE Main rank 31,966 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)"
+    ],
     courses: [{ name: "B.Tech ECE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -496,7 +505,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIT", ownership: "Government", established: 1994, website: "https://www.iitg.ac.in",
     logo: "/logos/iit-guwahati.jpg", campusAcres: 704,
     overview: "IIT Guwahati, the sixth IIT, was established in 1994 and began teaching in 1995. Its 285-hectare campus sits on the north bank of the Brahmaputra, about 20 km from the centre of Guwahati, with hills and lakes around it. It has eleven departments, seven interdisciplinary centres and five schools covering engineering, science, healthcare, management and humanities. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 588, maxRank: 12170,
     placementRate: 74, medianPackage: 17.0,
     hostelAvailable: true,
     facilities: [
@@ -520,6 +529,7 @@ export const colleges: CollegeSeed[] = [
       "Gymnasium, plus a gym in every hostel"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 822 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Every student gets a single room",
       "Of 902 B.Tech students graduating in 2024-25, 663 were placed and 209 went on to higher studies",
       "Median B.Tech salary of ₹17 lakh (2024-25 graduates)",
@@ -530,7 +540,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Guwahati website (About, Campus Life) and its NIRF 2026 Engineering data submission. Campus size converted from 285 hectares. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Guwahati website (About, Campus Life) and its NIRF 2026 Engineering data submission. Campus size converted from 285 hectares. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     // Source: official IIT Patna website (iitp.ac.in: About, History, Campus Life, Hostels). Checked 24 Nov 2026.
@@ -539,7 +549,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitp.ac.in",
     logo: "/logos/iit-patna.png",
     overview: "IIT Patna is one of the newer IITs, established by an Act of Parliament on 6 August 2008. Its campus is at Bihta on the banks of the Ganges, about 40 km from Patna. It has ten departments, including Computer Science & Engineering, Electrical, Mechanical, Chemical & Biochemical, Civil & Environmental and Materials Science & Engineering, and offers B.Tech, M.Tech and PhD programmes. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 2184, maxRank: 17179,
     hostelAvailable: true,
     facilities: [
       "8-storey boys' hostel with 912 rooms, each with a balcony, plus common rooms, a gym, 6 lifts and two mess halls",
@@ -560,6 +570,7 @@ export const colleges: CollegeSeed[] = [
     ],
     fests: ["Anwesha (cultural)", "Celesta (technical)", "Infinito (sports)", "Reverberance (music)", "Nebula (literary & arts)", "TEDx IIT Patna"],
     pros: [
+      "Computer Science closed at JEE Advanced rank 3,635 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Six student-run festivals a year for a small campus",
       "Modern hostels with lifts and attached gym",
       "Ten departments with interdisciplinary programmes"
@@ -570,15 +581,18 @@ export const colleges: CollegeSeed[] = [
       "Placement figures and fees weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Patna website (About, History, Campus Life, Hostels). Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Patna website (About, History, Campus Life, Hostels). Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "NIT Raipur", slug: "nit-raipur", city: "Raipur", state: "Chhattisgarh",
     nirfRank: 86, nirfScore: 47.59, nirfYear: 2025,
     type: "NIT", ownership: "Government", established: 1956, website: "https://nitrr.ac.in",
     overview: "Established institute with strong regional presence.",
-    course: "B.Tech IT", exam: "JEE", minRank: 15000, maxRank: 35000,
+    course: "B.Tech IT", exam: "JEE Main", minRank: 14423, maxRank: 57731,
     fees: 145000, placementRate: 78, averagePackage: 9.5,
+    pros: [
+      "Computer Science closed at JEE Main rank 16,439 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)"
+    ],
     courses: [{ name: "B.Tech IT", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -587,7 +601,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitgoa.ac.in",
     // Source: official NIT Goa website (nitgoa.ac.in: About). Checked 24 Nov 2026.
     overview: "NIT Goa was established in 2010 under the NIT Act, 2007 and NIT (Amendment) Act, 2012, and is an autonomous Institute of National Importance under the Ministry of Education. Its campus is on Kottamoll Plateau in the Cuncolim municipal area of South Goa, about 15 km from Margao. It offers B.Tech in five branches with a small intake of 42–44 students per branch, admitted through JEE (Main) with JoSAA/CSAB, plus DASA for students from abroad.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 10504, maxRank: 46260,
     hostelAvailable: true,
     facilities: [
       "Laboratories, workshops and a library with print and electronic resources",
@@ -602,6 +616,7 @@ export const colleges: CollegeSeed[] = [
     sports: ["Sports facilities for students; organised the All India Inter-NIT Faculty and Staff Tournament in 2018"],
     fests: ["SAAVYAS (techno-cultural)"],
     pros: [
+      "Computer Science closed at JEE Main rank 16,638 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Very small batches: 42–44 students per B.Tech branch",
       "Campus in South Goa, 15 km from Margao and reachable from Dabolim airport"
     ],
@@ -616,15 +631,18 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Civil Engineering", duration: "4 years" },
       { name: "B.Tech Mechanical Engineering", duration: "4 years" }
     ],
-    sourceNote: "From the official NIT Goa website (About). NIRF data, fees, placement figures and the logo weren't available when checked."
+    sourceNote: "From the official NIT Goa website (About). NIRF data, fees, placement figures and the logo weren't available when checked. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "IIT Gandhinagar", slug: "iit-gandhinagar", city: "Gandhinagar", state: "Gujarat",
     nirfRank: 25, nirfScore: 62.31, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://iitgn.ac.in",
     overview: "Innovative curriculum and excellent facilities.",
-    course: "B.Tech Mechanical", exam: "JEE", minRank: 3000, maxRank: 7000,
+    course: "B.Tech Mechanical", exam: "JEE Advanced", minRank: 1248, maxRank: 12873,
     fees: 225000, placementRate: 84, averagePackage: 15.5,
+    pros: [
+      "Computer Science closed at JEE Advanced rank 2,315 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)"
+    ],
     courses: [{ name: "B.Tech Mechanical", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -636,7 +654,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1963, website: "https://nitkkr.ac.in",
     logo: "/logos/nit-kurukshetra.png", campusAcres: 292,
     overview: "NIT Kurukshetra is a National Institute of Technology on a 292-acre campus in Kurukshetra, Haryana. Its Computer Engineering department has offered B.Tech since 1987 (now with an intake of 210), added Information Technology in 2006 and a B.Tech in Artificial Intelligence & Machine Learning from 2023-24. Physical education, sports or yoga is part of the curriculum for every engineering student. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Engineering", exam: "JEE",
+    course: "B.Tech Computer Engineering", exam: "JEE Main", minRank: 6460, maxRank: 40050,
     placementRate: 54, medianPackage: 9.0,
     hostelAvailable: true,
     facilities: [
@@ -659,6 +677,7 @@ export const colleges: CollegeSeed[] = [
       "Sports Committee of faculty and student captains plans games and tournaments"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 8,701 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Most first-year and girls' hostel rooms are single-seater",
       "Swimming pool with diving boards and a 400 m track",
       "B.Tech in Computer Engineering, IT and AI & ML"
@@ -673,7 +692,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Information Technology", duration: "4 years" },
       { name: "B.Tech Artificial Intelligence & Machine Learning", duration: "4 years" }
     ],
-    sourceNote: "From the official NIT Kurukshetra website (Campus & Infrastructure, Sports Section, Computer Engineering department) and its NIRF 2025 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Kurukshetra website (Campus & Infrastructure, Sports Section, Computer Engineering department) and its NIRF 2025 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "IIT Mandi", slug: "iit-mandi", city: "Mandi", state: "Himachal Pradesh",
@@ -682,7 +701,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Mandi website (iitmandi.ac.in: About, Sports) + IIT Mandi NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-mandi.png",
     overview: "IIT Mandi is one of the second-generation IITs and describes itself as a research university. Its campus is in the Kamand Valley, on the left bank of the Uhl River at Kamand and Salgi villages, about 14 km from Mandi town in Himachal Pradesh. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 2532, maxRank: 16689,
     placementRate: 78, medianPackage: 17.0,
     hostelAvailable: true,
     facilities: [
@@ -699,6 +718,7 @@ export const colleges: CollegeSeed[] = [
       "Inter-IIT medals: silver in cricket and women's table tennis (2022), bronze in cricket (2019), athletics medals (2018, 2019)"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 3,762 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 272 B.Tech students graduating in 2024-25, 211 were placed and 61 went on to higher studies",
       "Median B.Tech salary of ₹17 lakh (2024-25 graduates)",
       "Scenic Himalayan campus with a strong sports culture for a young IIT"
@@ -708,7 +728,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Mandi website (About, Sports Facilities) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Mandi website (About, Sports Facilities) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "IIT (ISM) Dhanbad", slug: "iit-dhanbad", city: "Dhanbad", state: "Jharkhand",
@@ -717,7 +737,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT (ISM) Dhanbad website (iitism.ac.in: History) + IIT (ISM) NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-dhanbad-on-dark.png",
     overview: "IIT (ISM) Dhanbad was founded on 9 December 1926 by Viceroy Lord Irwin as the Indian School of Mines & Applied Geology, following the McPherson Committee's recommendation for an institution teaching mining and geology. It later added petroleum engineering and applied geophysics, was renamed Indian School of Mines, began admitting students through IIT-JEE and introduced Computer Science and Engineering. It became an Indian Institute of Technology on 6 September 2016. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 2309, maxRank: 17791,
     placementRate: 79, medianPackage: 15.0,
     hostelAvailable: true,
     facilities: [
@@ -730,6 +750,7 @@ export const colleges: CollegeSeed[] = [
       "Programmes from B.Tech and BS-MS to MBA and PhD"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 4,167 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 910 B.Tech students graduating in 2024-25, 715 were placed and 160 went on to higher studies",
       "Median B.Tech salary of ₹15 lakh (2024-25 graduates)",
       "One of India's oldest technical institutions, with a unique strength in mining and earth sciences"
@@ -741,7 +762,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Computer Science and Engineering", duration: "4 years" },
       { name: "B.Tech Mining Engineering", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT (ISM) Dhanbad website (History) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT (ISM) Dhanbad website (History) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "NITK Surathkal", slug: "nitk-surathkal", city: "Mangaluru", state: "Karnataka",
@@ -750,7 +771,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1960, website: "https://www.nitk.ac.in",
     logo: "/logos/nitk-surathkal.png",
     overview: "NIT Karnataka, Surathkal, began as Karnataka Regional Engineering College (KREC) in 1960 and was upgraded to a National Institute of Technology in 2002. It is in Surathkal, Mangaluru, the headquarters of the coastal Dakshina Kannada district. Undergraduate admission is through JEE (Main) and JoSAA/CSAB counselling.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 678, maxRank: 28915,
     placementRate: 88, medianPackage: 12.84,
     hostelAvailable: true,
     facilities: [
@@ -766,6 +787,7 @@ export const colleges: CollegeSeed[] = [
     ],
     sports: ["Sports and games section for students", "Takes part in the All India Inter-NIT Sports Meet (athletics and chess, 2025-26)"],
     pros: [
+      "Computer Science closed at JEE Main rank 1,954 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 837 B.Tech students graduating in 2021-22, 734 were placed and 32 went on to higher studies (latest NIRF data on its site)",
       "Median B.Tech salary of ₹12.84 lakh in 2021-22",
       "Coastal campus in Mangaluru"
@@ -775,7 +797,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NITK website (About Us) and its NIRF 2023 Engineering data submission, the latest on its site (covers students graduating in 2021-22). Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NITK website (About Us) and its NIRF 2023 Engineering data submission, the latest on its site (covers students graduating in 2021-22). Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Calicut", slug: "nit-calicut", city: "Kozhikode", state: "Kerala",
@@ -784,7 +806,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1961, website: "https://nitc.ac.in",
     logo: "/logos/nit-calicut.svg", campusAcres: 297,
     overview: "NIT Calicut is an Institution of National Importance under the National Institutes of Technology Act, 2007, fully funded by the Government of India. Its fully residential campus lies at the foothills of the Western Ghats, about 22 km north-east of Kozhikode, stretching 1.5 km along the Calicut–Mukkam road over about 120 hectares. It offers 11 UG and 29 PG programmes including an MBA. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 2405, maxRank: 34315,
     placementRate: 88, medianPackage: 12.16,
     hostelAvailable: true,
     facilities: [
@@ -806,6 +828,7 @@ export const colleges: CollegeSeed[] = [
     ],
     fests: ["Tathva (techno-management, since 2000)"],
     pros: [
+      "Computer Science closed at JEE Main rank 5,769 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 915 B.Tech students graduating in 2024-25, 803 were placed and 106 went on to higher studies",
       "Median B.Tech salary of ₹12.16 lakh (2024-25 graduates)",
       "Tathva, which it describes as South India's largest techno-management fest",
@@ -816,7 +839,7 @@ export const colleges: CollegeSeed[] = [
       "Some boys' hostels have three or four students per room"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NIT Calicut website (About, Hostels, Tathva, campus news) and its NIRF 2026 Engineering data submission. Campus size converted from about 120 hectares. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Calicut website (About, Hostels, Tathva, campus news) and its NIRF 2026 Engineering data submission. Campus size converted from about 120 hectares. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "IIT Indore", slug: "iit-indore", city: "Indore", state: "Madhya Pradesh",
@@ -825,7 +848,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Indore website (iiti.ac.in: About). Checked 24 Nov 2026.
     logo: "/logos/iit-indore.png", campusAcres: 501,
     overview: "IIT Indore was established by the Government of India in 2009 as one of the new-generation IITs. Mentored at first by IIT Bombay and starting from a temporary campus in the city, it moved in 2016 to its permanent 501-acre residential campus at Simrol, near Indore. Its research areas include artificial intelligence, advanced materials, communications, renewable energy, healthcare technology and environmental sustainability. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 1186, maxRank: 14267,
     hostelAvailable: true,
     facilities: [
       "501-acre residential campus at Simrol, in use since 2016",
@@ -838,6 +861,7 @@ export const colleges: CollegeSeed[] = [
       "Strong focus on innovation and entrepreneurship"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 1,676 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Large 501-acre permanent campus",
       "Mentored by IIT Bombay in its early years",
       "Startup incubation support on campus"
@@ -847,7 +871,7 @@ export const colleges: CollegeSeed[] = [
       "Placement figures and fees are on separate IIT Indore sites that weren't checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Indore website (About). Fees, placements and hostel details are on separate sites that weren't checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Indore website (About). Fees, placements and hostel details are on separate sites that weren't checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "VNIT Nagpur", slug: "vnit-nagpur", city: "Nagpur", state: "Maharashtra",
@@ -856,7 +880,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1960, website: "https://vnit.ac.in",
     logo: "/logos/vnit-nagpur.png", campusAcres: 214,
     overview: "VNIT began in June 1960 as Visvesvaraya Regional College of Engineering (VRCE), set up by the Government of India and the Government of Maharashtra by merging the state engineering college that had run in Nagpur since 1956. It became a deemed university in June 2002 and an Institution of National Importance under the National Institutes of Technology Act, 2007. Its campus of about 214 acres is in Nagpur. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 5989, maxRank: 45437,
     hostelAvailable: true,
     facilities: [
       "Ten boys' hostels and two girls' hostels for more than 4,000 students",
@@ -873,6 +897,7 @@ export const colleges: CollegeSeed[] = [
       "Takes part in All India Inter-NIT tournaments, including badminton, table tennis and yoga"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 7,419 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Hostel places for more than 4,000 students with separate gyms",
       "Long history: started in 1960 as a Regional Engineering College",
       "Growing international student community"
@@ -881,14 +906,17 @@ export const colleges: CollegeSeed[] = [
       "Placement figures and fees weren't published on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official VNIT Nagpur website (History, Hostel, Sports). Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official VNIT Nagpur website (History, Hostel, Sports). Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Manipur", slug: "nit-manipur", city: "Imphal", state: "Manipur",
     type: "NIT", ownership: "Government", established: 2010, website: "https://www.nitmanipur.ac.in",
     overview: "Developing NIT in the northeast.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 25000, maxRank: 50000,
+    course: "B.Tech CSE", exam: "JEE Main", minRank: 31394, maxRank: 62614,
     fees: 135000, placementRate: 68, averagePackage: 7.0,
+    pros: [
+      "Computer Science closed at JEE Main rank 43,239 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -899,7 +927,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official NIT Meghalaya website (nitm.ac.in: About NIT). Checked 24 Nov 2026.
     logo: "/logos/nit-meghalaya.png",
     overview: "NIT Meghalaya is one of the 31 NITs established under the NIT Act 2007 (amended 2012) as an Institute of National Importance, fully funded by the Ministry of Education. Its permanent campus in the hills of Sohra is now fully functional, with academic buildings, student hostels, administrative blocks and faculty residences. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech", exam: "JEE",
+    course: "B.Tech", exam: "JEE Main", minRank: 21089, maxRank: 58913,
     hostelAvailable: true,
     facilities: [
       "New permanent campus at Sohra with modern academic buildings",
@@ -908,6 +936,7 @@ export const colleges: CollegeSeed[] = [
     ],
     campusLife: ["Ecologically rich hill setting at Sohra, Meghalaya"],
     pros: [
+      "Computer Science closed at JEE Main rank 28,662 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Brand-new, fully functional permanent campus",
       "Institute of National Importance, fully funded by the central government"
     ],
@@ -916,7 +945,7 @@ export const colleges: CollegeSeed[] = [
       "Sohra is a small hill town, so check travel connections"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official NIT Meghalaya website (About NIT). Recent Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Meghalaya website (About NIT). Recent Fees and placement figures weren't on the pages checked. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Mizoram", slug: "nit-mizoram", city: "Aizawl", state: "Mizoram",
@@ -924,7 +953,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official NIT Mizoram website (nitmz.ac.in: Hostels) + NIT Mizoram NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/nit-mizoram.png",
     overview: "NIT Mizoram is a National Institute of Technology in Aizawl, Mizoram. It is fully residential, with separate hostels for boys and girls, a mess in every hostel and institute buses between the hostels and the academic blocks. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech", exam: "JEE",
+    course: "B.Tech", exam: "JEE Main", minRank: 27017, maxRank: 62780,
     placementRate: 92, medianPackage: 8.4,
     hostelAvailable: true,
     facilities: [
@@ -935,6 +964,7 @@ export const colleges: CollegeSeed[] = [
     ],
     campusLife: ["Training and placement cell for internships and jobs"],
     pros: [
+      "Computer Science closed at JEE Main rank 41,038 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 137 B.Tech students graduating in 2024-25, 126 were placed and 7 went on to higher studies",
       "Placement rate has stayed above 85% for the last three batches (NIRF 2026 data)"
     ],
@@ -943,7 +973,7 @@ export const colleges: CollegeSeed[] = [
       "Hostels and academic blocks are apart, so you depend on institute buses"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official NIT Mizoram website (Hostels, Transportation, Health) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages, and it is not in the NIRF 2025 Engineering top 100."
+    sourceNote: "From the official NIT Mizoram website (Hostels, Transportation, Health) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages, and it is not in the NIRF 2025 Engineering top 100. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Nagaland", slug: "nit-nagaland", city: "Chumukedima", state: "Nagaland",
@@ -951,7 +981,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official NIT Nagaland website (nitnagaland.ac.in: Hostels, Medical). Checked 25 Nov 2026.
     logo: "/logos/nit-nagaland.png",
     overview: "NIT Nagaland is a National Institute of Technology at Chumukedima, Nagaland. It is a small, residential campus whose hostels are named after the mountains of the region, with separate hostels for first-year students. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech", exam: "JEE",
+    course: "B.Tech", exam: "JEE Main", minRank: 34098, maxRank: 64955,
     hostelAvailable: true,
     facilities: [
       "Six hostels on campus: four 64-seat boys' hostels, a 56-seat girls' hostel and a new 32-seat PG boys' hostel",
@@ -965,6 +995,7 @@ export const colleges: CollegeSeed[] = [
       "Student sports activities and a placement cell"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 42,326 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Dedicated hostels for first-year students",
       "Small hostels of 32–64 students each"
     ],
@@ -973,7 +1004,7 @@ export const colleges: CollegeSeed[] = [
       "Placement figures, fees and NIRF data weren't readable (the website was intermittently unavailable)"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official NIT Nagaland website (Hostels, Medical). Its website was intermittently unavailable, so placement figures, fees and NIRF data weren't checked."
+    sourceNote: "From the official NIT Nagaland website (Hostels, Medical). Its website was intermittently unavailable, so placement figures, fees and NIRF data weren't checked. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "IIT Bhubaneswar", slug: "iit-bhubaneswar", city: "Bhubaneswar", state: "Odisha",
@@ -982,7 +1013,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Bhubaneswar website (iitbbs.ac.in: About, About Campus) + IIT Bhubaneswar NIRF 2026 Engineering data. Checked 25 Nov 2026.
     logo: "/logos/iit-bhubaneswar.png", campusAcres: 936,
     overview: "IIT Bhubaneswar came into existence on 22 July 2008. After starting in two transit campuses in Bhubaneswar, it moved to its permanent 936-acre campus at the foot of the historic Barunei Hill, which has academic and residential areas plus space for training centres and a research park. Its vision is to be globally recognised for outstanding graduates and new knowledge. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 2982, maxRank: 16868,
     placementRate: 77, medianPackage: 13.3,
     hostelAvailable: true,
     facilities: [
@@ -996,6 +1027,7 @@ export const colleges: CollegeSeed[] = [
       "Focus on cross-discipline work, innovation, design and entrepreneurship"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 4,899 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 315 B.Tech students graduating in 2024-25, 243 were placed and 50 went on to higher studies",
       "Median B.Tech salary of ₹13.3 lakh (2024-25 graduates)",
       "Very large 936-acre campus"
@@ -1005,7 +1037,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Bhubaneswar website (About, About Campus) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not in these sources. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Bhubaneswar website (About, About Campus) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not in these sources. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "NIT Jalandhar", slug: "nit-jalandhar", city: "Jalandhar", state: "Punjab",
@@ -1013,8 +1045,11 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1987, website: "https://www.nitj.ac.in",
     logo: "/logos/nit-jalandhar.png",
     overview: "Good infrastructure and placement records.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 8000, maxRank: 20000,
+    course: "B.Tech CSE", exam: "JEE Main", minRank: 10687, maxRank: 53959,
     fees: 150000, placementRate: 82, averagePackage: 10.5,
+    pros: [
+      "Computer Science closed at JEE Main rank 13,411 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1025,7 +1060,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official MNIT Jaipur website (mnit.ac.in: About MNIT, Sports) + MNIT NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/mnit-jaipur.png", campusAcres: 317,
     overview: "MNIT Jaipur was set up in 1963 as Malaviya Regional Engineering College by the Government of India and the Government of Rajasthan. It became a National Institute of Technology on 26 June 2002 and an Institution of National Importance by an Act of Parliament on 15 August 2007, and is fully funded by the Ministry of Education. Its 317-acre campus is in the heart of Jaipur, close to the airport, railway station, hospitals and shopping malls. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 3755, maxRank: 37814,
     placementRate: 77, medianPackage: 10.0,
     hostelAvailable: true,
     facilities: [
@@ -1045,6 +1080,7 @@ export const colleges: CollegeSeed[] = [
       "Coaches and athlete support from the Physical Education & Sports office"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 5,868 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 732 B.Tech students graduating in 2024-25, 564 were placed and 24 went on to higher studies",
       "Large 317-acre campus inside the city, close to the airport and railway station",
       "Strong sports participation"
@@ -1054,7 +1090,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official MNIT Jaipur website (About MNIT, Sports) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official MNIT Jaipur website (About MNIT, Sports) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Sikkim", slug: "nit-sikkim", city: "Ravangla", state: "Sikkim",
@@ -1062,7 +1098,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official NIT Sikkim website (nitsikkim.ac.in: Campus, Information). Checked 25 Nov 2026.
     logo: "/logos/nit-sikkim.png",
     overview: "NIT Sikkim is an Institute of National Importance under the Ministry of Education. It currently runs from a temporary campus at Ravangla, South Sikkim, next to the Jawahar Navodaya Vidyalaya campus, while its permanent campus at Khamdong is under construction. Undergraduate admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech", exam: "JEE",
+    course: "B.Tech", exam: "JEE Main", minRank: 14021, maxRank: 61708,
     hostelAvailable: true,
     facilities: [
       "Temporary campus at Ravangla: 16 three-storey blocks of furnished 2-bedroom apartments used as boys' and girls' hostels and staff housing",
@@ -1076,6 +1112,7 @@ export const colleges: CollegeSeed[] = [
     ],
     sports: ["Common playground for outdoor games"],
     pros: [
+      "Computer Science closed at JEE Main rank 31,060 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Institute of National Importance",
       "Students live in furnished apartments rather than large dormitories"
     ],
@@ -1085,7 +1122,7 @@ export const colleges: CollegeSeed[] = [
       "Placement figures, fees and NIRF data weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech", duration: "4 years" }],
-    sourceNote: "From the official NIT Sikkim website (Campus, Information). Parts of the campus description may be out of date. Placement figures, fees and NIRF data weren't on the pages checked."
+    sourceNote: "From the official NIT Sikkim website (Campus, Information). Parts of the campus description may be out of date. Placement figures, fees and NIRF data weren't on the pages checked. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     // Source: official IIT Madras website (iitm.ac.in) + IIT Madras NIRF 2026 Engineering data submission.
@@ -1095,7 +1132,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIT", ownership: "Government", established: 1959, website: "https://www.iitm.ac.in",
     logo: "/logos/iit-madras.png", campusAcres: 630,
     overview: "Set up in 1959 with technical assistance from the West German government and declared an Institute of National Importance in 1961, IIT Madras is a fully residential institute in South Chennai. It has 16 academic departments, nearly 100 laboratories and about 550 faculty, and has been named an Institute of Eminence. Undergraduate entry is through JEE (Main) and JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 74, maxRank: 8354,
     placementRate: 81, medianPackage: 17.78,
     hostelAvailable: true,
     facilities: [
@@ -1134,6 +1171,7 @@ export const colleges: CollegeSeed[] = [
     ],
     fests: ["Shaastra (technical, January)", "Saarang (cultural, January)"],
     pros: [
+      "Computer Science closed at JEE Advanced rank 151 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 781 B.Tech students graduating in 2024-25, 631 were placed and 147 went on to higher studies",
       "Median B.Tech salary of ₹17.78 lakh (2024-25 graduates)",
       "Merit-cum-means scholarship: 67% tuition fee exemption for family income up to ₹4.5 lakh",
@@ -1168,7 +1206,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.S. Medical Sciences & Engineering", duration: "4 years" },
       { name: "Bachelor of Cyber Security", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Sports, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not published on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Madras website (About, Campus Life, Hostels, Sports, Scholarships, UG Admission 2026) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not published on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "IIT Hyderabad", slug: "iit-hyderabad", city: "Sangareddy", state: "Telangana",
@@ -1177,7 +1215,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Hyderabad website (iith.ac.in: About IITH, Campus Services). Checked 24 Nov 2026.
     logo: "/logos/iit-hyderabad.png",
     overview: "IIT Hyderabad was established in 2008 and says it has consistently ranked among India's top 10 engineering institutes in NIRF. It offers undergraduate programmes in classical engineering, applied sciences, design and interdisciplinary areas, with a strong focus on research, innovation and entrepreneurship, and has a special relationship with Japanese universities and industry. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 339, maxRank: 9123,
     placementRate: 77, medianPackage: 21.0,
     hostelAvailable: true,
     facilities: [
@@ -1197,6 +1235,7 @@ export const colleges: CollegeSeed[] = [
       "Programmes in design and interdisciplinary areas alongside engineering"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 680 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 399 B.Tech students graduating in 2023-24, 306 were placed and 37 went on to higher studies",
       "Median B.Tech salary of ₹21 lakh (2023-24 graduates)",
       "Single rooms for every student",
@@ -1208,15 +1247,18 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Hyderabad website (About IITH, Campus Services) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees weren't available. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Hyderabad website (About IITH, Campus Services) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees weren't available. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "NIT Agartala", slug: "nit-agartala", city: "Agartala", state: "Tripura",
     type: "NIT", ownership: "Government", established: 1965, website: "https://www.nita.ac.in",
     logo: "/logos/nit-agartala.png",
     overview: "Large campus with improved connectivity and placements.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 15000, maxRank: 35000,
+    course: "B.Tech CSE", exam: "JEE Main", minRank: 18036, maxRank: 61482,
     fees: 145000, placementRate: 75, averagePackage: 8.5,
+    pros: [
+      "Computer Science closed at JEE Main rank 24,527 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1227,7 +1269,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Kanpur website (iitk.ac.in: Students) + IIT Kanpur NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-kanpur.png",
     overview: "IIT Kanpur describes itself as known worldwide for a student-centred approach to nurturing future leaders and innovators. Undergraduates can do research through the SURGE summer programme, start companies through the SIDBI Innovation & Incubation Centre, and get confidential support from the Center for Mental Health and Wellbeing. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 32, maxRank: 7837,
     placementRate: 71, medianPackage: 21.7,
     hostelAvailable: true,
     facilities: [
@@ -1243,6 +1285,7 @@ export const colleges: CollegeSeed[] = [
       "Cultural activities and a strong student community"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 283 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 1,205 B.Tech students graduating in 2024-25, 855 were placed and 257 went on to higher studies",
       "Median B.Tech salary of ₹21.7 lakh (2024-25 graduates)",
       "Undergraduate research through SURGE and startup support through SIIC"
@@ -1251,7 +1294,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Kanpur website (Students) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Kanpur website (Students) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "IIT Roorkee", slug: "iit-roorkee", city: "Roorkee", state: "Uttarakhand",
@@ -1259,7 +1302,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIT", ownership: "Government", established: 1847, website: "https://www.iitr.ac.in",
     // Source: official IIT Roorkee website (iitr.ac.in: Institute, History). Checked 24 Nov 2026.
     overview: "IIT Roorkee traces its roots to Thomason College, which it describes as the oldest engineering college in India. The college was proposed around 1846 by Colonel Cautley, who was building the Ganges Canal, to James Thomason, Lieutenant-Governor of the North-West Provinces, to train civil engineers for canals, roads and irrigation works across northern India. Today it is an IIT administered through the IIT Council, and undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 363, maxRank: 8735,
     placementRate: 70, medianPackage: 17.0,
     hostelAvailable: true,
     facilities: [
@@ -1272,6 +1315,7 @@ export const colleges: CollegeSeed[] = [
       "International partnerships and exchange initiatives"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 587 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 1,102 B.Tech students graduating in 2023-24, 769 were placed and 333 went on to higher studies",
       "Median B.Tech salary of ₹17 lakh (2023-24 graduates)",
       "Merit-cum-means scholarship for 25% of undergraduate students",
@@ -1281,7 +1325,7 @@ export const colleges: CollegeSeed[] = [
       "Fees and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Roorkee website (Institute, History) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees and the logo weren't available. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Roorkee website (Institute, History) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees and the logo weren't available. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "IIT Kharagpur", slug: "iit-kharagpur", city: "Kharagpur", state: "West Bengal",
@@ -1290,7 +1334,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Kharagpur website (iitkgp.ac.in: About) + IIT Kharagpur NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-kharagpur.png",
     overview: "IIT Kharagpur, in West Bengal, has the motto 'Yogah Karmasu Kaushalam' (excellence in action is yoga), from the Bhagavad Gita. It aims to give broad-based education, build a spirit of entrepreneurship and innovation, and bring together expertise in science, technology, management and law, with programmes including architecture, management and law alongside engineering. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 217, maxRank: 12603,
     placementRate: 50, medianPackage: 20.74,
     hostelAvailable: true,
     facilities: [
@@ -1304,6 +1348,7 @@ export const colleges: CollegeSeed[] = [
       "Programmes across science, technology, management and law"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 509 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 882 four-year B.Tech students graduating in 2024-25, 438 took jobs and 367 went on to higher studies",
       "Median B.Tech salary of ₹20.74 lakh (2024-25 graduates)",
       "Unusually wide range of programmes, including law and architecture"
@@ -1313,7 +1358,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts and hostel details weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Kharagpur website (About) and its NIRF 2026 Engineering data submission (4-year UG programmes). Placement % = students placed ÷ students graduating. Fees were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Kharagpur website (About) and its NIRF 2026 Engineering data submission (4-year UG programmes). Placement % = students placed ÷ students graduating. Fees were not on these pages. Faculty and research figures are from its NIRF 2025 data submission. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "IIT Ropar", slug: "iit-ropar", city: "Rupnagar", state: "Punjab",
@@ -1321,8 +1366,11 @@ export const colleges: CollegeSeed[] = [
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitrpr.ac.in",
     logo: "/logos/iit-ropar.png",
     overview: "Established IIT with strong research focus and good placements.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 2000, maxRank: 5000,
+    course: "B.Tech CSE", exam: "JEE Advanced", minRank: 1768, maxRank: 15356,
     fees: 210000, placementRate: 85, averagePackage: 16.0,
+    pros: [
+      "Computer Science closed at JEE Advanced rank 3,214 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1331,8 +1379,11 @@ export const colleges: CollegeSeed[] = [
     nirfRank: 27, nirfScore: 61.31, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2008, website: "https://www.iitj.ac.in",
     overview: "Known for multidisciplinary programs and AI advancements.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 2500, maxRank: 6000,
+    course: "B.Tech CSE", exam: "JEE Advanced", minRank: 2536, maxRank: 17195,
     fees: 215000, placementRate: 83, averagePackage: 14.5,
+    pros: [
+      "Computer Science closed at JEE Advanced rank 3,755 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1343,7 +1394,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT (BHU) website (iitbhu.ac.in: Hostels) + IIT (BHU) NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-bhu.png",
     overview: "IIT (BHU) Varanasi is an Indian Institute of Technology located on the Banaras Hindu University campus in Varanasi, Uttar Pradesh. It is fully residential, with hostels ranging from some of the oldest, such as Dr. C. V. Raman and Dhanarajgiri, to the Satish Dhawan Hostel opened in May 2022. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 853, maxRank: 15894,
     placementRate: 97, medianPackage: 18.0,
     hostelAvailable: true,
     facilities: [
@@ -1358,6 +1409,7 @@ export const colleges: CollegeSeed[] = [
       "Hostel communities with long traditions in the older hostels"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 1,439 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 1,090 B.Tech students graduating in 2024-25, 1,061 were placed and 26 went on to higher studies",
       "Median B.Tech salary of ₹18 lakh (2024-25 graduates)",
       "Placement rate above 90% for each of the last three batches (NIRF 2026 data)"
@@ -1366,7 +1418,7 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked, so confirm them during admission"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT (BHU) Varanasi website (Hostels) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT (BHU) Varanasi website (Hostels) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "IIT Palakkad", slug: "iit-palakkad", city: "Palakkad", state: "Kerala",
@@ -1375,7 +1427,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Palakkad website (iitpkd.ac.in: About, Hostels) + IIT Palakkad NIRF 2025 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-palakkad-on-dark.png", campusAcres: 504,
     overview: "IIT Palakkad was established in 2015, starting with 120 students in July 2015 and growing to about 1,700. It sits at the Palakkad Gap in the Western Ghats, the northern gateway to Kerala, near the Silent Valley rainforests. It completed its move to its permanent Nila and Sahyadri campuses at the foothills of the Sahyadri range in 2023; the Sahyadri campus alone covers 504 acres. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 4760, maxRank: 18397,
     placementRate: 67, medianPackage: 12.0,
     hostelAvailable: true,
     facilities: [
@@ -1397,6 +1449,7 @@ export const colleges: CollegeSeed[] = [
       "Badminton at the 4GB Badminton Academy in Palakkad"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 7,625 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 156 B.Tech students graduating in 2023-24, 105 were placed and 16 went on to higher studies",
       "Median B.Tech salary of ₹12 lakh (2023-24 graduates)",
       "Brand-new permanent campus with modern labs and coaching for several sports"
@@ -1407,15 +1460,18 @@ export const colleges: CollegeSeed[] = [
       "Fee amounts weren't on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIT Palakkad website (About, Hostels) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Palakkad website (About, Hostels) and its NIRF 2025 Engineering data submission (students graduating in 2023-24). Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     name: "IIT Tirupati", slug: "iit-tirupati", city: "Tirupati", state: "Andhra Pradesh",
     nirfRank: 57, nirfScore: 52.73, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2015, website: "https://www.iittp.ac.in",
     overview: "Fastest growing among the newer IITs.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 3000, maxRank: 7500,
+    course: "B.Tech CSE", exam: "JEE Advanced", minRank: 2879, maxRank: 17682,
     fees: 210000, placementRate: 81, averagePackage: 12.5,
+    pros: [
+      "Computer Science closed at JEE Advanced rank 6,030 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1424,8 +1480,11 @@ export const colleges: CollegeSeed[] = [
     nirfRank: 72, nirfScore: 50.37, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2016, website: "https://www.iitbhilai.ac.in",
     overview: "Emerging IIT with strong focus on core engineering.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 4000, maxRank: 9000,
+    course: "B.Tech CSE", exam: "JEE Advanced", minRank: 6201, maxRank: 17880,
     fees: 200000, placementRate: 78, averagePackage: 11.5,
+    pros: [
+      "Computer Science closed at JEE Advanced rank 8,886 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1433,8 +1492,11 @@ export const colleges: CollegeSeed[] = [
     name: "IIT Goa", slug: "iit-goa-new", city: "Ponda", state: "Goa",
     type: "IIT", ownership: "Government", established: 2016, website: "https://www.iitgoa.ac.in",
     overview: "New IIT situated in a vibrant location with growing industry ties.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 3500, maxRank: 8500,
+    course: "B.Tech CSE", exam: "JEE Advanced", minRank: 4323, maxRank: 14290,
     fees: 205000, placementRate: 79, averagePackage: 11.0,
+    pros: [
+      "Computer Science closed at JEE Advanced rank 7,024 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1443,8 +1505,11 @@ export const colleges: CollegeSeed[] = [
     nirfRank: 56, nirfScore: 53.08, nirfYear: 2025,
     type: "IIT", ownership: "Government", established: 2016, website: "https://www.iitjammu.ac.in",
     overview: "Scenic campus with rapidly developing academic programs.",
-    course: "B.Tech CSE", exam: "JEE", minRank: 4500, maxRank: 10000,
+    course: "B.Tech CSE", exam: "JEE Advanced", minRank: 4505, maxRank: 18637,
     fees: 200000, placementRate: 75, averagePackage: 10.0,
+    pros: [
+      "Computer Science closed at JEE Advanced rank 7,218 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)"
+    ],
     courses: [{ name: "B.Tech CSE", duration: '4 years' }],
     sourceNote: UNVERIFIED
   },
@@ -1455,7 +1520,7 @@ export const colleges: CollegeSeed[] = [
     // Source: official IIT Dharwad website (iitdh.ac.in: About, Programmes) + IIT Dharwad NIRF 2026 Engineering data. Checked 24 Nov 2026.
     logo: "/logos/iit-dharwad.png",
     overview: "IIT Dharwad is one of the newer IITs, in Dharwad, Karnataka. It offers B.Tech programmes in Computer Science & Engineering, Electrical Engineering, Chemical & Biochemical Engineering, Civil & Infrastructure Engineering and more, plus interdisciplinary BS degrees in mathematics and physics, M.Sc., M.Tech and PhD. Undergraduate entry is through JEE (Advanced).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Advanced", minRank: 4363, maxRank: 17968,
     placementRate: 69, medianPackage: 13.25,
     hostelAvailable: true,
     facilities: [
@@ -1468,6 +1533,7 @@ export const colleges: CollegeSeed[] = [
       "Interdisciplinary BS programmes alongside B.Tech"
     ],
     pros: [
+      "Computer Science closed at JEE Advanced rank 8,332 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Of 159 B.Tech students graduating in 2024-25, 110 were placed and 31 went on to higher studies",
       "Median B.Tech salary of ₹13.25 lakh (2024-25 graduates)",
       "Small batches at a newer IIT"
@@ -1483,7 +1549,7 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Civil & Infrastructure Engineering", duration: "4 years" },
       { name: "BS Interdisciplinary Sciences (Mathematics / Physics major)", duration: "4 years" }
     ],
-    sourceNote: "From the official IIT Dharwad website (About, Programmes) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIT Dharwad website (About, Programmes) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     // Source: official IIITDM Kurnool website (iiitk.ac.in: About, Sports Facilities). Checked 25 Nov 2026.
@@ -1491,7 +1557,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIIT", ownership: "Government", established: 2015, website: "https://iiitk.ac.in",
     logo: "/logos/iiitdm-kurnool.png", campusAcres: 151,
     overview: "The Indian Institute of Information Technology, Design & Manufacturing, Kurnool was announced in 2014 under the IIIT Act, 2014, to meet the Government of India's commitment under the Andhra Pradesh Reorganisation Act. It is fully funded by the Ministry of Education and began teaching in August 2015 at its mentor institute, IIITDM Kancheepuram. It became an Institute of National Importance in August 2017. Its 151-acre permanent campus sits on a hill overlooking Kurnool, with strong winds from the Tungabhadra river.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 22369, maxRank: 55564,
     hostelAvailable: true,
     facilities: [
       "151-acre hilltop campus in the Rayalaseema region, overlooking Kurnool city",
@@ -1509,6 +1575,7 @@ export const colleges: CollegeSeed[] = [
       "Shri Krishnadevaraya ground for outdoor games"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 37,282 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Institute of National Importance, fully funded by the Ministry of Education",
       "Wide range of sports facilities and a supervised fitness centre",
       "Peaceful hilltop campus"
@@ -1518,7 +1585,7 @@ export const colleges: CollegeSeed[] = [
       "Placement figures and fees weren't readable on the pages checked"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIITDM Kurnool website (About, Sports Facilities). Its NIRF data is on a separate file site that wasn't checked; fees and placement figures weren't readable."
+    sourceNote: "From the official IIITDM Kurnool website (About, Sports Facilities). Its NIRF data is on a separate file site that wasn't checked; fees and placement figures weren't readable. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     // Source: official IIIT Sri City website (iiits.ac.in: About, Hostels & Dining, Sports, Placements). Checked 25 Nov 2026.
@@ -1526,7 +1593,7 @@ export const colleges: CollegeSeed[] = [
     type: "IIIT (PPP)", ownership: "Government", established: 2013, website: "https://iiits.ac.in",
     logo: "/logos/iiit-sri-city.png",
     overview: "IIIT Sri City was established in 2013 by the Ministry of Education as an Institute of National Importance. It was set up as a public-private partnership between the Government of India, the Government of Andhra Pradesh and industry partners represented by the Sri City Foundation. It is in Sri City, about 60 km from Chennai on the Nellore highway, with Chennai and Tirupati airports each about 70 km away. It offers B.Tech, M.Tech, MS and PhD programmes and is known for undergraduate-led research.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 11251, maxRank: 29473,
     hostelAvailable: true,
     facilities: [
       "Two hostel blocks with a large dining hall; two more blocks are being built",
@@ -1546,6 +1613,7 @@ export const colleges: CollegeSeed[] = [
       "Multi-gym for aerobic training"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 23,052 in JoSAA 2026 (round 5, OPEN, gender-neutral, All India quota)",
       "Strong focus on undergraduate research and practical programming",
       "About an hour from Chennai",
       "Internships from the first year"
@@ -1559,14 +1627,14 @@ export const colleges: CollegeSeed[] = [
       { name: "B.Tech Computer Science and Engineering", duration: "4 years" },
       { name: "B.Tech Electronics and Communication Engineering", duration: "4 years" }
     ],
-    sourceNote: "From the official IIIT Sri City website (About, Hostels & Dining, Sports, Campus Placement). NIRF data, fees and placement figures weren't on the pages checked."
+    sourceNote: "From the official IIIT Sri City website (About, Hostels & Dining, Sports, Campus Placement). NIRF data, fees and placement figures weren't on the pages checked. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, All India quota)."
   },
   {
     // Source: official IIPE website (iipe.ac.in: Sports, Student Life). Checked 25 Nov 2026.
     name: "Indian Institute of Petroleum & Energy (IIPE)", slug: "iipe-visakhapatnam", city: "Visakhapatnam", state: "Andhra Pradesh",
     type: "National Institute", ownership: "Government", website: "https://iipe.ac.in",
     overview: "The Indian Institute of Petroleum and Energy (IIPE) in Visakhapatnam focuses on petroleum, energy and earth sciences, with a Department of Petroleum Engineering & Earth Sciences. It offers two B.Tech branches with a common first year, plus M.Tech and PhD programmes. Undergraduate admission is through JEE (Main).",
-    course: "B.Tech Petroleum Engineering", exam: "JEE",
+    course: "B.Tech Petroleum Engineering", exam: "JEE Main",
     hostelAvailable: true,
     facilities: [
       "Separate boys' and girls' hostels",
@@ -1596,7 +1664,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1961, website: "https://www.nitrkl.ac.in",
     logo: "/logos/nit-rourkela.png",
     overview: "NIT Rourkela began as the Regional Engineering College, Rourkela in 1961 and was raised to a National Institute of Technology with university status by the Government of India, which funds it. It is run by the Board of Governors of the NIT Rourkela Society and trains engineers and scientists at undergraduate and postgraduate levels. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 2525, maxRank: 36492,
     placementRate: 81, medianPackage: 18.38,
     hostelAvailable: true,
     facilities: [
@@ -1605,6 +1673,7 @@ export const colleges: CollegeSeed[] = [
       "Central Research Facility for advanced instruments"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 4,266 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 1,021 B.Tech students graduating in 2024-25, 829 were placed and 155 went on to higher studies",
       "Median B.Tech salary of ₹18.38 lakh (2024-25 graduates)",
       "NIRF 2025 Engineering rank 13"
@@ -1613,7 +1682,7 @@ export const colleges: CollegeSeed[] = [
       "Rourkela is a smaller industrial city, far from big metro job hubs"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NIT Rourkela website (home page, Campus Facility) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Rourkela website (home page, Campus Facility) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "Siksha 'O' Anusandhan (ITER)", slug: "siksha-o-anusandhan", city: "Bhubaneswar", state: "Odisha",
@@ -1652,7 +1721,7 @@ export const colleges: CollegeSeed[] = [
     type: "Central University", ownership: "Government", established: 1920, website: "https://www.jmi.ac.in",
     logo: "/logos/jamia-millia-islamia.svg",
     overview: "Jamia Millia Islamia was founded at Aligarh in 1920, when nationalist teachers and students answered Mahatma Gandhi's call to boycott colonial-supported institutions. It moved to New Delhi and became a Central University by an Act of Parliament in 1988. In Urdu, Jamia means 'university' and Millia means 'national'. Its Faculty of Engineering and Technology offers B.Tech programmes, with admission through JEE (Main).",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main",
     hostelAvailable: true,
     pros: [
       "Central university in New Delhi with low government fees",
@@ -1668,14 +1737,15 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1959, website: "https://www.nitw.ac.in",
     logo: "/logos/nit-warangal.png",
     overview: "NIT Warangal was the first of the Regional Engineering Colleges, set up in 1959, and is now an Institution of National Importance under the NIT Act, funded by the Government of India. Its campus is in Warangal, Telangana. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 1608, maxRank: 31744,
     hostelAvailable: true,
     pros: [
+      "Computer Science closed at JEE Main rank 2,581 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "First of India's Regional Engineering Colleges (now NITs)",
       "NIRF 2025 Engineering rank 28"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "The NIT Warangal website only loads with JavaScript, so we could only confirm its logo and basic facts. Placement and fee figures are not shown yet. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "The NIT Warangal website only loads with JavaScript, so we could only confirm its logo and basic facts. Placement and fee figures are not shown yet. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "Thapar Institute of Engineering and Technology", slug: "thapar", city: "Patiala", state: "Punjab",
@@ -1684,7 +1754,7 @@ export const colleges: CollegeSeed[] = [
     type: "Deemed University", ownership: "Private", established: 1956, website: "https://www.thapar.edu",
     logo: "/logos/thapar.png", campusAcres: 250,
     overview: "Thapar Institute of Engineering and Technology (TIET), founded in 1956, is one of India's oldest private engineering institutions. Its 250-acre campus is in Patiala, Punjab, and it is a deemed-to-be university accredited A++ by NAAC. B.Tech admission is mainly through JEE (Main) scores.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main",
     placementRate: 86, medianPackage: 10,
     hostelAvailable: true,
     pros: [
@@ -1753,7 +1823,7 @@ export const colleges: CollegeSeed[] = [
     type: "Deemed University", ownership: "Private", established: 1984, website: "https://www.sastra.edu",
     logo: "/logos/sastra.png",
     overview: "SASTRA (Shanmugha Arts, Science, Technology & Research Academy) is a deemed-to-be university in Thanjavur, Tamil Nadu, teaching engineering, management, law, sciences and humanities. It was re-accredited in its fourth NAAC cycle with the top A++ grade and a score of 3.76, which it says makes it the top university of its kind in Tamil Nadu. B.Tech admission uses JEE (Main) scores together with Class 12 marks.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main",
     hostelAvailable: true,
     pros: [
       "NAAC A++ grade with a score of 3.76 (fourth cycle)",
@@ -1842,14 +1912,15 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1960, website: "https://www.nitdgp.ac.in",
     logo: "/logos/nit-durgapur.png",
     overview: "NIT Durgapur in West Bengal started as a Regional Engineering College in 1960 and is now an Institution of National Importance under the NIT Act, funded by the Government of India. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 8572, maxRank: 51177,
     hostelAvailable: true,
     pros: [
+      "Computer Science closed at JEE Main rank 12,281 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "NIRF 2025 Engineering rank 49",
       "Government-funded research projects, such as next-generation nano-dielectrics for high-speed devices"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NIT Durgapur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Durgapur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Silchar", slug: "nit-silchar", city: "Silchar", state: "Assam",
@@ -1858,13 +1929,14 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1967, website: "https://www.nits.ac.in",
     logo: "/logos/nit-silchar.png", campusAcres: 540,
     overview: "NIT Silchar began in 1967 as a Regional Engineering College, working first from a camp office in Shillong, and admitted its first 60 B.E. students in 1977. It became a National Institute of Technology with deemed university status on 28 June 2002. Its campus of about 540 acres is 8 km south of Silchar town, Assam, on the Silchar–Hailakandi road. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 8111, maxRank: 50179,
     hostelAvailable: true,
     facilities: [
       "Eight boys' hostels and three girls' hostels, each with its own mess committee",
       "A 1,000-bed boys' hostel, a 300-bed PG hostel and a married scholars' hostel have been built"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 13,993 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Large 540-acre campus",
       "NIRF 2025 Engineering rank 50"
     ],
@@ -1872,7 +1944,7 @@ export const colleges: CollegeSeed[] = [
       "Silchar is far from major cities; travel to and from home takes longer"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NIT Silchar website (History, Hostels). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Silchar website (History, Hostels). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Patna", slug: "nit-patna", city: "Patna", state: "Bihar",
@@ -1881,17 +1953,18 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1886, website: "https://www.nitp.ac.in",
     logo: "/logos/nit-patna.png",
     overview: "NIT Patna is an Institution of National Importance under the Ministry of Education, on the banks of the Ganga in Patna, Bihar. It traces its history to 1886 and was the Bihar College of Engineering before it became an NIT in 2004. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 11488, maxRank: 50873,
     hostelAvailable: true,
     fests: [
       "Tatva (techno-management fest)"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 17,282 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "One of India's oldest engineering institutions",
       "NIRF 2025 Engineering rank 53"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NIT Patna website (home page). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Patna website (home page). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "IIEST Shibpur", slug: "iiest-shibpur", city: "Howrah", state: "West Bengal",
@@ -1900,14 +1973,15 @@ export const colleges: CollegeSeed[] = [
     type: "Institute of National Importance", ownership: "Government", established: 1856, website: "https://www.iiests.ac.in",
     logo: "/logos/iiest-shibpur.png",
     overview: "The Indian Institute of Engineering Science and Technology (IIEST), Shibpur, in Howrah near Kolkata, is an Institution of National Importance. It traces its roots to 1856 and was long known as Bengal Engineering College, one of India's oldest engineering colleges. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 12394, maxRank: 59117,
     hostelAvailable: true,
     pros: [
+      "Computer Science closed at JEE Main rank 18,799 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "One of India's oldest engineering colleges, on the banks of the Hooghly",
       "NIRF 2025 Engineering rank 54"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official IIEST Shibpur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official IIEST Shibpur website (home page). Its NIRF data page did not load for us, so placement and fee figures are not shown. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "Manipal University Jaipur", slug: "manipal-jaipur", city: "Jaipur", state: "Rajasthan",
@@ -1932,7 +2006,7 @@ export const colleges: CollegeSeed[] = [
     type: "State University", ownership: "Government", established: 1962, website: "https://www.mmmut.ac.in",
     logo: "/logos/mmmut.jpg",
     overview: "Madan Mohan Malaviya University of Technology (MMMUT) is a state government university in Gorakhpur, Uttar Pradesh, with a NAAC 'A' grade. It started as an engineering college in 1962 and now teaches engineering, applied sciences, management and other subjects. B.Tech admission is based on JEE (Main) scores.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main",
     placementRate: 88, medianPackage: 13.75,
     hostelAvailable: true,
     pros: [
@@ -1950,7 +2024,7 @@ export const colleges: CollegeSeed[] = [
     type: "Deemed University", ownership: "Private", established: 1955, website: "https://bitmesra.ac.in",
     logo: "/logos/bit-mesra.png",
     overview: "Birla Institute of Technology (BIT) Mesra, founded in 1955 by industrialist and philanthropist B.M. Birla, is one of the oldest institutes of technology in independent India. It is a deemed-to-be university in Mesra, Ranchi, the capital of Jharkhand, set among forests and hills. B.Tech admission is based on JEE (Main) scores.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main",
     hostelAvailable: true,
     pros: [
       "One of the oldest technology institutes in independent India",
@@ -1989,7 +2063,7 @@ export const colleges: CollegeSeed[] = [
     type: "Deemed University", ownership: "Government", established: 2007, website: "https://www.iist.ac.in",
     logo: "/logos/iist.png",
     overview: "The Indian Institute of Space Science and Technology (IIST) was set up in 2007 at Valiamala, Thiruvananthapuram, Kerala, under the Department of Space, to promote education and research in space science and technology. It offers B.Tech in Aerospace Engineering and Electronics & Communication Engineering, and a dual degree with a B.Tech in Engineering Physics. B.Tech admission is based on JEE (Advanced) ranks.",
-    course: "B.Tech Aerospace Engineering", exam: "JEE",
+    course: "B.Tech Aerospace Engineering", exam: "JEE Advanced",
     placementRate: 67, medianPackage: 11.98,
     hostelAvailable: true,
     pros: [
@@ -2010,16 +2084,17 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1961, website: "https://www.mnnit.ac.in",
     logo: "/logos/mnnit-allahabad.png",
     overview: "Motilal Nehru National Institute of Technology (MNNIT) Allahabad in Prayagraj, Uttar Pradesh, is an Institution of National Importance under the NIT Act. It began as a Regional Engineering College in 1961. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 1641, maxRank: 42249,
     placementRate: 94, medianPackage: 12.6,
     hostelAvailable: true,
     pros: [
+      "Computer Science closed at JEE Main rank 5,375 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 1,032 B.Tech students graduating in 2024-25, 966 were placed",
       "Median B.Tech salary of ₹12.6 lakh (2024-25 graduates)",
       "Four-star rating from the Ministry of Education's Institutions' Innovation Council"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official MNNIT Allahabad website (home page) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official MNNIT Allahabad website (home page) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "NIT Delhi", slug: "nit-delhi", city: "Delhi", state: "Delhi",
@@ -2028,7 +2103,7 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 2010, website: "https://nitdelhi.ac.in",
     logo: "/logos/nit-delhi.svg",
     overview: "NIT Delhi is one of the newer National Institutes of Technology, set up in 2010, and is an Institution of National Importance under the NIT Act. Its campus is at Narela, Delhi. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 3613, maxRank: 32027,
     hostelAvailable: true,
     facilities: [
       "Hostels such as Dhauladhar on campus",
@@ -2038,6 +2113,7 @@ export const colleges: CollegeSeed[] = [
       "Sports club for students"
     ],
     pros: [
+      "Computer Science closed at JEE Main rank 8,669 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Located in the national capital",
       "NIRF 2025 Engineering rank 65"
     ],
@@ -2045,7 +2121,7 @@ export const colleges: CollegeSeed[] = [
       "A young institute that is still building out its campus"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official NIT Delhi website (home and campus pages). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official NIT Delhi website (home and campus pages). Placement and fee figures were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "SVNIT Surat", slug: "svnit-surat", city: "Surat", state: "Gujarat",
@@ -2054,16 +2130,17 @@ export const colleges: CollegeSeed[] = [
     type: "NIT", ownership: "Government", established: 1961, website: "https://www.svnit.ac.in",
     logo: "/logos/svnit-surat.png",
     overview: "Sardar Vallabhbhai National Institute of Technology (SVNIT) in Surat, Gujarat, is an Institution of National Importance under the NIT Act. It began as a Regional Engineering College in 1961. B.Tech admission is through JEE (Main) and JoSAA.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main", minRank: 6371, maxRank: 46051,
     placementRate: 74, medianPackage: 10,
     hostelAvailable: true,
     pros: [
+      "Computer Science closed at JEE Main rank 9,517 in JoSAA 2026 (round 5, OPEN, gender-neutral, other-state quota)",
       "Of 801 B.Tech students graduating in 2024-25, 591 were placed and 144 went on to higher studies",
       "Median B.Tech salary of ₹10 lakh (2024-25 graduates)",
       "Anti-ragging helpline publicised on the home page"
     ],
     courses: [{ name: "B.Tech Computer Science and Engineering", duration: "4 years" }],
-    sourceNote: "From the official SVNIT website (home, NIRF) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Hostel fee notices are on the website; tuition fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking."
+    sourceNote: "From the official SVNIT website (home, NIRF) and its NIRF 2026 Engineering data submission. Placement % = students placed ÷ students graduating. Hostel fee notices are on the website; tuition fees were not on these pages. NIRF 2025 rank and score are from the official NIRF Engineering ranking. Cutoff ranks are JoSAA 2026 round 5 opening and closing ranks for B.Tech (OPEN category, gender-neutral, other-state quota)."
   },
   {
     name: "Sathyabama Institute of Science and Technology", slug: "sathyabama", city: "Chennai", state: "Tamil Nadu",
@@ -2088,7 +2165,7 @@ export const colleges: CollegeSeed[] = [
     type: "Deemed University", ownership: "Private", established: 1999, website: "https://www.iiitb.ac.in",
     logo: "/logos/iiit-bangalore.png",
     overview: "The International Institute of Information Technology Bangalore (IIITB) is a deemed-to-be university in Electronic City, Bengaluru, focused on IT, data science, electronics and digital society. It is best known for its Integrated M.Tech and postgraduate programmes, and started a 4-year B.Tech in 2024 with 210 seats. Admission is based on JEE (Main) ranks.",
-    course: "B.Tech Computer Science and Engineering", exam: "JEE",
+    course: "B.Tech Computer Science and Engineering", exam: "JEE Main",
     hostelAvailable: true,
     pros: [
       "Strong postgraduate and research focus in IT and data science",

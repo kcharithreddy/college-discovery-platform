@@ -6,8 +6,8 @@ import { CollegeCard, CollegeCardSkeleton } from '@/components/CollegeCard';
 import { College, FiltersResponse, api } from '@/lib/api';
 
 export default function PredictorPage() {
-  const [exams, setExams] = useState<string[]>(['JEE']);
-  const [exam, setExam] = useState('JEE');
+  const [exams, setExams] = useState<string[]>(['JEE Main', 'JEE Advanced']);
+  const [exam, setExam] = useState('JEE Main');
   const [rank, setRank] = useState('');
   const [matches, setMatches] = useState<College[] | null>(null);
   const [message, setMessage] = useState('');
@@ -15,7 +15,14 @@ export default function PredictorPage() {
 
   useEffect(() => {
     api<FiltersResponse>('/colleges/filters')
-      .then(data => { if (data.exams.length) setExams(data.exams); })
+      .then(data => {
+        const list = data.rankExams?.length ? data.rankExams : data.exams;
+        if (!list.length) return;
+        // JEE Main first: it covers the most colleges (NITs, IIITs and other institutes).
+        const sorted = [...list].sort((a, b) => Number(b === 'JEE Main') - Number(a === 'JEE Main'));
+        setExams(sorted);
+        setExam(current => (sorted.includes(current) ? current : sorted[0]));
+      })
       .catch(() => undefined);
   }, []);
 
@@ -43,7 +50,7 @@ export default function PredictorPage() {
         <div aria-hidden className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
         <p className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-brand-100"><Target className="h-4 w-4" /> College predictor</p>
         <h1 className="mt-3 max-w-2xl text-4xl font-extrabold md:text-5xl">Which colleges can I get with my rank?</h1>
-        <p className="mt-3 max-w-xl text-brand-100">Enter your exam and rank. We match it against the rank ranges we have for each college.</p>
+        <p className="mt-3 max-w-xl text-brand-100">Enter your JEE Main rank (CRL) for NITs, IIITs and other institutes, or your JEE Advanced rank for IITs. We compare it with official JoSAA 2026 closing ranks.</p>
 
         <form onSubmit={predict} className="mt-8 grid max-w-2xl gap-3 rounded-2xl bg-white/10 p-3 backdrop-blur sm:grid-cols-[1fr_1fr_auto]">
           <label>
@@ -64,7 +71,7 @@ export default function PredictorPage() {
 
       <p className="mt-4 flex items-start gap-2 text-sm text-sub">
         <Info className="mt-0.5 h-4 w-4 shrink-0" />
-        Cutoffs change every year and differ by branch, category and quota. Treat this as a starting point and check official JoSAA or counselling closing ranks.
+        Based on JoSAA 2026 round 5 closing ranks for B.Tech: OPEN category, gender-neutral, All India quota for IITs and IIITs, other-state quota for NITs (home-state cutoffs are usually higher). A match means at least one branch closed at or after your rank. Cutoffs change every year, so check the official JoSAA website too.
       </p>
 
       {message && <p className="card mt-6 border-rose-200 p-4 text-rose-700 dark:border-rose-900 dark:text-rose-300">{message}</p>}

@@ -16,7 +16,7 @@ export function buildBeforeYouJoin(college: College): Faq[] {
     answer: [
       admissionRoute(college),
       college.minRank != null && college.maxRank != null
-        ? `In our data, students admitted here had ${college.exam} ranks roughly between ${college.minRank.toLocaleString('en-IN')} and ${college.maxRank.toLocaleString('en-IN')}. Cutoffs change every year and differ by branch, category and quota.`
+        ? `In JoSAA 2026 (round 5, OPEN category, gender-neutral), B.Tech seats here opened at ${college.exam} rank ${college.minRank.toLocaleString('en-IN')} and the last branch closed at ${college.maxRank.toLocaleString('en-IN')}. Popular branches like Computer Science close much earlier, and cutoffs differ by category, quota and year.`
         : 'We do not have cutoff ranks for this college yet.',
       isCentral ? 'Check the previous rounds\' opening and closing ranks on the official JoSAA website.' : 'Check last year\'s cutoffs on the official counselling or admissions website.'
     ].join(' ')
