@@ -116,7 +116,8 @@ Run from the repository root:
 | `npm run lint` | ESLint for the web app |
 | `npm run db:migrate` | Create and apply a new migration (development) |
 | `npm run db:deploy` | Apply existing migrations (CI / production) |
-| `npm run seed` | Reset the database and load sample data |
+| `npm run seed` | Reset the database and load the college data |
+| `npm run seed:if-changed -w apps/api` | Load the college data only if it changed (used on server start) |
 
 ## Environment variables
 
@@ -162,19 +163,31 @@ Base URL: `/api`
 
 ## Deployment
 
-### Backend (Render / Railway)
+The website runs on **Vercel**; the API and its PostgreSQL database run on **Render**.
 
-- **Root directory:** `apps/api`
-- **Build command:** `npm install && npm run build && npx prisma migrate deploy`
-- **Start command:** `npm start`
-- **Environment:** `DATABASE_URL`, `JWT_SECRET`, `CLIENT_URL` (your Vercel URL), and optionally `GOOGLE_CLIENT_ID`, `DEMO_OTP`
+### 1. API + database (Render Blueprint)
 
-Seed the database once after the first deploy with `npm run seed`.
+[`render.yaml`](render.yaml) describes both, so one step creates them:
 
-### Frontend (Vercel)
+1. In Render: **New → Blueprint**, pick this repository (branch `main`).
+2. When asked, set `CLIENT_URL` to your Vercel address, e.g. `https://your-site.vercel.app`.
+3. Click **Apply**. Render creates the database, generates `JWT_SECRET`, applies the migrations and loads the colleges.
+
+On every start the API applies new migrations and reloads the colleges only if the college data changed (`npm run seed:if-changed`), so restarts keep students' reviews and saved lists.
+
+Check it at `https://<your-api>.onrender.com/api/health`.
+
+### 2. Website (Vercel)
 
 - **Root directory:** `apps/web`
-- **Environment:** `NEXT_PUBLIC_API_URL=https://your-backend-url.com/api`, and optionally `NEXT_PUBLIC_GOOGLE_CLIENT_ID`
+- **Environment:** `NEXT_PUBLIC_API_URL=https://<your-api>.onrender.com/api`, and optionally `NEXT_PUBLIC_GOOGLE_CLIENT_ID`
+- **Redeploy** after changing environment variables: the API address is built into the site's Content-Security-Policy.
+
+### Free-plan notes
+
+- Render's free API sleeps after 15 minutes without visitors. The website retries automatically while it wakes up (about a minute). To keep it awake, set the repository variable `API_URL` to `https://<your-api>.onrender.com/api`; the [Keep API awake](.github/workflows/keep-api-awake.yml) workflow then pings it every 10 minutes.
+- Render's free PostgreSQL database expires after 30 days. For a permanent free database, create one on [Neon](https://neon.tech) and set the API's `DATABASE_URL` to its connection string.
+- Mobile OTP needs an SMS provider, so it is off in production; use email or Google login.
 
 ## College data
 
