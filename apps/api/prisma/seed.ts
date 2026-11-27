@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import { createHash } from 'crypto';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import { colleges } from './data/colleges';
@@ -12,12 +13,14 @@ async function main() {
     slugs.add(college.slug);
   }
 
-  // `--if-changed` (used when the server starts) skips seeding when the database already has
-  // exactly this many colleges, so restarts don't wipe students' reviews and saved lists.
+  // `--if-changed` (used when the server starts) skips seeding when the database already holds
+  // exactly this college data, so restarts don't wipe students' reviews and saved lists.
+  // The data's fingerprint is stored as a comment on the College table after each seed.
+  const fingerprint = createHash('sha256').update(JSON.stringify(colleges)).digest('hex');
   if (process.argv.includes('--if-changed')) {
-    const existing = await prisma.college.count();
-    if (existing === colleges.length) {
-      console.log(`Database already has ${existing} colleges; skipping seed`);
+    const [row] = await prisma.$queryRaw<{ fingerprint: string | null }[]>`SELECT obj_description('"College"'::regclass) AS fingerprint`;
+    if (row?.fingerprint === fingerprint) {
+      console.log('College data is unchanged; skipping seed');
       return;
     }
   }
@@ -47,6 +50,8 @@ async function main() {
     }
   }
 
+  // fingerprint is a hex digest, so it is safe to put in the SQL text.
+  await prisma.$executeRawUnsafe(`COMMENT ON TABLE "College" IS '${fingerprint}'`);
   console.log(`Seeded ${colleges.length} colleges`);
 }
 
