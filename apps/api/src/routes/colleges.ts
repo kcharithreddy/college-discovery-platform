@@ -65,7 +65,7 @@ router.get('/', asyncHandler(async (req, res) => {
 
 router.get('/filters', asyncHandler(async (_req, res) => {
   const [colleges, courses] = await Promise.all([
-    prisma.college.findMany({ select: { state: true, type: true, exam: true } }),
+    prisma.college.findMany({ select: { state: true, type: true, exam: true, maxRank: true } }),
     prisma.course.findMany({ select: { name: true }, distinct: ['name'], orderBy: { name: 'asc' } })
   ]);
   const unique = (values: string[]) => [...new Set(values)].sort();
@@ -73,6 +73,8 @@ router.get('/filters', asyncHandler(async (_req, res) => {
     states: unique(colleges.map(c => c.state)),
     types: unique(colleges.map(c => c.type)),
     exams: unique(colleges.map(c => c.exam)).filter(exam => exam !== 'See official website'),
+    /** Exams that have cutoff ranks, i.e. the ones the predictor can use. */
+    rankExams: unique(colleges.filter(c => c.maxRank != null).map(c => c.exam)),
     courses: courses.map(c => c.name)
   });
 }));
@@ -102,14 +104,12 @@ router.post('/predict', asyncHandler(async (req, res) => {
     return;
   }
 
+  // A college is possible when at least one branch closed at or after this rank.
+  // (minRank isn't checked: a better rank than the opening rank still gets a seat.)
   const matches = await prisma.college.findMany({
-    where: {
-      exam: parsed.data.exam,
-      minRank: { lte: parsed.data.rank },
-      maxRank: { gte: parsed.data.rank }
-    },
+    where: { exam: parsed.data.exam, maxRank: { gte: parsed.data.rank } },
     orderBy: SORTS.nirf,
-    take: 20
+    take: 60
   });
 
   res.json({ matches });

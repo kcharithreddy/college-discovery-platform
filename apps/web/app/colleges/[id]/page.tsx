@@ -121,7 +121,7 @@ export default async function CollegeDetail({ params }: { params: { id: string }
             <dl className="grid gap-3 sm:grid-cols-3">
               <Fact label="Tuition / year" value={formatFees(college.fees)} />
               <Fact label="Hostel + mess / year" value={formatFees(college.hostelFees)} />
-              <Fact label="Rank range" value={college.minRank != null && college.maxRank != null ? `${college.minRank.toLocaleString('en-IN')} – ${college.maxRank.toLocaleString('en-IN')}` : NOT_AVAILABLE} />
+              <Fact label="JoSAA 2026 ranks" value={college.minRank != null && college.maxRank != null ? `${college.minRank.toLocaleString('en-IN')} – ${college.maxRank.toLocaleString('en-IN')}` : NOT_AVAILABLE} />
             </dl>
             {college.courses && college.courses.length > 0 && (
               <div className="mt-5 overflow-x-auto rounded-xl border border-line">

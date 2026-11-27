@@ -58,7 +58,7 @@ export type College = {
   reviews?: Review[];
 };
 
-export type FiltersResponse = { states: string[]; types: string[]; exams: string[]; courses: string[] };
+export type FiltersResponse = { states: string[]; types: string[]; exams: string[]; rankExams?: string[]; courses: string[] };
 export type AuthResponse = { token: string; user: { id: string; name: string; email?: string | null; phone?: string | null; provider?: string } };
 
 export class ApiError extends Error {
