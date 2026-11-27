@@ -85,9 +85,15 @@ export function clearToken() {
   window.dispatchEvent(new Event('auth-changed'));
 }
 
+/** Free hosting puts the API to sleep when idle; waking it can take up to about a minute. */
+const WAKE_UP_RETRY_DELAYS_MS = [2000, 4000, 8000, 15000, 30000];
+const OFFLINE_MESSAGE = 'Could not reach the server. It may be starting up, so please try again in a minute.';
+
+const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 export async function api<T>(path: string, options: RequestInit = {}): Promise<T> {
   const token = getToken();
-  const res = await fetch(`${API_URL}${path}`, {
+  const request = () => fetch(`${API_URL}${path}`, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -96,6 +102,24 @@ export async function api<T>(path: string, options: RequestInit = {}): Promise<T
     },
     cache: 'no-store'
   });
+
+  // Only reads are retried: repeating a POST or DELETE could submit it twice.
+  const canRetry = !options.method || options.method.toUpperCase() === 'GET';
+  let res: Response | undefined;
+  for (let attempt = 0; !res; attempt++) {
+    try {
+      res = await request();
+      // 502/503/504 come from the host while the API is still booting.
+      if (canRetry && [502, 503, 504].includes(res.status) && attempt < WAKE_UP_RETRY_DELAYS_MS.length) {
+        res = undefined;
+        await wait(WAKE_UP_RETRY_DELAYS_MS[attempt]);
+      }
+    } catch {
+      // fetch only throws on network failure (server unreachable or asleep).
+      if (!canRetry || attempt >= WAKE_UP_RETRY_DELAYS_MS.length) throw new ApiError(OFFLINE_MESSAGE, 0);
+      await wait(WAKE_UP_RETRY_DELAYS_MS[attempt]);
+    }
+  }
 
   if (!res.ok) {
     const error = await res.json().catch(() => ({ message: 'Request failed' }));
